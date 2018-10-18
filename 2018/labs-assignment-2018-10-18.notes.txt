@@ -70,7 +70,7 @@ etc.
 
 		if ((n = read(fd, buf, sizeof (buf))) == -1)
 			err(1, "read");
-		if ((n = write(1, buf, n)) == -1)
+		if (write(1, buf, n) == -1)
 			err(1, "write");
 	}
 
