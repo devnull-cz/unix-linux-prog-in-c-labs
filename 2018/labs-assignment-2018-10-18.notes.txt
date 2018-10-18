@@ -1,0 +1,93 @@
+Some notes from the labs on Oct 18, 2018
+----------------------------------------
+
+Notes based on what I have seen on your displays, questions you asked,
+etc.
+
+- err(3) means it is from section 3, i.e. "man 3 err".  See slide 10,
+  "Manual Page Sections".
+
+- so, if you want a man page for printf(), you need "man 3 printf" as
+  "man printf" will get you the shell command printf(1)
+
+- err(3) uses errno to print the extra error message.  For functions
+  that do not set it, e.g. getopt(3), use errx(3).  See slide 51,
+  "Formatted error messages: err(3)".
+
+- use ".c" for your files, not ".cpp" as gcc(1) will run as a C++
+  compiler if provided with *.cpp files.  C and C++ are two different
+  animals in many ways.
+
+- check return values of the system calls.  There are exceptions, e.g.
+  usually return values for close(2) are ignored.  For example, the
+  following code is really bad:
+
+	int fd;
+	char buf[10] = { 0 };
+
+	fd = open("/bleh", O_RDONLY);
+	read(fd, buf, sizeof (buf));
+	write(1, buf, sizeof (buf));
+
+	$ ./a.out 
+	¿
+	ì
+	 ^[[?1;2c
+
+  If /bleh does not exist, fd will be -1.  So, read(2) will immediatelly
+  return -1 as well as file descriptor -1 is illegal, and write(2) will
+  print out 10 NUL characters and that may mess up your terminal
+  settings (use "stty sane" in such cases).  To fix the code:
+
+  	- check fd is not -1
+	- get return value of read(2), check it is not -1
+	- write(2) only as many bytes as the return value of read(2).
+
+  That will cope with a non-existent file, file that has less than 10
+  bytes, and other unexpected issues.
+
+  If you are lazy, assert(3) is a convenient function for short programs
+  that do not need proper error reporting.  However, do not use it like
+  that for real code, e.g. your semester assignment.  For example, the
+  code above could be fixed as:
+
+	#include <fcntl.h>
+	#include <unistd.h>
+	#include <err.h>
+	#include <assert.h>
+
+	int
+	main(int argc, char **argv)
+	{
+		int fd, n;
+		char buf[10];
+
+		/* If you are lazy. */
+		assert(argc == 2);
+
+		if ((fd = open(argv[1], O_RDONLY)) == -1)
+			err(1, "open");
+
+		if ((n = read(fd, buf, sizeof (buf))) == -1)
+			err(1, "read");
+		if ((n = write(1, buf, n)) == -1)
+			err(1, "write");
+	}
+
+- if you use the recommended cstyle as mentioned on
+  http://http://mff.devnull.cz/cstyle, there is an exception in
+  indenting in the switch statement.  Align the case with the switch
+  keyword otherwise you might quickly reach 80 columns if you have
+  nested switches.  E.g.:
+
+  	switch (c) {
+	case 'A':
+		printf("...");
+		break;
+	case 'B':
+		...
+
+- if you want to printf(3) what you read(2), you need to properly
+  terminate the buffer with the NUL char, i.e. '\0'.
+
+vim:tw=72
