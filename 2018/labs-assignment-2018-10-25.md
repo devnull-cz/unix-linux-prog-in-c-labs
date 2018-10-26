@@ -60,4 +60,24 @@ test2:
         ./check.sh $(PROG) $(FILES)
 ```
 
-Of course, there should be a set of negative tests (that make sure the program fails on input which are not palindomatic files). The second target (`test2`) is possibly more flexible as one does not have to battle with shell vs. Makefile intricacies.
+Of course, there should be a set of negative tests (that make sure the program fails on input which are not palindomatic files). The second target (`test2`) is possibly more flexible as one does not have to battle with shell vs. Makefile intricacies. What is inside `check.sh` ? Well, pretty much the same as is in the Makefile:
+
+```shell
+#!/bin/bash
+
+PROG=$1
+shift
+ret=0
+
+for file in $*; do
+	$PROG $file >/dev/null
+	if [[ $? -ne 0 ]]; then
+		echo "FAILED: $file"
+		ret=1
+	else
+		echo "PASSED $file"
+	fi
+done
+
+exit $ret
+```
