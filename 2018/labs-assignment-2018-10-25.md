@@ -1,3 +1,5 @@
+# Tasks
+
 1) palindrome file detection
   - a word that reads the same way forwards or backwards, e.g. 'noon', 'ada', etc.
     https://en.wikipedia.org/wiki/Palindrome
@@ -38,3 +40,24 @@
    - there are 2 formats of utmp entries: historical (utmp) and extended/standard (utmpx)
      - see what the system you will be writing this on uses and stick with that (i.e. either use utmp.h or utmpx.h) 
 - e.g. macOS uses utmpx (/var/run/utmpx)
+
+# Testing notes
+
+dead-simple solution to unit testing:
+
+```
+PROG=./a.out                                                                    
+                                                                                
+FILES=noona.txt noon.txt noona.txt                                              
+test:                                                                           
+        @for file in $(FILES); do \                                             
+                $(PROG) $$file >/dev/null; \                                    
+                if [ $$? -ne 0 ]; then echo "FAILED: $$file"; ret=1; else \     
+                echo "PASSED $$file"; fi \                                      
+        done; exit $$ret                                                        
+                                                                                
+test2:                                                                          
+        ./check.sh $(PROG) $(FILES)
+```
+
+Of course, there should be a set of negative tests (that make sure the program fails on input which are not palindomatic files). The second target (`test2`) is possibly more flexible as one does not have to battle with shell vs. Makefile intricacies.
