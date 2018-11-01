@@ -130,7 +130,7 @@ list.
 Example:
 
 $ cat args
-echo
+/bin/echo
 hello
 world
 
