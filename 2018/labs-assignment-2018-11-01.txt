@@ -1,0 +1,141 @@
+Assignment for labs on Nov 1, 2018
+----------------------------------
+
+General notes:
+
+- check all calls short from those you really do not need to (e.g.
+  sleep() and printf())
+
+- printing debugging information will help you
+
+- you might need to use stderr for messages (i.e. fprintf(stder, "...",
+  ...)) to avoid buffering
+
+- remember that each command line argument must correspond to the
+  execl() argument.  The following is wrong:
+
+  execl("/usr/bin/pstree", "pstree", "-psa 1", NULL);
+
+  The correct call is:
+
+  execl("/usr/bin/pstree", "pstree", "-psa", "1", NULL);
+
+- do remember the 1st execl() argument is the full path, the 2nd
+  argument is argv[0] to the command's main() function, etc.  The
+  following is wrong:
+
+  execl("/bin/ls", NULL);
+
+  as argv[0] is a NULL string, there is no terminating NULL now.
+  Anything that is on the stack will be taken as string pointers, until
+  NULL is found.  Quite probably, you will see an error from ls about
+  non-existent files.
+
+- to print a number into a string, the easiest way might be asprintf().
+  Note "&s" as the 1st argument.  Example:
+
+  char *s;
+
+  asprintf(&s, "%d", getpid());
+
+  Check the asprintf(3) man page on Linux, you will need to define
+  _GNU_SOURCE before including <stdio.h>.
+
+- anything you printf after any exec(2) call will be printed ONLY if the
+  call failed.  If it succeeds, the process is already running the
+  exec()ed binary and is no such code in the current process image.
+
+- do NOT use system(3) function.  It forks and runs a shell and that is
+  not what we want.
+
+Assignments
+-----------
+
+1. Fork a process, sleep in the child for a second using sleep(3).  In the
+parent, wait for the child, exit.
+
+------------------------------------------------------------------------
+2. fork a child, fork again in the child, and again.  Every parent waits
+for its child.  Exec pstree(1) with -psa options in the last child on
+	itself (i.e.  "pstree -psa <childs-pid>").  Exit then.
+
+There is no pstree(1) natively on macOS.  You can download it from brew
+or mac packages.  On Solaris, there is ptree(1).
+
+Example:
+
+$ ./a.out
+init,1
+  `-sshd,534 -o PidFile=/run/sshd.pid -f /etc/ssh/sshd_config
+      `-sshd,40324
+          `-sshd,40336
+              `-bash,40337
+                  `-a.out,40612
+                      `-a.out,40613
+                          `-a.out,40614
+                              `-pstree,40615 -psa 40615
+
+------------------------------------------------------------------------
+3. Create a child, let it sleep random seconds (e.g. use mod on PID),
+then let it create a file from argv[1], and exit.  Parent busy waits in
+the meantime, and is every second checking the existence of argv[1].
+When the file is found, the parent removes the file and exits.
+
+------------------------------------------------------------------------
+4. Parent forks a child and waits for it.  Child sleeps for ever.  Kill
+the child from the shell.  Parent will print the signal number.
+
+Example:
+
+$ ./a.out &
+[1] 34926
+CHILD: my pid is 34927.
+$ kill -9 34927
+PARENT: child killed by signal 9.
+
+------------------------------------------------------------------------
+5. Program busy waits, checking a mode for a file from argv[1].  When
+that file gets mode r-x-wxr--, program exits.  If the file does not
+exist at all, it is considered an error and program bails out right
+away.  Use chmod(1) from shell to change the mode of the file.  Note
+that if the file gets r-x-wxrw-, for example, the program must not exit.
+
+Example:
+
+$ touch test
+$ ls -l test
+-rw-------  1 janp  staff  0 Oct 31 22:51 test
+$ ./a.out test &
+[1] 35095
+$ chmod 0536 test
+$ ls -l test
+-r-x-wxrw-  1 janp  staff  0 Oct 31 22:51 test*
+$ chmod o-w test
+File got the mode, exiting.
+[1]+  Done                    ./a.out test
+
+------------------------------------------------------------------------
+6. Process a file from argv[1] to build argv for execv(2).  You must not
+use a statically allocated *argv array for pointers as the number of
+arguments may be unlimited.  There is one argument per line in the file.
+You may only process the file once, i.e. you must not first read the
+file into memory, then count the lines, allocate argv, then process the
+file again to populate the argv.  You man not use mmap(2) even if you
+know how to.
+
+Hint: use macros from <queue.h> to build a linked list of arguments
+while reading the file, then allocate and populate argv using the linked
+list.
+
+Example:
+
+$ cat args
+echo
+hello
+world
+
+$ ./a.out args
+hello world
+------------------------------------------------------------------------
+
+vim:tw=72
