@@ -3,7 +3,7 @@ Assignment for labs on Nov 1, 2018
 
 General notes:
 
-- check all calls short from those you really do not need to (e.g.
+- check return values from all calls short from those you really do not need to (e.g.
   sleep() and printf())
 
 - printing debugging information will help you
