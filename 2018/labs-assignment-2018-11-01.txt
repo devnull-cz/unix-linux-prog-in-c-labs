@@ -125,7 +125,7 @@ use a statically allocated *argv array for pointers as the number of
 arguments may be unlimited.  There is one argument per line in the file.
 You may only process the file once, i.e. you must not first read the
 file into memory, then count the lines, allocate argv, then process the
-file again to populate the argv.  You man not use mmap(2) even if you
+file again to populate the argv.  You may not use mmap(2) even if you
 know how to.
 
 Hint: use macros from <queue.h> to build a linked list of arguments
