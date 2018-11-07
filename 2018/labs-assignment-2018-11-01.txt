@@ -81,7 +81,7 @@ init,1
                               `-pstree,40615 -psa 40615
 
 ------------------------------------------------------------------------
-3. Create a child, let it sleep random seconds (e.g. use mod on PID),
+3. Create a child, let it sleep random seconds (e.g. use modulo operation on PID value),
 then let it create a file from argv[1], and exit.  Parent busy waits in
 the meantime, and is every second checking the existence of argv[1].
 When the file is found, the parent removes the file and exits.
