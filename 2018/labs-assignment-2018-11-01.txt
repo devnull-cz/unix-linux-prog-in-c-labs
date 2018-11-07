@@ -51,7 +51,7 @@ General notes:
   exec()ed binary and is no such code in the current process image.
 
 - do NOT use system(3) function.  It forks and runs a shell and that is
-  not what we want.
+  not what we want. Besides, it might have security consequences.
 
 Assignments
 -----------
