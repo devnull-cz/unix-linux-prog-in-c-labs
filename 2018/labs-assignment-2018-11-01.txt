@@ -10,6 +10,7 @@ General notes:
 
 - you might need to use stderr for messages (i.e. fprintf(stder, "...",
   ...)) to avoid buffering
+  - or use fflush()
 
 - remember that each command line argument must correspond to the
   execl() argument.  The following is wrong:
