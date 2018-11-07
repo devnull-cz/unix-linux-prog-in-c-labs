@@ -41,6 +41,10 @@ General notes:
 
   Check the asprintf(3) man page on Linux, you will need to define
   _GNU_SOURCE before including <stdio.h>.
+  
+  Make sure to free() the pointer once done with the buffer.
+  
+  Alternatively, use snprintf() with static buffer.
 
 - anything you printf after any exec(2) call will be printed ONLY if the
   call failed.  If it succeeds, the process is already running the
