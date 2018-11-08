@@ -83,3 +83,7 @@ hello world
 Use `strace` with the follow option (-f) to trace across forks. Optionally, store the output into a file (use -o) so that the tracing output is not mixed with program output. Also, see what filtering capabilities are there (-e) to trace just a subset of system calls.
 
 Try to run the programs under debugger to see what happens on fork.
+
+# Notes
+
+- avoid using system(3) at all costs. Besides unnecessarily spawning shell, it might introduce security vulnerability. See https://wiki.sei.cmu.edu/confluence/pages/viewpage.action?pageId=87152177
