@@ -1,13 +1,13 @@
 - warmup:
+  - Fork a process, sleep in the child for specified timeout using sleep(3). 
+  - In the parent, wait for the child, exit.
+  - see what happens if parent does not wait on the child to finish
 ```
   usage: ./a.out <timeout_in_seconds>
 ```
-  Fork a process, sleep in the child for specified timeout using sleep(3). 
-  In the parent, wait for the child, exit.
-  - see what happens if parent does not wait on the child to finish
-  
-  - Parent forks a child and waits for it.  Child sleeps for ever. 
-    Kill the child from the shell.  Parent will print the signal number.
+
+- Parent forks a child and waits for it.  Child sleeps for ever. 
+  - Kill the child from the shell.  Parent will print the signal number.
 
 Example:
 ```
@@ -24,9 +24,9 @@ PARENT: child killed by signal 9.
   - write tests
 
 - fork a child, fork again in the child, and again until specified count of children is met.
-  Every parent waits for its child. 
-  Exec pstree(1) with -psa options in the last child on itself (i.e. "pstree -psa <childs-pid>"). 
-  Exit then.
+  - Every parent waits for its child. 
+  - Exec pstree(1) with -psa options in the last child on itself (i.e. "pstree -psa <childs-pid>"). 
+  - Exit then.
 ```
   usage: ./a.out <num_children>
 ```
@@ -34,8 +34,7 @@ PARENT: child killed by signal 9.
   
 - parent creates a child that will allocate specified number of memory on the heap, 
   fill it with given byte and exit.
-  Parent will then report high-water memory usage using wait4().
-  
+  - Parent will then report high-water memory usage using wait4().
   - see getrusage(2) man page for details about the rusage structure members
   - try the same via GNU time (e.g. `/usr/bin/time -v -- /some/program`) and see 
     if the reported values match
@@ -48,8 +47,7 @@ PARENT: child killed by signal 9.
   file into memory, then count the lines, allocate argv, then process the
   file again to populate the argv.  You may not use mmap(2) even if you
   know how to.
-
-  Hint: use macros from <queue.h> to build a linked list of arguments
+  - Hint: use macros from <queue.h> to build a linked list of arguments
   while reading the file, then allocate and populate argv using the linked
   list.
 
