@@ -26,13 +26,14 @@ PARENT: child killed by signal 9.
   - write tests
 
 - fork a child, fork again in the child, and again until specified count of children is met.
-  - Every parent waits for its child. 
-  - Exec pstree(1) with -psa options in the last child on itself (i.e. "pstree -psa <childs-pid>"). 
+  - Every parent waits for its child.
+  - Exec pstree(1) with -psa options in the last child on itself (i.e. `pstree -psa <childs-pid>`). 
   - Exit then.
 ```
   usage: ./a.out <num_children>
 ```
-  - on Solaris use ptree <pid>, on macOS install pstree from Homebrew
+  - on Solaris use `ptree <pid>`, on macOS install `pstree` from Homebrew
+  - the goal is to create a cascade of processes, not flat tree ("broom")
   
 - parent creates a child that will allocate specified number of memory on the heap, 
   fill it with given byte and exit.
