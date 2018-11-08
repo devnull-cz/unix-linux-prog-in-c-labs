@@ -1,5 +1,7 @@
 - warmup:
+```
   usage: ./a.out <timeout_in_seconds>
+```
   Fork a process, sleep in the child for specified timeout using sleep(3). 
   In the parent, wait for the child, exit.
   - see what happens if parent does not wait on the child to finish
@@ -35,12 +37,12 @@ PARENT: child killed by signal 9.
   Parent will then report high-water memory usage using wait4().
   
   - see getrusage(2) man page for details about the rusage structure members
-  - try the same via GNU time (e.g. /usr/bin/time -v -- /some/program) and see 
+  - try the same via GNU time (e.g. `/usr/bin/time -v -- /some/program`) and see 
     if the reported values match
   - see https://github.com/gsauthof/cgmemtime for more sophisticated solution
   
 - Process a file from argv[1] to build argv for execv(2).  You must not
-  use a statically allocated *argv array for pointers as the number of
+  use a statically allocated `*argv` array for pointers as the number of
   arguments may be unlimited.  There is one argument per line in the file.
   You may only process the file once, i.e. you must not first read the
   file into memory, then count the lines, allocate argv, then process the
