@@ -6,8 +6,8 @@
   In the parent, wait for the child, exit.
   - see what happens if parent does not wait on the child to finish
   
-- Parent forks a child and waits for it.  Child sleeps for ever. 
-  Kill the child from the shell.  Parent will print the signal number.
+  - Parent forks a child and waits for it.  Child sleeps for ever. 
+    Kill the child from the shell.  Parent will print the signal number.
 
 Example:
 ```
