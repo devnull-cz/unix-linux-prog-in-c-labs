@@ -1,3 +1,5 @@
+# Tasks
+
 - warmup:
   - Fork a process, sleep in the child for specified timeout using sleep(3). 
   - In the parent, wait for the child, exit.
@@ -75,3 +77,9 @@ hello world
   bar
   ahem ahem
 ```
+
+# Debugging
+
+Use `strace` with the follow option (-f) to trace across forks. Optionally, store the output into a file (use -o) so that the tracing output is not mixed with program output. Also, see what filtering capabilities are there (-e) to trace just a subset of system calls.
+
+Try to run the programs under debugger to see what happens on fork.
