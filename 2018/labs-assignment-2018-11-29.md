@@ -8,12 +8,12 @@ Once a connection is accepted, from the specified IP address,
 the server will fork+exec a shell and redirect std{in,out,err} to the network connection.
 Otherwise, it will behave as a echo server - what is read is written back
 until the connection is closed.
-   
-NOTE: the program has to support both IPv[46]
-NOTE: port can be specified as a number or name of service
-NOTE: use netcat as a client for testing
-NOTE: for testing in non segregated network environment, it is highly advisable to let the
-      server listen only on localhost addresses (and change the allowed address accordingly)
+
+Notes/constrains:
+ - the program has to support both IPv[46] but should use address family specific functions only when absolutely necessary (definitely not when creating/binding the socket !) i.e. only for address comparison after new connection was accepted.
+ - port can be specified as a number or name of service
+ - use netcat as a client for testing
+ - for testing in non segregated network environment, it is highly advisable to let the server listen only on localhost addresses (and change the allowed address accordingly)
  
 Variants:
    - allow more simultaneous connections (both echo and shell)
