@@ -14,6 +14,7 @@ Notes/constrains:
  - port can be specified as a number or name of service
  - use netcat as a client for testing
  - for testing in non segregated network environment, it is highly advisable to let the server listen only on localhost addresses (and change the allowed address accordingly)
+ - networking APIs that are sufficient (besides the usuall read/write/printf/etc.): socket, bind, listen, accept, getaddrinfo, getnameinfo, setsockopt (for `SO_REUSEADDR`)
  
 Variants:
    - allow more simultaneous connections (both echo and shell)
