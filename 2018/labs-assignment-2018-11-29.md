@@ -19,4 +19,13 @@ Variants:
    - allow more simultaneous connections (both echo and shell)
    - the whitelist of IP addresses allowed to spawn a shell will be read from a file
    - the whitelist can consist of IP prefixes
+   - make the server check a shared secret in the echo mode first and only if it matches (plus the IP address match) will it switch to shell mode
 
+Debugging:
+  - make sure there are no file descriptor leaks (e.g. connect to the server in both modes enough times so that any leakage will have the maximum limit imposed by ulimit)
+    - can also be observed via `lsof`
+  - `strace` or `truss` can help you see problems when passing structures to syscalls
+  - gdb (compile with -g)
+  - assert()
+  - DEBUG() macro (variadic)
+  - traffic dump (`tcpdump` or `tshark` or `snoop` or Wireshark)
