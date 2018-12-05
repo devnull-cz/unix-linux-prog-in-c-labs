@@ -1,4 +1,5 @@
-Dec 5, 2018
+NSWI-015, Unix/Linux Programming In C, the labs
+Thu Dec 6, 2018
 
 ------------------------------------------------------------------------
 1. Create one thread, write something to standard error output in it,
