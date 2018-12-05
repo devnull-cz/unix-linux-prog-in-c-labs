@@ -1,0 +1,85 @@
+Dec 5, 2018
+
+------------------------------------------------------------------------
+1. Create one thread, write something to standard error output, sleep 1
+   second, write something else.  In main(), wait for the thread to
+   finish.
+
+------------------------------------------------------------------------
+2. Create argv[1] number of threads, pass each thread some ID in the
+   pthread_create() argument.  Each thread randomly sleeps 1 or 2
+   seconds, prints its ID, then returns from its function.
+
+   In main(), wait for all created threads before exiting.  As the
+   number of thread may be potentically large, use dynamically allocated
+   memory to store the pthread_t values.
+
+------------------------------------------------------------------------
+3. (something similar was done last Thu.  If you already wrote it, use
+   that code.)
+
+   Take the latest tcp/trivial-tcp-echo-server.c from
+   https://github.com/devnull-cz/unix-linux-prog-in-c-src, and use code
+   from resolving/getaddrinfo.c to modify the echo server to call
+   getaddrinfo() and use only the first IPv6 address (i.e. check for
+   AF_INET6 family) to bind/listen/accept.
+
+   By default IPv6 sockets can be used for IPv4 communication as well
+   (see the latest materials, version 57, section on getaddrinfo()).
+
+   So, verify you can connect over both IPv6 and IPv4.  E.g.:
+
+   bash-1$ ./echo-server 9999
+   ...
+
+   bash-2$ nc 127.0.0.1 9999
+   ...
+
+   bash-3$ nc ::1 9999
+   ...
+
+   Use also with the public IP on your machine.  All addresses should be
+   useable to connect to the echo server.
+
+------------------------------------------------------------------------
+4. Take code from (3) and modify it to serve parallel connections using
+   threads.  That means, after you accept a new connection, pass the
+   returned socket to a newly created pthread.  Do not wait for the
+   threads, use pthread_detach() on them.  After you create a thread,
+   call accept() again.
+
+   Each thread will just read from the socket and write the data back.
+   Test with nc(1) again but use multiple nc's in parallel.
+
+------------------------------------------------------------------------
+5. Modify (3) to bind on all addresses (well, there will be 2 -- one
+   IPv4 wildcard address, one IPv6 wildcard address as you use NULL for
+   the hostname) returned by getaddinfo().  For the IPv6 address, you will
+   need to set the socket to IPv6 only.  Just get to calling listen(2),
+   then wait for any signal, no need to actually accept().  However,
+   before killing the process, verify with nc(1) that you can connect
+   both on 127.0.0.1 and ::1.  Verify with "lsof -p <PID>" that you have
+   two sockets open, one for IPv4, one for IPv6.
+
+   Calling bind(2) on both IPv4 and IPv6 addresses will end up with bind
+   failing the 2nd invocation.  A hint on what is going on and how to
+   fix it is in the following text added to the v57 of the materials (on
+   page with getaddrinfo() function):
+
+	== 8< ==
+	IPv6 sockets may be used for both IPv4 and IPv6 communications.
+	That means if you try to bind addresses returned by getaddrinfo,
+	bind should return EADDRINUSE after its first call if you use
+	both IPv4 and IPv6 addresses.  Binding on an IPv6 address should
+	be sufficient to accept connections over IPv4 as well. Details
+	are in RFC 3493. If you want to restrict a socket to IPv6 only,
+	use the following code on a socket from the AF INET6 family:
+
+	int on = 1;
+        if (setsockopt(s, IPPROTO_IPV6, IPV6_V6ONLY, (char *)&on,
+            sizeof(on)) == -1) {
+                /* deal with the error here */
+	}
+	== 8< ==
+
+vim:tw=72
