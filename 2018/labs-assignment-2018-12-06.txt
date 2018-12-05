@@ -1,18 +1,24 @@
 Dec 5, 2018
 
 ------------------------------------------------------------------------
-1. Create one thread, write something to standard error output, sleep 1
-   second, write something else.  In main(), wait for the thread to
-   finish.
+1. Create one thread, write something to standard error output in it,
+   sleep 1 second, write something else from the thread.  In main(),
+   just wait for the thread to finish, then exit.
+
+   You must see on your terminal all the text the thread printed.
+
+   Check return values of all pthread_* calls.
 
 ------------------------------------------------------------------------
 2. Create argv[1] number of threads, pass each thread some ID in the
    pthread_create() argument.  Each thread randomly sleeps 1 or 2
-   seconds, prints its ID, then returns from its function.
+   seconds, prints out its ID, then returns from its function.
 
    In main(), wait for all created threads before exiting.  As the
    number of thread may be potentically large, use dynamically allocated
    memory to store the pthread_t values.
+
+   Check return values of all pthread_* calls.
 
 ------------------------------------------------------------------------
 3. (something similar was done last Thu.  If you already wrote it, use
