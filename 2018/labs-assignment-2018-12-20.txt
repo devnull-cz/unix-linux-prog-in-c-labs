@@ -1,0 +1,173 @@
+Labs Dec 20, 2018
+-----------------
+(there is also labs-assignment-2018-12-20.jpg but there are just some random
+notes regarding the implementation)
+
+Write a program that accepts the following file as input (in argv[1]):
+
+     M N\n
+     M N\n
+     ...
+     M N\n
+
+Where M (aka mark) is a character, N is a digit.  There is one space between M
+and N.  An example input file:
+
+     -------------...
+     |A 3
+     |B 1
+     |C 2
+     |X 9
+     |...
+
+Create N threads for each M and give each thread a unique numeric ID.  A main
+thread will then loop indefinitely, sleeping one second each iteration,
+randomly setting a mark to one of the characters from M, and broadcasting on a
+condition variable.  All threads woken up and matching the given mark print
+their mark and ID, and put themselves to sleep again.  For each iteration, each
+thread prints its ID once at most (otherwise you would be actively looping for
+the whole second until a new mark is randomly selected).
+
+Note that if a thread is not printing its ID, it must sleep in
+pthread_cond_wait().  Busy waiting is not acceptable.
+
+Hint: use a generation (= counter) number for each loop in main(), and each
+thread may print a message just once per a given generation.
+
+Sleeping with sleep(3) is only allowed in the main thread.
+
+Printing enough debug messages is encouraged.
+
+Free free to assert on anything that is not expected, e.g. a bad input file
+format, return of open(2), etc.
+
+The program never exits until you kill it (^C).  That means you neither join the
+threads nor you need to detach them.
+
+Note that during the first main() iteration, not all threads for a given mark
+may be ready yet (however, you could easily fix it with a barrier) so you may
+have fewer output lines than the number of threads but after the first
+generation, you should always get the exact number of output messages as is N
+for given M.  If not, you code is not correct.  Also, there must be always some
+input every iteration otherwise the code is not correct.
+
+Example output:
+
+$ cat input
+A 3
+B 1
+C 4
+Z 7
+
+$ ./a.out input
+read line: A 3
+read line: B 1
+read line: C 4
+read line: Z 7
+total number of threads is 15
+ids[0] id 0 char A
+ids[1] id 1 char A
+ids[2] id 2 char A
+ids[3] id 3 char B
+ids[4] id 4 char C
+ids[5] id 5 char C
+ids[6] id 6 char C
+ids[7] id 7 char C
+ids[8] id 8 char Z
+ids[9] id 9 char Z
+ids[10] id 10 char Z
+ids[11] id 11 char Z
+ids[12] id 12 char Z
+ids[13] id 13 char Z
+ids[14] id 14 char Z
+thread id 0 started with mark A.
+thread id 1 started with mark A.
+thread id 2 started with mark A.
+thread id 3 started with mark B.
+thread id 4 started with mark C.
+thread id 5 started with mark C.
+thread id 6 started with mark C.
+thread id 7 started with mark C.
+thread id 8 started with mark Z.
+thread id 9 started with mark Z.
+thread id 10 started with mark Z.
+thread id 11 started with mark Z.
+thread id 12 started with mark Z.
+thread id 13 started with mark Z.
+== generation is 1 ==
+thread id 14 started with mark Z.
+main set mark to B
+thread id 3 with mark B hailing!
+== generation is 2 ==
+main set mark to C
+thread id 4 with mark C hailing!
+thread id 5 with mark C hailing!
+thread id 7 with mark C hailing!
+thread id 6 with mark C hailing!
+== generation is 3 ==
+main set mark to Z
+thread id 8 with mark Z hailing!
+thread id 14 with mark Z hailing!
+thread id 10 with mark Z hailing!
+thread id 13 with mark Z hailing!
+thread id 11 with mark Z hailing!
+thread id 9 with mark Z hailing!
+thread id 12 with mark Z hailing!
+== generation is 4 ==
+main set mark to C
+thread id 4 with mark C hailing!
+thread id 5 with mark C hailing!
+thread id 6 with mark C hailing!
+thread id 7 with mark C hailing!
+== generation is 5 ==
+main set mark to Z
+thread id 13 with mark Z hailing!
+thread id 14 with mark Z hailing!
+thread id 10 with mark Z hailing!
+thread id 12 with mark Z hailing!
+thread id 8 with mark Z hailing!
+thread id 11 with mark Z hailing!
+thread id 9 with mark Z hailing!
+== generation is 6 ==
+main set mark to B
+thread id 3 with mark B hailing!
+== generation is 7 ==
+main set mark to C
+thread id 7 with mark C hailing!
+thread id 6 with mark C hailing!
+thread id 5 with mark C hailing!
+thread id 4 with mark C hailing!
+== generation is 8 ==
+main set mark to Z
+thread id 9 with mark Z hailing!
+thread id 14 with mark Z hailing!
+thread id 8 with mark Z hailing!
+thread id 13 with mark Z hailing!
+thread id 10 with mark Z hailing!
+thread id 12 with mark Z hailing!
+thread id 11 with mark Z hailing!
+== generation is 9 ==
+main set mark to Z
+thread id 12 with mark Z hailing!
+thread id 9 with mark Z hailing!
+thread id 8 with mark Z hailing!
+thread id 10 with mark Z hailing!
+thread id 11 with mark Z hailing!
+thread id 14 with mark Z hailing!
+thread id 13 with mark Z hailing!
+== generation is 10 ==
+main set mark to C
+thread id 4 with mark C hailing!
+thread id 6 with mark C hailing!
+thread id 5 with mark C hailing!
+thread id 7 with mark C hailing!
+== generation is 11 ==
+main set mark to Z
+thread id 13 with mark Z hailing!
+thread id 12 with mark Z hailing!
+thread id 14 with mark Z hailing!
+thread id 8 with mark Z hailing!
+thread id 9 with mark Z hailing!
+thread id 10 with mark Z hailing!
+thread id 11 with mark Z hailing!
+^C
