@@ -17,8 +17,9 @@
   - variant: make this code generic so any sort of job can be used (e.g. convert this to parallelized
            port scanner/downloader/web crawler)
 
-  Example output:
+  - example output:
 
+```
 	$ ./a.out 1 100000
 	Num of CPUs: 8
 	n1=1 n2=100000
@@ -51,6 +52,7 @@
 	(83%) best number so far 83160, has 128 divisors
 	Job done, joining all the threads now.
 	Best number: 83160 (divisors 128)
+```
 
 2) rewrite https://github.com/devnull-cz/unix-linux-prog-in-c-src/blob/master/select/non-blocking-connect.c 
    to use threads instead of non-blocking connect
