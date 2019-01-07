@@ -14,8 +14,9 @@
 
   - check: [1, 100000]: the winner is 83160 that has 128 divisors
 
-  - variant: make this code generic so any sort of job can be used (e.g. convert this to parallelized
-           port scanner/downloader/web crawler)
+  - variants:
+    - make this code generic so any sort of job can be used (e.g. convert this to parallelized port scanner/downloader/web crawler)
+    - pass the information about the best number to the main thread so that no single number is lost (i.e. use a queue)
 
   - example output:
 
