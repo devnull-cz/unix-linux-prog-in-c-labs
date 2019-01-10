@@ -66,6 +66,8 @@
      - use cleanup routines so that the cleanup can be generic
        - gotcha: pthread_cleanup_* are usually implemented as macros
    
+   - sub-variant: it does not mean that all the connect() calls are in progress once all the threads start running, i.e. after all the pthread_create() calls complete. This might matter if the timeout is low (use setitimer(2) to get sub-second timeouts) or there is high number of threads. The main thread should start the timer only after all the connections are initiated.
+   
    - variant: create up to MAX threads, use a queue to manage the work
               - insert addresses into the queue as they are returned from resolving library calls so that 
                 the address family precedence is preserved
