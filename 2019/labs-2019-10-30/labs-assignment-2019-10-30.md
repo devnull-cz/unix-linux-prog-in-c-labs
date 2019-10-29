@@ -25,6 +25,8 @@
        print certain entries)
    - use macros (to detect special directory entries)
    - avoid using global variables in any of the variants
+   - how to allocate enough memory for path on given file system ?
+     - see pathconf(2)
 
 4) utmp modification (standard hacker tool from the 90's)
    https://en.wikipedia.org/wiki/Utmp
