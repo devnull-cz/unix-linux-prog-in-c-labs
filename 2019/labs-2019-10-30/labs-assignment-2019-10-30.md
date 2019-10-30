@@ -1,8 +1,18 @@
+
+# Generic notes
+
+- check all return values and react accordingly (err(3) family of functions)
+  - okay, maybe except those from printf() family of functions and close(2)
+- write unit tests
+  - ideally driven by Makefile
+  - ideally run them in CI environment (like Travis, Github actions etc.)
+
 # Tasks
 
-1) palindrome file detection
-  - a word that reads the same way forwards or backwards, e.g. 'noon', 'ada', etc.
+## palindrome file detection
+  - definition: a word that reads the same way forwards or backwards, e.g. 'noon', 'ada', etc.
     https://en.wikipedia.org/wiki/Palindrome
+    - palindromatic file is a that whose contents form a palindrome
   - optional: the detection should be case insensitive
     - add getopt() option to control this behavior
   - usage: `./a.out <file>`
@@ -12,8 +22,9 @@
   - implementation: there are multiple choices (using index walkers, recursive,
     read all of it in and compare reversed string, ...)
     - use read()+lseek() to retrieve single character on given position
+    - usig stat(2)/fstat(2)/lstat(2) is not allowed
 
-3) directory traversal with stat
+## directory traversal with stat
    - usage: ./a.out directory
    - will traverse the directory recursively and compute the average length in bytes of all regular files found
    - bonus points: follow symlinks
@@ -28,8 +39,10 @@
    - how to allocate enough memory for path on given file system ?
      - see pathconf(2)
 
-4) utmp modification (standard hacker tool from the 90's)
-   https://en.wikipedia.org/wiki/Utmp
+## utmp modification (standard hacker tool from the 90's)
+
+What the h\* is utmp ? See https://en.wikipedia.org/wiki/Utmp
+
    - write a program that removes entries matching specification from utmp database
      - entry specification: username + tty, the tty can be optional
    - sufficient to read/process one entry at a time
