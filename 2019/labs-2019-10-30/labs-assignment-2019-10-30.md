@@ -39,7 +39,7 @@
    - how to allocate enough memory for path on given file system ?
      - see pathconf(2)
 
-## utmp modification (standard hacker tool from the 90's)
+## utmp modification (standard [hacker tool](https://www.imdb.com/title/tt0113957/?ref_=nv_sr_1?ref_=nv_sr_1) from the 90's)
 
 What the h\* is utmp ? See https://en.wikipedia.org/wiki/Utmp
 
