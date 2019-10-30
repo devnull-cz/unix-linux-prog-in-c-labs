@@ -25,7 +25,7 @@
     - usig stat(2)/fstat(2)/lstat(2) is not allowed
 
 ## directory traversal with stat
-   - usage: ./a.out directory
+   - usage: `./a.out directory`
    - will traverse the directory recursively and compute the average length in bytes of all regular files found
    - bonus points: follow symlinks
      - extra bonus points: do not follow symlinks outside of the top level directory
@@ -35,7 +35,7 @@
        uses function to compute the average, 2nd traversal uses function to
        print certain entries)
    - use macros (to detect special directory entries)
-   - avoid using global variables in any of the variants
+   - avoid using global variables in any of the variants (i.e. use recursion)
    - how to allocate enough memory for path on given file system ?
      - see pathconf(2)
 
@@ -51,4 +51,4 @@ What the h\* is utmp ? See https://en.wikipedia.org/wiki/Utmp
      - make sure to preserve ownership/permissions/times - use stat(2)
    - there are 2 formats of utmp entries: historical (utmp) and extended/standard (utmpx)
      - see what the system you will be writing this on uses and stick with that (i.e. either use utmp.h or utmpx.h) 
-- e.g. macOS uses utmpx (/var/run/utmpx)
+- e.g. macOS uses utmpx (`/var/run/utmpx`)
