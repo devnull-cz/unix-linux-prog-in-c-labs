@@ -22,7 +22,7 @@
   - implementation: there are multiple choices (using index walkers, recursive,
     read all of it in and compare reversed string, ...)
     - use read()+lseek() to retrieve single character on given position
-    - usig stat(2)/fstat(2)/lstat(2) is not allowed
+    - use of stat(2)/fstat(2)/lstat(2) is not allowed
 
 ## directory traversal with stat
    - usage: `./a.out directory`
