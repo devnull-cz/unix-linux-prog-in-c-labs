@@ -19,7 +19,7 @@ for v in $REQ_EXECUTABLES; do
 	fi
 
 	if [[ ! -f $value || ! -x $value ]]; then
-	    echo "$v not found or not executable.  Exiting."
+	    echo "$value not found or not executable.  Exiting."
 	    exit 1
 	fi
 done
