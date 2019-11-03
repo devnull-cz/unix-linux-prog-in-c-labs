@@ -1,0 +1,4 @@
+echo HELLO WORLD > input
+cat <input >output
+cat output
+rm -f input output

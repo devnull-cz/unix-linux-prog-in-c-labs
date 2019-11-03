@@ -1,0 +1,13 @@
+# It is better to overwrite variables set here in you local test-config.local so
+# that you do not need to fix it again after each pull from the test repository.
+# Also see run-tests.sh.
+
+# You need to set this one to your shell binary.
+#
+# However, you should first set it to your system /bin/bash to make sure you can
+# properly run and pass the tests.
+export MYSH="/bin/true"
+
+# Get STEF from https://github.com/devnull-cz/stef, then set STEF to path to
+# stef.sh.
+export STEF="path/to/stef.sh"

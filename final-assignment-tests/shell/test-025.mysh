@@ -1,0 +1,7 @@
+rm -f output4
+echo X > output | echo Y > output2 | echo Z >output3
+cat output >> output4
+cat output2 >> output4
+cat output3 >> output4
+cat <output4
+rm -f output output2 output3 output4

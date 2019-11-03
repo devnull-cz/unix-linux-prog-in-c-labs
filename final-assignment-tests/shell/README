@@ -1,0 +1,84 @@
+# These tests are for verifying correctness of the shell assignment
+# implementation for NSWI015.
+#
+# If you find a bug in your implementation that is not covered in these tests,
+# let us know and we can add it.
+
+Make sure variables in ./test-config are correctly defined, then run the
+following.
+
+# For phase 1
+./run-tests.sh $( cat phase-1.tests )
+
+Expected output is something like the following (the number of tests may
+change):
+
+$ ./run-tests.sh $( cat phase-1.tests )
+=== [ NSWI015 mysh shell unit tests ] ===
+
+001	PASS
+002	PASS
+003	PASS
+004	PASS
+005	PASS
+006	PASS
+007	PASS
+008	PASS
+010	PASS
+011	PASS
+021	PASS
+022	PASS
+034	PASS
+035	PASS
+
+============
+
+TESTS PASSED
+
+# For phase 2
+./run-tests.sh
+
+Expected output is something like the following (the number of tests may
+change):
+
+$ ./run-tests.sh
+=== [ NSWI015 mysh shell unit tests ] ===
+
+001	PASS
+002	PASS
+003	PASS
+004	PASS
+005	PASS
+006	PASS
+007	PASS
+008	PASS
+009	PASS
+010	PASS
+011	PASS
+012	PASS
+013	PASS
+014	PASS
+015	PASS
+016	PASS
+017	PASS
+018	PASS
+019	PASS
+020	PASS
+021	PASS
+022	PASS
+023	PASS
+024	PASS
+025	PASS
+026	PASS
+028	PASS
+029	PASS
+030	PASS
+031	PASS
+032	PASS
+033	PASS
+034	PASS
+035	PASS
+
+============
+
+TESTS PASSED

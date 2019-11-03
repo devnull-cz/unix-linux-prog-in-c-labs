@@ -1,0 +1,6 @@
+rm -f out2
+touch out2
+echo hello world >out2 >out
+cat out
+cat out2
+rm -f out out2

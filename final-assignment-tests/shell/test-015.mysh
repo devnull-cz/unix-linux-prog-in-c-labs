@@ -1,0 +1,4 @@
+echo A B C > out
+echo X Y Z >> out
+cat out
+rm -f out

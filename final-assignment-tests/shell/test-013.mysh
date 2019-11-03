@@ -1,0 +1,1 @@
+date | cat | sort | wc -l; uname -a | wc -l; echo X

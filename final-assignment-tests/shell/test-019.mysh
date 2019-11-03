@@ -1,0 +1,1 @@
+echo XXX | cat | cat | cat | cat | cat | cat | cat | sort | sort | uniq | uniq | cat | cat | cat | cat

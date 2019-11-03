@@ -1,0 +1,3 @@
+# this just prints out "hello world", with prefixed redirection.
+echo hello world > output
+<    output cat
