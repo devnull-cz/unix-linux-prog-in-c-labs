@@ -2,7 +2,7 @@
 # implementation for NSWI015.
 #
 # If you find a bug in your implementation that is not covered in these tests,
-# let us know and we can add it.
+# let us know and we can add a new test.  Ideally, send us a pull request.
 
 Make sure variables in ./test-config are correctly defined, then run the
 following.
