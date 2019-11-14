@@ -1,3 +1,4 @@
 /tmp
 /etc
 /tmp
+/tmp
