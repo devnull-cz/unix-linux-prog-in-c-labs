@@ -36,3 +36,13 @@
     - introduce a kill() wrapper, use assert()
   - can the whole process group be killed with single signal if it does
     not have the SIGTERM handling ?
+
+# Parent/child synchronization via signal
+
+- write a program that creates a child process
+  - The child will wait for the parent to signal (SIGUSR1) and only then starts
+    running a loop (print/sleep) with finite iterations
+  - the parent will wait for the child to send a signal (SIGUSR2) that it
+    completed the loop
+- construct the program as correcly as possible (i.e. avoid signal races)
+  - hint: sigsuspend()
