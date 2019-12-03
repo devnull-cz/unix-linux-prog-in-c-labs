@@ -12,7 +12,7 @@
 Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/master/tcp
 
 - what happens if server writes to a socket that is associated with client that has disconnected in the mean time ?
-  - - use connect.c and simple echo server (slow down writes in server)
+  - use connect.c and simple echo server (slow down writes in server)
 - what happens without `SO_REUSEADDR` ? when is it relevant ?
   - use `netstat` to observe the connections
 - how many TCP connections does server accept before `listen()` and `accept()` ?
