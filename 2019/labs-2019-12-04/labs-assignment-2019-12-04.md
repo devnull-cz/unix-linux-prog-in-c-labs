@@ -2,6 +2,7 @@
 
 Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/master/tcp
 
+- how do you know on server side that the client stopped sending data ?
 - what happens without `SO_REUSEADDR` ?
   - use `netstat` to observe the connections
 - how many TCP connections does server accept before `listen()` and `accept()` ?
