@@ -1,8 +1,18 @@
+## Debugging (networking) code
+  - make sure there are no file descriptor leaks (e.g. connect to the server in both modes enough times so that any leakage will have the maximum limit imposed by `ulimit`)
+    - can also be observed via `lsof`
+  - `strace` or `truss` can help you see problems when passing structures to syscalls
+  - gdb (compile with -g)
+  - `assert()`
+  - `DEBUG()` macro (variadic)
+  - traffic dump (`tcpdump` or `tshark` or `snoop` or Wireshark)
+
 # TCP experiments
 
 Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/master/tcp
 
 - how do you know on server side that the client stopped sending data ?
+- what happens if server writes to a socket that is associated with client that has disconnected in the mean time ?
 - what happens without `SO_REUSEADDR` ?
   - use `netstat` to observe the connections
 - how many TCP connections does server accept before `listen()` and `accept()` ?
@@ -40,12 +50,3 @@ until the connection is closed.
    - the whitelist of IP addresses allowed to spawn a shell will be read from a file
    - the whitelist can consist of IP prefixes
    - make the server check a shared secret in the echo mode first and only if it matches (plus the IP address match) will it switch to shell mode
-
-## Debugging:
-  - make sure there are no file descriptor leaks (e.g. connect to the server in both modes enough times so that any leakage will have the maximum limit imposed by `ulimit`)
-    - can also be observed via `lsof`
-  - `strace` or `truss` can help you see problems when passing structures to syscalls
-  - gdb (compile with -g)
-  - `assert()`
-  - `DEBUG()` macro (variadic)
-  - traffic dump (`tcpdump` or `tshark` or `snoop` or Wireshark)
