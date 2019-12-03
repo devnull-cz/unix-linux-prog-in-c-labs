@@ -36,8 +36,7 @@ Once a connection is accepted, the server will fork+exec a program and redirect 
 connection.
 
 ## Notes/constrains:
- - the program has to support both IPv[46] but should use address family specific functions only when absolutely necessary (definitely not when creating/binding the socket !) i.e. only for address comparison after new connection was accepted.
- - port can be specified as a number or name of service
+ - use numeric IPv4 address and port for the time being. Once the lecture is past address resolution APIs, return back and fix the program so that it is address family agnostic.
  - use netcat as a client for testing
  - the executed program can be e.g. a shell. In that case the program will become de facto backdoor therefore for testing in non segregated network environment it is highly advisable to let the server listen only on localhost addresses (also see the allowed address variant below)
  - networking APIs that are sufficient (besides the usuall read/write/printf/etc.): socket, bind, listen, accept, getaddrinfo, getnameinfo, setsockopt (for `SO_REUSEADDR`)
