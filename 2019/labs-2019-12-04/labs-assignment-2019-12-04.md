@@ -36,10 +36,10 @@ Once a connection is accepted, the server will fork+exec a program and redirect 
 connection.
 
 ## Notes/constrains:
- - use numeric IPv4 address and port for the time being. Once the lecture is past address resolution APIs, return back and fix the program so that it is address family agnostic.
+ - use numeric IPv4 address and port for the time being. Once the lecture is past address resolution APIs (in particular `getaddrinfo, getnameinfo`), return back and fix the program so that it is address family agnostic.
  - use netcat as a client for testing
  - the executed program can be e.g. a shell. In that case the program will become de facto backdoor therefore for testing in non segregated network environment it is highly advisable to let the server listen only on localhost addresses (also see the allowed address variant below)
- - networking APIs that are sufficient (besides the usuall read/write/printf/etc.): socket, bind, listen, accept, getaddrinfo, getnameinfo, setsockopt (for `SO_REUSEADDR`)
+ - networking APIs that are sufficient (besides the usuall read/write/printf/etc.): `socket, bind, listen, accept, setsockopt` (for `SO_REUSEADDR`)
 
 ## Variants:
    - restrict clients
