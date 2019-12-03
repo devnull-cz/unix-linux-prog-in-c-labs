@@ -1,10 +1,13 @@
-# Experiments
+# TCP experiments
 
 Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/master/tcp
 
-- what happens without `SO_REUSEADDR`
+- what happens without `SO_REUSEADDR` ?
   - use `netstat` to observe the connections
-- how many TCP connections does server accept before `listen()` and `accept()`
+- how many TCP connections does server accept before `listen()` and `accept()` ?
+- how long does it take for `connect()` to time out ?
+- how does TCP handshake look like ?
+- what happens if `read()` from network socket is interrupted with a signal (use TCP sink server and simple connect)
 
 # Simple TCP server with descriptor redirection
 
