@@ -7,7 +7,7 @@ new one can be accepted.
    usage: ./a.out <address> <port>
 ```
 Once a connection is accepted, from the specified IP address,
-the server will fork+exec a program and redirect std{in,out,err} to the network
+the server will fork+exec a program and redirect `std{in,out,err}` to the network
 connection.
 Otherwise, it will behave as a echo server - what is read is written back
 until the connection is closed.
@@ -30,10 +30,10 @@ until the connection is closed.
    - make the server check a shared secret in the echo mode first and only if it matches (plus the IP address match) will it switch to shell mode
 
 ## Debugging:
-  - make sure there are no file descriptor leaks (e.g. connect to the server in both modes enough times so that any leakage will have the maximum limit imposed by ulimit)
+  - make sure there are no file descriptor leaks (e.g. connect to the server in both modes enough times so that any leakage will have the maximum limit imposed by `ulimit`)
     - can also be observed via `lsof`
   - `strace` or `truss` can help you see problems when passing structures to syscalls
   - gdb (compile with -g)
-  - assert()
-  - DEBUG() macro (variadic)
+  - `assert()`
+  - `DEBUG()` macro (variadic)
   - traffic dump (`tcpdump` or `tshark` or `snoop` or Wireshark)
