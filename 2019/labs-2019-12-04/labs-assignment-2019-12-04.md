@@ -22,7 +22,7 @@ Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/
 - how long does it take for `connect()` to time out ?
   - use connect.c
 - how does TCP handshake look like ?
-- what happens if `read()` from network socket is interrupted with a signal
+- what happens if `read()` from network socket is interrupted with a (handled) signal
   - use TCP sink server and simple connect
 
 # Simple TCP server with descriptor redirection
