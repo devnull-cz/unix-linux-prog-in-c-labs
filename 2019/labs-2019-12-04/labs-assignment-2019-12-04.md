@@ -24,6 +24,7 @@ Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/
 - how does TCP handshake look like ?
 - what happens if `read()` from network socket is interrupted with a (handled) signal
   - use TCP sink server and simple connect
+  - see atomicio() in OpenSSH
 
 # Simple TCP server with descriptor redirection
 
