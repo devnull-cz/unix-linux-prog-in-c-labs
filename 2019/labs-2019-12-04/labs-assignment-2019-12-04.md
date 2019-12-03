@@ -1,6 +1,6 @@
 # Debugging (networking) code
-  - make sure there are no file descriptor leaks (e.g. connect to the server in both modes enough times so that any leakage will have the maximum limit imposed by `ulimit`)
-    - can also be observed via `lsof`
+  - make sure there are no file descriptor leaks (e.g. connect to the server enough times so that any leakage will hit the maximum limit imposed by `ulimit`)
+    - can also be observed via `lsof` or via `/proc`
   - `strace` or `truss` can help you see problems when passing structures to syscalls
   - gdb (compile with -g)
   - `assert()`
