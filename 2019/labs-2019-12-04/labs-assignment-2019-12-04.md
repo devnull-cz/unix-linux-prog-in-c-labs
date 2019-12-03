@@ -16,7 +16,7 @@ Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/
 - what happens without `SO_REUSEADDR` ? when is it relevant ?
   - use `netstat` to observe the connections
 - how many TCP connections does server accept before `listen()` and `accept()` ?
-  - modify connect.c to establish number of connections and sink server
+  - modify connect.c to establish number of connections and sink server and experiment with listen backlog value
 - how long does it take for `connect()` to time out ?
   - use connect.c
 - how does TCP handshake look like ?
