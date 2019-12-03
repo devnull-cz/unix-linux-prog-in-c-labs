@@ -1,3 +1,11 @@
+# Experiments
+
+Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/master/tcp
+
+- what happens without `SO_REUSEADDR`
+  - use `netstat` to observe the connections
+- how many TCP connections does server accept before `listen()` and `accept()`
+
 # Simple TCP server with descriptor redirection
 
 Implement a program that will start listening on a specified TCP port and address.
