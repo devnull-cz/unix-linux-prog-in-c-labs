@@ -12,11 +12,15 @@
 Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/master/tcp
 
 - how do you know on server side that the client stopped sending data ?
+  - use connect.c and simple echo server
 - what happens if server writes to a socket that is associated with client that has disconnected in the mean time ?
-- what happens without `SO_REUSEADDR` ?
+  - - use connect.c and simple echo server (slow down writes in server)
+- what happens without `SO_REUSEADDR` ? when is it relevant ?
   - use `netstat` to observe the connections
 - how many TCP connections does server accept before `listen()` and `accept()` ?
+  - modify connect.c to establish number of connections and sink server
 - how long does it take for `connect()` to time out ?
+  - use connect.c
 - how does TCP handshake look like ?
 - what happens if `read()` from network socket is interrupted with a signal (use TCP sink server and simple connect)
 
