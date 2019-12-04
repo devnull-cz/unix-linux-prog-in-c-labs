@@ -12,6 +12,8 @@
 
 Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/master/tcp
 
+- what happens in TCP if client process with established connection is terminated ?
+  - RST or FIN ?
 - what happens if server writes to a socket that is associated with client that has disconnected in the mean time ?
   - use connect.c and simple echo server (slow down writes in server)
 - what happens without `SO_REUSEADDR` ? when is it relevant ?
