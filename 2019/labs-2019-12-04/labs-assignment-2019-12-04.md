@@ -5,6 +5,7 @@
   - gdb (compile with -g)
   - `assert()`
   - `DEBUG()` macro (variadic)
+  - use Netcat for testing/probing
   - traffic dump (`tcpdump` or `tshark` or `snoop` or Wireshark)
 
 # TCP experiments
