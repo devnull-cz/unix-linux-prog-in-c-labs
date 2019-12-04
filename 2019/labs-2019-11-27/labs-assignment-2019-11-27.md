@@ -5,6 +5,13 @@
   - verify that the RSS/size of the program is limited even for very
     large (think MiB/GiB) palindromatic files
 
+# Questions
+
+- is SIGCHLD always sent when child terminates ?
+  - does it depend on wait()/waitpid()
+- how to handle SIGPIPE ?
+  - hint: https://www.pixelbeat.org/programming/sigpipe_handling.html
+
 # Signal chain
 
 - write a program that will create a chain of N processes, each child creates
