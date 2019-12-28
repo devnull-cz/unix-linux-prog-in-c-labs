@@ -12,6 +12,8 @@ source ./test-config
 
 for v in $REQ_EXECUTABLES; do
 	value=$( eval echo \$$v )
+	value=$( eval echo $value )
+	export $v=$value
 
 	if [[ -z "$value" ]]; then
 	    echo "Variable $v must be defined.  Exiting."
