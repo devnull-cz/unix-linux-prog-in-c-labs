@@ -8,7 +8,7 @@ source ./test-config
 
 # You can overwrite variables set in ./test-config here so that you don't need
 # to fix them every time you sync with the STEF repo.
-[[ -f $LOCAL_CONFIG ]] && source $LOCAL_CONFIG
+[[ -f $LOCAL_CONFIG ]] && source "$LOCAL_CONFIG"
 
 for v in $REQ_EXECUTABLES; do
 	value=$( eval echo \$$v )
