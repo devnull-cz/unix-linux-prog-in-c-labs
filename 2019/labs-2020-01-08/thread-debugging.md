@@ -30,7 +30,7 @@ thread apply all bt
 
 ### Locking primitives
 
-gdb does not seem to have intrinsic knowledge of pthread synchronization primitives however it will e.g. print mutex nicely:
+gdb does not seem to have special commands to query pthread synchronization primitives however it will print e.g. mutex or condvar nicely:
 
 ```
 (gdb) print g_best_mtx 
@@ -41,5 +41,11 @@ $8 = pthread_mutex_t = {
   Robust = No,
   Shared = No,
   Protocol = None
+}
+(gdb) p g_best_cnd
+$9 = pthread_cond_t = {
+  Threads known to still execute a wait function = 1,
+  Clock ID = CLOCK_REALTIME,
+  Shared = No
 }
 ```
