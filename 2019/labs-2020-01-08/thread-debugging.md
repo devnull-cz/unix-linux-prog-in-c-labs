@@ -30,4 +30,16 @@ thread apply all bt
 
 ### Locking primitives
 
-XXX
+gdb does not seem to have intrinsic knowledge of pthread synchronization primitives however it will e.g. print mutex nicely:
+
+```
+(gdb) print g_best_mtx 
+$8 = pthread_mutex_t = {
+  Type = Normal,
+  Status = Acquired, possibly with waiters,
+  Owner ID = 14246,
+  Robust = No,
+  Shared = No,
+  Protocol = None
+}
+```
