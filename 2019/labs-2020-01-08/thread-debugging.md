@@ -30,7 +30,7 @@ thread apply all bt
 
 ### Locking primitives
 
-gdb does not seem to have special commands to query pthread synchronization primitives however it will print e.g. mutex or condvar nicely:
+gdb does not seem to have special commands to query pthread synchronization primitives (such as [getting list of locked mutexes for given thread](https://stackoverflow.com/q/3983676/11582827)) however it will print e.g. mutex or condvar nicely:
 
 ```
 (gdb) print g_best_mtx 
