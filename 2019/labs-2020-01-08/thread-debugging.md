@@ -21,6 +21,10 @@ lots of instructions can fly by elsewhere while single stepping a thread.
 
 Commands like `backtrace` then take this into account.
 
+### finding a thread
+
+`thread find ID` where ID is e.g. LWP ID on Linux.
+
 ### Applying a command to a group of threads
 
 E.g.:
