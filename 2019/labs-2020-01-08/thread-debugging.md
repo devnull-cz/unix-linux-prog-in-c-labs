@@ -3,13 +3,13 @@
 
 ## GDB
 
-`info thread` - prints basic thread overview
-`break <linespec> thread <threadnum>` inserts breakpoint for particular thread
+- `info thread` - prints basic thread overview
+- `break <linespec> thread <threadnum>` inserts breakpoint for particular thread
   - if the thread specification is omitted the breakpoint applies for
     all threads
   - use e.g. like so (this references structure member):
 ```
-break divisors.c:90 if res.divisors > 100 thread 7
+    break divisors.c:90 if res.divisors > 100 thread 7
 ```
 
 NOTE: single stepping in one thread does not affect other threads, i.e.
