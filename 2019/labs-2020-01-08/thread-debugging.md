@@ -7,9 +7,9 @@
 `break <linespec> thread <threadnum>` inserts breakpoint for particular thread
   - if the thread specification is omitted the breakpoint applies for
     all threads
-  - use e.g. like so:
+  - use e.g. like so (this references structure member):
 ```
-break buffer.c:33 thread 7 if foo > bar
+break divisors.c:90 if res.divisors > 100 thread 7
 ```
 
 NOTE: single stepping in one thread does not affect other threads, i.e.
