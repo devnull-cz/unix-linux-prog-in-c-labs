@@ -1,4 +1,19 @@
 #/bin/bash
 
-# same as test-010 except it runs with empty environment
+# Same as test-010 except it runs with empty environment.
+#
+# Note that bash prints warnings for environment variables not set.  However, we
+# do not check the actual messages (there is no test-036.output), we only care
+# about the exit value.  For example:
+#
+#	host-machine$ env - /bin/bash
+#	bash: cd: HOME not set
+#	$ cd -
+#	bash: cd: OLDPWD not set
+#	$ cd
+#	bash: cd: HOME not set
+#	$ exit
+#	host-machine$ echo $?
+#	0
+#
 env - $MYSH test-010.mysh
