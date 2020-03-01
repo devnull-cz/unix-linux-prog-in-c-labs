@@ -1,7 +1,5 @@
 #/bin/bash
 
-# Same as test-010 except it runs with empty environment.
-#
 # Note that bash prints warnings for environment variables not set.  However, we
 # do not check the actual messages (there is no test-036.output), we only care
 # about the exit value.  As 'pwd' was the last command, and it succeeded, we
@@ -19,4 +17,4 @@
 #	host-machine$ echo $?
 #	0
 #
-env - $MYSH test-010.mysh
+env - $MYSH test-036.mysh
