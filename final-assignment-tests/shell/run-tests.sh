@@ -26,4 +26,6 @@ for v in $REQ_EXECUTABLES; do
 	fi
 done
 
+echo "Running with $MYSH"
+
 $STEF $*
