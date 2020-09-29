@@ -27,7 +27,6 @@
 
 - will define a void pointer to self
   - verify that this is the case via debugger (or debug prints)
-  - use assert() to make sure the type sizes are what you expect
 
 - prints program arguments, each on separate line, using at least 2 ways
   - certainly 3 ways are possible..
@@ -47,6 +46,7 @@
 - will detect if the system is little/big endian machine
   - use only basic C (no system/library calls besides printf())
   - there are multiple ways to do it
+  - use assert() to make sure the type sizes are what you expect
 
 - will implement linked list
   - fill the list with program arguments
