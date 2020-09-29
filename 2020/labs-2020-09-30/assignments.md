@@ -23,6 +23,11 @@
 
 # Tasks
 
+## Trivia
+
+- see `twenty.c`, find why exactly it does not work and find a fix
+- what does the `plus-deref-plus-argv.c` do exactly ?
+
 ## Write a program that..
 
 - will define a void pointer to self
@@ -66,3 +71,4 @@
   - exit with error in case of invalid input (at least 2 lines are required)
   - written test cases ?
     - see https://github.com/devnull-cz/stef
+
