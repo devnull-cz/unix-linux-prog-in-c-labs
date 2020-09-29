@@ -28,7 +28,8 @@
 - will define a void pointer to self
   - verify that this is the case via debugger (or debug prints)
 
-- prints program arguments, each on separate line, using at least 2 ways
+- prints program arguments (including the name of the program itself),
+  each on separate line, using at least 2 ways
   - certainly 3 ways are possible..
   - did you use square brackets to access the arguments ?
     - try without them. and without local variables or argument count.
