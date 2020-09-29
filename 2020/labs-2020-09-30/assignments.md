@@ -30,7 +30,8 @@
 
 - prints program arguments, each on separate line, using at least 2 ways
   - certainly 3 ways are possible..
-  - did you use square brackets to access the arguments ? try without them.
+  - did you use square brackets to access the arguments ?
+    - try without them. and without local variables or argument count.
 
 - will print 2nd character of second argument (assuming there is one)
   of the program in upper case
