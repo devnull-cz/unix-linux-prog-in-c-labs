@@ -2,7 +2,7 @@
 
 - usual compiler options ?
   - `-Wall -Wextra`
-  - `std=c99`
+  - `-std=c99`
 
 - always check return values and react appropriately
   - malloc() (and anything the uses it under the hood) can fail
@@ -11,7 +11,7 @@
 
 ## Misc
 
-- demonstrate how to use Github+Travis
+- demonstrate how to use Github + Travis/Github actions
   - `.travis.yml` contents:
 ```yml
   language: c
