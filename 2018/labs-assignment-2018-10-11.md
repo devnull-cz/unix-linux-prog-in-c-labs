@@ -4,13 +4,14 @@
     - write your own unit tests
     
 - demonstrate how to use Github+Travis
-  .travis.yml:
+  - `.travis.yml` contents:
+```yml
   language: c
   compiler:
   - clang
   - gcc
   script: make
-  
+```  
 - more on C style (or coding style in general)
   - header include ordering, general ordering (license, includes, typedefs, defines, func prototypes, func definitions)
 
