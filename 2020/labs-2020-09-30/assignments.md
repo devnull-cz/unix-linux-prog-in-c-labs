@@ -48,11 +48,12 @@
   - there are multiple ways to do it
   - use assert() to make sure the type sizes are what you expect
 
-- will implement linked list
+- implements linked list
   - fill the list with program arguments
   - traverse the list and print each item to separate line
   - free the whole list
     - any memory leaks ?
+  - any refactoring yet ?
   - now reimplement using queue.h macros (see queue(3) man page)
 
 - will print (to stdout) only the penultimate line of input received on stdin
@@ -60,3 +61,5 @@
   - be conservative in memory usage, use malloc()/free() to allocate the memory
     - hint: array of 2 pointers, strdup()
   - exit with error in case of invalid input (at least 2 lines are required)
+  - written test cases ?
+    - see https://github.com/devnull-cz/stef
