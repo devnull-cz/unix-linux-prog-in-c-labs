@@ -36,6 +36,14 @@
   of the program in upper case
   - use only pointer arithmetics to do that in single expression
 
+- displays a indication by rotating dash/slash/etc. characters
+  - printing `\r` will clean the line and revert back to beginning
+  - need to `fflush()` the output buffer after each character
+  - to sleep under one second use `poll(NUll, 0, <value_in_msec>);`
+
+- will display a moving star (`*`) that is going back and forth
+  - use a reasonable hard coded line length
+
 - will detect if the system is little/big endian machine
   - use only basic C (no system/library calls besides printf())
   - there are multiple ways to do it
