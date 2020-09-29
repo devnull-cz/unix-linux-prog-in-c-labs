@@ -34,13 +34,14 @@
                 If yes return 0, otherwise return 1.         
 
         Examples:
-
-        ./main -a SHELL HOME
+```
+        $ ./main -a SHELL HOME
         0
-        ./main -o SHELL NONEXISTENT
+        $ ./main -o SHELL NONEXISTENT
         0
-        ./main SHELL HOME PWD
-        - should print usage
+        # (should print usage)
+        $ ./main SHELL HOME PWD
+```
     
   - environment variable manipulation
     - write a program that will create a set of new environment variables based on a static string of the form "XXXX=Y"
