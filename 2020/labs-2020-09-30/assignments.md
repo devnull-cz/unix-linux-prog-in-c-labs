@@ -43,6 +43,8 @@
 - will print 2nd character of second argument (assuming there is one)
   of the program in upper case
   - use only pointer arithmetics to do that in single expression
+  - now try to write the program with as few characters as possible (you do not have to print the new line)
+    - how many characters does the program have in total ?
 
 - displays a indication by rotating dash/slash/etc. characters
   - printing `\r` will clean the line and revert back to beginning
