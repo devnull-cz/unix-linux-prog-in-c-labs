@@ -40,7 +40,7 @@
   - did you use square brackets to access the arguments ?
     - try without them. and without local variables or argument count.
 
-- will print 2nd character of second argument (assuming there is one)
+- will print 2nd character of second argument (assuming there is one), that is `argv[1]`
   of the program in upper case
   - use only pointer arithmetics to do that in single expression
   - now try to write the program with as few characters as possible (you do not have to print the new line)
