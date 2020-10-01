@@ -44,6 +44,7 @@
   of the program in upper case
   - use only pointer arithmetics to do that in single expression
   - now try to write the program with as few characters as possible (you do not have to print the new line)
+    - do not modify argv
     - https://www.ioccc.org/
     - how many characters does the program have in total ?
 
