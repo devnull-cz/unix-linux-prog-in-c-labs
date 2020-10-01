@@ -67,7 +67,7 @@
   - free the whole list
     - any memory leaks ?
   - any refactoring yet ?
-  - now reimplement using queue.h macros (see queue(3) man page)
+  - now reimplement using `queue.h` macros (see queue(3) man page)
 
 - will print (to stdout) only the penultimate line of input received on stdin
   - use getline(3)
