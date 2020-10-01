@@ -36,6 +36,7 @@
 - prints program arguments (including the name of the program itself),
   each on separate line, using at least 2 ways
   - certainly 3 ways are possible..
+    - so you will end up with 3 programs
   - did you use square brackets to access the arguments ?
     - try without them. and without local variables or argument count.
 
