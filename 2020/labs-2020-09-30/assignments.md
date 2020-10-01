@@ -66,6 +66,7 @@
   - traverse the list and print each item to separate line
   - free the whole list
     - any memory leaks ?
+      - use e.g. Valgrind to check
   - any refactoring yet ?
   - now reimplement using `queue.h` macros (see queue(3) man page)
 
