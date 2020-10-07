@@ -4,7 +4,7 @@
 - `liba` will define a function `fna` which calls a function `fnb`
 - function `fnb` will be defined in `libb`
 - design `fna` and `fnb` as you wish just make sure they return something based
-  on argv[1], and print that out from `main`
+  on `argv[1]`, and print that out from `main`
 - `main()` from `main.c` only calls function `fna`
 - make sure you can call the program from a local directory as `./a.out`, and
   also from the `/` directory using a full path.
