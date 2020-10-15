@@ -51,11 +51,11 @@ Makefiles: let's assume GNU make for now
          Makefile
 	 libmax.c
 ```
-     - hint: subdirs + shell snippet that will run `make` (or better $(MAKE))
+   - hint: subdirs + shell snippet that will run `make` (or better $(MAKE))
              inside these directories
 	     - or use `make -C` with target specification of multiple elements
 
-     [bonus]: use Makefile includes to minimize sharing/copying
+   [bonus]: use Makefile includes to minimize sharing/copying
               (hint: use top-level makefile and include it in subdirs)
 
   3) [optional] build with various compilers in CI environment
