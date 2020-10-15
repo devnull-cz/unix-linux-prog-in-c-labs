@@ -2,6 +2,12 @@
 
 subdirs: shell snippet that will run `make` (or better `$(MAKE)`) inside these directories or use `make -C` with target specification of multiple elements
 
+## Binary inspection
+
+- use file(1), nm, ldd, readelf to inspect `libmin.o, libmin.so, main.o, main`
+- run the program with various LD_DEBUG values to see dynamic linker
+ processing (e.g. 'libs', 'symbols')
+
 ## Questions
 
 - what if `-shared` is used for building `.o` files as well ?
