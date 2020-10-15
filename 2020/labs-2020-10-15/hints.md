@@ -1,3 +1,10 @@
+# Libraries
+
+## Questions
+
+- what if `-shared` is used for building `.o` files as well ?
+- what if `-fpic` is used for building `.so` files ?
+
 
 # Histogram
 
