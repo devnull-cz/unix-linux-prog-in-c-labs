@@ -1,5 +1,7 @@
 # Libraries
 
+subdirs: shell snippet that will run `make` (or better `$(MAKE)`) inside these directories or use `make -C` with target specification of multiple elements
+
 ## Questions
 
 - what if `-shared` is used for building `.o` files as well ?
