@@ -58,6 +58,9 @@ bonus: use Makefile includes to minimize sharing/copying
 
 ## [optional] write simple test script
 
+- fill the integer array from command line and compare actual return value to expected value
+  - option: wrap this in a shell script
+  - do this for multiple different inputs
 - run it in the CI environment above
 
 
