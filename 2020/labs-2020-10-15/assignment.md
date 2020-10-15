@@ -27,9 +27,6 @@ Makefiles: let's assume GNU make for now
      - header files => C files dependencies
      - use phony targets (clean) if using GNU make
 
-    Q: - what if `-shared` is used for building `.o` files as well ?
-       - what if `-fpic` is used for building `.so` files ?
-
   2) implement
 
      `int max(int a[], ssize_t len); // return maximum value`
