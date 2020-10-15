@@ -3,7 +3,7 @@
 
 Makefiles: let's assume GNU make for now
 
-  0) implement a program and dynamic library
+## implement a program and dynamic library
      - start without makefiles
      - the dynamic library will be called `libmin.so`
        - it will implement one function:
@@ -20,14 +20,14 @@ Makefiles: let's assume GNU make for now
        - run the program with various LD_DEBUG values to see dynamic linker
          processing (e.g. 'libs', 'symbols')
 
-  1) construct set of Makefiles
+## construct set of Makefiles
      - basic targets: `all`, `clean`
      - use automatic gmake variables (preceded with the '@' char)
      - use wildcard rule for `*.c` => `*.o` files
      - header files => C files dependencies
      - use phony targets (clean) if using GNU make
 
-  2) implement
+## implement maximum function
 
      `int max(int a[], ssize_t len); // return maximum value`
 	
@@ -48,18 +48,20 @@ Makefiles: let's assume GNU make for now
          Makefile
 	 libmax.c
 ```
-   - hint: subdirs + shell snippet that will run `make` (or better $(MAKE))
+   - hint: subdirs + shell snippet that will run `make` (or better `$(MAKE)`)
              inside these directories
 	     - or use `make -C` with target specification of multiple elements
 
-   [bonus]: use Makefile includes to minimize sharing/copying
+bonus: use Makefile includes to minimize sharing/copying
               (hint: use top-level makefile and include it in subdirs)
 
-  3) [optional] build with various compilers in CI environment
-     - use Travis / Github Actions
+## [optional] build with various compilers in CI environment
+     
+- use Travis / Github Actions
 
-  4) [optional] write simple test script
-     - run it in the CI environment above
+## [optional] write simple test script
+
+- run it in the CI environment above
 
 
 # ASCII histogram
