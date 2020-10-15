@@ -7,9 +7,7 @@ Makefiles: let's assume GNU make for now
      - start without makefiles
      - the dynamic library will be called `libmin.so`
        - it will implement one function:
-```C
-         int min(int a[], ssize_t len); // return minimum value
-```
+         `int min(int a[], ssize_t len); // return minimum value`
        - the library source will be comprised of 2 files:
  	 - `libmin.h`
          - `libmin.c` - will include libmin.h
@@ -33,9 +31,9 @@ Makefiles: let's assume GNU make for now
        - what if `-fpic` is used for building `.so` files ?
 
   2) implement
-```C
-        int max(int a[], ssize_t len); // return maximum value
-```
+
+     `int max(int a[], ssize_t len); // return maximum value`
+	
      similarly to `libmin`, i.e. `libmax.[ch]`, `libmax.so`, ...
 
      - and link main with both libraries
