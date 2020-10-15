@@ -16,7 +16,7 @@ Makefiles: let's assume GNU make for now
 - `main.c` will create array of the size of program arguments, fill it with the numbers, call min() and print the result to stdout
 - how do you tell:
   - `libmin.so` is dynamic library
-  - defined the `min` function
+  - `libmin.so` defines the `min` function (rather than taking it from elsewhere)
   - `main` is linked against `libmin.so`
 
 ## construct set of Makefiles
