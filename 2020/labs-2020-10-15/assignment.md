@@ -14,9 +14,10 @@ Makefiles: let's assume GNU make for now
 
 - the program will be in `main.c`, compiled into `main` binary and will be linked against `libmin.so`
 - `main.c` will create array of the size of program arguments, fill it with the numbers, call min() and print the result to stdout
-- use file(1), nm, ldd, readelf to inspect `libmin.o, libmin.so, main.o, main`
-- run the program with various LD_DEBUG values to see dynamic linker
- processing (e.g. 'libs', 'symbols')
+- how do you tell:
+  - `libmin.so` is dynamic library
+  - defined the `min` function
+  - `main` is linked against `libmin.so`
 
 ## construct set of Makefiles
 
