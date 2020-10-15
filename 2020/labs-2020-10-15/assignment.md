@@ -7,16 +7,13 @@ Makefiles: let's assume GNU make for now
 
 - start without makefiles
 - the dynamic library will be called `libmin.so`
-- it will implement one function:
- `int min(int a[], ssize_t len); // return minimum value`
+- it will implement one function: `int min(int a[], ssize_t len); // return minimum value`
 - the library source will be comprised of 2 files:
- - `libmin.h`
- - `libmin.c` - will include libmin.h
+  - `libmin.h`
+  - `libmin.c` - will include libmin.h
 
-- the program will be in `main.c`, compiled into `main` binary
-and will be linked against `libmin.so`
-- `main.c` will create array of the size of program arguments,
- fill it with the numbers, call min() and print the result to stdout
+- the program will be in `main.c`, compiled into `main` binary and will be linked against `libmin.so`
+- `main.c` will create array of the size of program arguments, fill it with the numbers, call min() and print the result to stdout
 - use file(1), nm, ldd, readelf to inspect `libmin.o, libmin.so, main.o, main`
 - run the program with various LD_DEBUG values to see dynamic linker
  processing (e.g. 'libs', 'symbols')
