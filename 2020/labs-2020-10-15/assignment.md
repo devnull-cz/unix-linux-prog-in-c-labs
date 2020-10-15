@@ -4,53 +4,52 @@
 Makefiles: let's assume GNU make for now
 
 ## implement a program and dynamic library
-     - start without makefiles
-     - the dynamic library will be called `libmin.so`
-       - it will implement one function:
-         `int min(int a[], ssize_t len); // return minimum value`
-       - the library source will be comprised of 2 files:
- 	 - `libmin.h`
-         - `libmin.c` - will include libmin.h
 
-     - the program will be in `main.c`, compiled into `main` binary
-       and will be linked against `libmin.so`
-       - `main.c` will create array of the size of program arguments,
-         fill it with the numbers, call min() and print the result to stdout
-       - use file(1), nm, ldd, readelf to inspect `libmin.o, libmin.so, main.o, main`
-       - run the program with various LD_DEBUG values to see dynamic linker
-         processing (e.g. 'libs', 'symbols')
+- start without makefiles
+- the dynamic library will be called `libmin.so`
+- it will implement one function:
+ `int min(int a[], ssize_t len); // return minimum value`
+- the library source will be comprised of 2 files:
+ - `libmin.h`
+ - `libmin.c` - will include libmin.h
+
+- the program will be in `main.c`, compiled into `main` binary
+and will be linked against `libmin.so`
+- `main.c` will create array of the size of program arguments,
+ fill it with the numbers, call min() and print the result to stdout
+- use file(1), nm, ldd, readelf to inspect `libmin.o, libmin.so, main.o, main`
+- run the program with various LD_DEBUG values to see dynamic linker
+ processing (e.g. 'libs', 'symbols')
 
 ## construct set of Makefiles
-     - basic targets: `all`, `clean`
-     - use automatic gmake variables (preceded with the '@' char)
-     - use wildcard rule for `*.c` => `*.o` files
-     - header files => C files dependencies
-     - use phony targets (clean) if using GNU make
+
+- basic targets: `all`, `clean`
+- use automatic gmake variables (preceded with the '@' char)
+- use wildcard rule for `*.c` => `*.o` files
+- header files => C files dependencies
+- use phony targets (clean) if using GNU make
 
 ## implement maximum function
 
-     `int max(int a[], ssize_t len); // return maximum value`
-	
-     similarly to `libmin`, i.e. `libmax.[ch]`, `libmax.so`, ...
+`int max(int a[], ssize_t len); // return maximum value`
 
-     - and link main with both libraries
-       - 1st argument will be now "min" or "max" and based on that
-         given function (and therefore library will be used)
+similarly to `libmin`, i.e. `libmax.[ch]`, `libmax.so`, ...
 
-     - use hierarchical build:
+- and link main with both libraries
+- 1st argument will be now "min" or "max" and based on that
+ given function (and therefore library will be used)
+
+- use hierarchical build:
 ```
-       Makefile
-       main.c
-       libmin/
-         Makefile
-	 libmin.c
-       libmax/
-         Makefile
-	 libmax.c
+Makefile
+main.c
+libmin/
+ Makefile
+ libmin.c
+libmax/
+ Makefile
+ libmax.c
 ```
-   - hint: subdirs + shell snippet that will run `make` (or better `$(MAKE)`)
-             inside these directories
-	     - or use `make -C` with target specification of multiple elements
 
 bonus: use Makefile includes to minimize sharing/copying
               (hint: use top-level makefile and include it in subdirs)
