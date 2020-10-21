@@ -23,12 +23,16 @@ Next labs should primarily cover only the lecture that comes right before.
   little as possible.  You can truly learn only by making mistakes and then fix
   those.
 
+- **always test your code**
+
 # simple cat
 
 - implement a trival cat
 - deal with error paths
 - use the `err` and `errx` functions rather than the pure C way of `errno` and
   `strerror(errno)`
+- verify your implementation via redirecting the output to a file, then `diff`
+  it with the system `cat` output
 
 ```
 $ ./cat cat.c getopt.c ...
@@ -45,8 +49,7 @@ cat: xxx: No such file or directory
 - max line length is 128 characters
 - truncate longer lines
 	- and test that truncation works as expected
-- you can verify your implementation via redirecting the output to a file, then
-  `diff` it with the original
+- verify the implementation
 
 # simple cp
 
@@ -66,6 +69,7 @@ $ echo $?
 - arg1 is a filename, arg2 is its mode
 - verify the right mode was used
 	- beware of the dog: 777 != 0777
+- check with `ls` you got it right
 
 ```
 $ ./touch myfile 0554
@@ -131,7 +135,7 @@ no filenames entered
 
 - hard code the following including the file names
 	- that is, just run `./a.out`
-	- then verify with `diff /etc/group /tmp/stderr`
+	- verify with `diff /etc/group /tmp/stderr`
 
 ```
 $ cat </etc/group 2>/tmp/stderr 1>&2
