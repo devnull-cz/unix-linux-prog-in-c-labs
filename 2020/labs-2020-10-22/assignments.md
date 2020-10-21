@@ -99,10 +99,12 @@ $
 
 # simple mkfile
 - create a file of certain size
-- `./mkfile <size> <filename>`
-- use `k` as a suffix for kilobytes
+- `./mkfile [-p <char>] [-f] <size> <filename>`
 - use `lseek` and write just 1 byte to make the file of the right site
+- size is in bytes, use `k` as a suffix for kilobytes
 - with `-p <char>`, fill out the whole file with the character
+- without `-f`, `mkfile` will not overwrite an existing file.  You need the
+  force flag to truncate an existing file on opening it.
 
 # emulate `wc -l`
 
