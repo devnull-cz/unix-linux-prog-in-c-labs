@@ -103,3 +103,11 @@ $
 - use `k` as a suffix for kilobytes
 - use `lseek` and write just 1 byte to make the file of the right site
 - with `-p <char>`, fill out the whole file with the character
+
+# emulate `wc -l`
+
+```
+$ ./lc file1 file2
+file1	30
+file2	3
+```
