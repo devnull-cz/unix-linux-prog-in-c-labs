@@ -7,14 +7,15 @@
 
 - for this lecture and labs, **never** use `fopen`, `fread`, `fwrite` etc.  Not
   today, not during any other lab sessions nor the exam.  Use syscalls `open`,
-  `read`, `write`, etc.  (there nothing wrong with the standard C lib functions,
-  quite the contrary, but this lecture is about mastering the underlying
-  syscalls).
+  `read`, `write`, etc.
+	- there is nothing wrong with the standard C lib functions, quite the
+	  contrary, but this lecture is about mastering the underlying
+	  syscalls).
 
 # getopt
 - check out `unix-linux-prog-in-c-src/getopt/getopts.sh`, then write the same
-  functionality in C.  Fee free to compile `getopt.c` and run it but do not look
-  at the source code until you finish your implementation.
+  functionality in C.  Feel free to compile `getopt.c` and execute it but do not
+  look at the source code until you finish your implementation.
 
 ```
 $ ./getopts.sh
@@ -53,10 +54,12 @@ cat: xxx: No such file or directory
 
 # simple cat modified
 - read the whole line to a buffer first (check for `\n`)
-- print it out then
+- print out the buffer then
 - max line length is 128 characters
 - truncate longer lines
-	- and test it really works
+	- and test that truncation works as expected
+- you can verify your implementation via redirecting the output to a file, then
+  `diff` it with the original
 
 # simple cp
 - copy a file
