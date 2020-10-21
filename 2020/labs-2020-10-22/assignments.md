@@ -7,6 +7,7 @@ time, it is important stuff.
 Next labs should primarily cover only the lecture that comes right before.
 
 # foreword
+
 - **always** compile with `-Wall -Wextra`
 
 - **always** fix all the warnings before moving on
@@ -23,6 +24,7 @@ Next labs should primarily cover only the lecture that comes right before.
   those.
 
 # simple cat
+
 - implement a trival cat
 - deal with error paths
 - use the `err` and `errx` functions rather than the pure C way of `errno` and
@@ -37,6 +39,7 @@ cat: xxx: No such file or directory
 ```
 
 # simple cat modified
+
 - read the whole line to a buffer first (check for `\n`)
 - print out the buffer then
 - max line length is 128 characters
@@ -46,6 +49,7 @@ cat: xxx: No such file or directory
   `diff` it with the original
 
 # simple cp
+
 - copy a file
 - verify with `diff` it works as expected
 
@@ -57,6 +61,7 @@ $ echo $?
 ```
 
 # create a file
+
 - arg1 is a filename, arg2 is its mode
 - verify the right mode was used
 	- beware of the dog: 777 != 0777
@@ -66,6 +71,7 @@ $ ./touch myfile 0554
 ```
 
 # reverse cat
+
 - print a file reversed char by char
 - it is OK to use a buffer of size 1
 - you may just process one file and ignore other arguments
@@ -84,6 +90,7 @@ $
 ```
 
 # getopt
+
 - check out `unix-linux-prog-in-c-src/getopt/getopts.sh`, then write the same
   functionality in C.  Feel free to compile `getopt.c` and execute it but do not
   look at the source code until you finish your implementation.
@@ -110,6 +117,7 @@ no filenames entered
 ```
 
 # simple mkfile
+
 - create a file of certain size
 - `./mkfile [-p <char>] [-f] <size> <filename>`
 - use `lseek` and write just 1 byte to make the file of the right site
@@ -126,7 +134,8 @@ file1	30
 file2	3
 ```
 
-# Use `FD_CLOEXEC`
+# use of `FD_CLOEXEC`
+
 - verify how it works
 - use the `exec` line (we will get propertly to the `exec` calls later this
   year) from `read/redirect.c`
@@ -141,11 +150,13 @@ err(1, "execl");
 ```
 
 # `stat`
+
 - print inode number for a file from argv1
 - print the times as well.  Find functions to use to properly format the time
   values.
 
 # directory listing
+
 - write code to list all files in the current directory
 - as before, but provide a type of each file
 	- feel free to use `d_type` present on Linux and some other systems
