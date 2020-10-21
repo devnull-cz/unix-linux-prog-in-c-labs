@@ -41,8 +41,8 @@ no filenames entered
 # simple cat
 - implement a trival cat
 - deal with error paths
-- if you know how to use `err` function, use it, otherwise use the pure C way of
-  `errno` and `strerror(errno)`
+- use the `err` and `errx` functions rather than the pure C way of `errno` and
+  `strerror(errno)`
 
 ```
 $ ./cat cat.c getopt.c ...
