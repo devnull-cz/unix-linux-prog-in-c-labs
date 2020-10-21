@@ -1,5 +1,11 @@
 # Unix/Linux Programming in C, NSWI015, Labs, Oct 22, 2020
 
+90 minutes is probably not enough time to finish all these tasks which
+essentially cover the last two lectures.  Please finish those when you have
+time, it is important stuff.
+
+Next labs should primarily cover only the lecture that comes right before.
+
 # foreword
 - **always** compile with `-Wall -Wextra`
 
@@ -12,31 +18,9 @@
 	  contrary, but this lecture is about mastering the underlying
 	  syscalls).
 
-# getopt
-- check out `unix-linux-prog-in-c-src/getopt/getopts.sh`, then write the same
-  functionality in C.  Feel free to compile `getopt.c` and execute it but do not
-  look at the source code until you finish your implementation.
-
-```
-$ ./getopts.sh
-usage: getopts.sh command [-c code] [filename [filename [...]]]
-
-$ ./getopts.sh boot -c 11 xxx yyy
-first param (command): boot
-option -c set to '11'
-...done reading option arguments
-filenames: xxx yyy
-
-$ ./getopts.sh boot -x 11 xxx yyy
-first param (command): boot
-./getopts.sh: illegal option -- x
-usage: getopts.sh command [-c code] [filename [filename [...]]]
-
-$ ./getopts.sh attach
-first param (command): attach
-...done reading option arguments
-no filenames entered
-```
+- try to use the existing code from the unix-linux-programming-in-c-src repo as
+  little as possible.  You can truly learn only by making mistakes and then fix
+  those.
 
 # simple cat
 - implement a trival cat
@@ -83,8 +67,10 @@ $ ./touch myfile 0554
 
 # reverse cat
 - print a file reversed char by char
-- you may use arg1 only
-- mind the `\n` (see the example below)
+- it is OK to use a buffer of size 1
+- you may just process one file and ignore other arguments
+- mind the `\n` at the end of the file (see the example below)
+	- may not be there but usually is
 
 ```
 $ echo "0123456789" > numbers.txt
@@ -95,6 +81,32 @@ $ ./rcat numbers.txt
 9876543210$ echo .
 .
 $
+```
+
+# getopt
+- check out `unix-linux-prog-in-c-src/getopt/getopts.sh`, then write the same
+  functionality in C.  Feel free to compile `getopt.c` and execute it but do not
+  look at the source code until you finish your implementation.
+
+```
+$ ./getopts.sh
+usage: getopts.sh command [-c code] [filename [filename [...]]]
+
+$ ./getopts.sh boot -c 11 xxx yyy
+first param (command): boot
+option -c set to '11'
+...done reading option arguments
+filenames: xxx yyy
+
+$ ./getopts.sh boot -x 11 xxx yyy
+first param (command): boot
+./getopts.sh: illegal option -- x
+usage: getopts.sh command [-c code] [filename [filename [...]]]
+
+$ ./getopts.sh attach
+first param (command): attach
+...done reading option arguments
+no filenames entered
 ```
 
 # simple mkfile
@@ -113,3 +125,29 @@ $ ./lc file1 file2
 file1	30
 file2	3
 ```
+
+# Use `FD_CLOEXEC`
+- verify how it works
+- use the `exec` line (we will get propertly to the `exec` calls later this
+  year) from `read/redirect.c`
+- see for yourself that the following will not print the error (as 2 is already
+  closed!)
+- use `fcntl` with `FD_CLOEXEC` to fix it
+
+```C
+close(2);
+execl("/nonexistent", "nonexistent", NULL);
+err(1, "execl");
+```
+
+# `stat`
+- print inode number for a file from argv1
+- print the times as well.  Find functions to use to properly format the time
+  values.
+
+# directory listing
+- write code to list all files in the current directory
+- as before, but provide a type of each file
+	- feel free to use `d_type` present on Linux and some other systems
+- as before, but recursively enter directories.  Use indentation to follow the
+  directory tree
