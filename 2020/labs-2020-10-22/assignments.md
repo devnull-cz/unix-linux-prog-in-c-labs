@@ -51,6 +51,7 @@ cat: xxx: No such file or directory
 # simple cp
 
 - copy a file
+- check the input arguments, provide good error messages
 - verify with `diff` it works as expected
 
 ```
@@ -126,12 +127,14 @@ no filenames entered
 - without `-f`, `mkfile` will not overwrite an existing file.  You need the
   force flag to truncate an existing file on opening it.
 
-# emulate `wc -l`
+# redirection
+
+- hard code the following including the file names
+	- that is, just run `./a.out`
+	- then verify with `diff /etc/group /tmp/stderr`
 
 ```
-$ ./lc file1 file2
-file1	30
-file2	3
+$ cat </etc/group 2>/tmp/stderr 1>&2
 ```
 
 # use of `FD_CLOEXEC`
