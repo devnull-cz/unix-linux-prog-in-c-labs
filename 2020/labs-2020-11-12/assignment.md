@@ -38,7 +38,7 @@ sequence:
   1. parent: creates the file
   1. parent: forks a child
   1. parent: mmaps the file, writes the contents to memory
-  1. parent: writes 1 string to the pipe to notify the parent
+  1. parent: writes 1 string to the pipe to notify the child
   1. child: reads one char from the parent (via pipe)
   1. child: mmaps the same file
   1. child: read the memory, print the string to `stdout`
