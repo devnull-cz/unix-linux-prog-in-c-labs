@@ -26,3 +26,22 @@
 ```
     read pid </tmp/pool_fifo && while [ 1 ]; do pstree -p $pid; sleep 1; done
 ```
+
+# shared memory and pipe
+
+- usage: `./a.out <file_to_mmap> <string>`
+- file contents: `| length | byte_0 | byte_1 | ... | byte_N |`
+- parent creates the file sufficiently large to hold the string (sans the terminating zero)
+  - make sure the length fits one byte
+
+sequence:
+  1. parent: creates the file
+  1. parent: forks a child
+  1. parent: mmaps the file, writes the contents to memory
+  1. parent: writes 1 string to the pipe to notify the parent
+  1. child: reads one char from the parent (via pipe)
+  1. child: mmaps the same file
+  1. child: read the memory, print the string to `stdout`
+  1. cleanup - `wait()`, `unmap()`, ...
+  
+Try with both `MAP_SHARED` and `MAP_PRIVATE` flags.
