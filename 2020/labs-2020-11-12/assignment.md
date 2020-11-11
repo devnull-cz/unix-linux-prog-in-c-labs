@@ -31,6 +31,8 @@
 
 - usage: `./a.out <file_to_mmap> <string>`
 - file contents: `| length | byte_0 | byte_1 | ... | byte_N |`
+  - e.g. `| 5 | h | e | l | l | o |` 
+    - note: there is no terminating zero byte
 - parent creates the file sufficiently large to hold the string (sans the terminating zero)
   - make sure the length fits one byte
 
