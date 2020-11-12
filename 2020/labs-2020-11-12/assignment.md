@@ -20,7 +20,7 @@
       - create the named pipe beforehand with mkfifo(1)
   - signal handling:
     - `SIGHUP` - reload N from the config file
-    - `SIGUSR1` - print current number of workers to `stderr`
+    - `SIGUSR1` - print number of workers created so far to `stderr`
   - verify with pstree(1)/ptree(1) run on parent's pid one it starts running
     - this is automatic thanks to the pipe semantics: reader and writer randezvous
 ```
