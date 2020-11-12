@@ -47,3 +47,5 @@ sequence:
   1. cleanup - `wait()`, `unmap()`, ...
   
 Try with both `MAP_SHARED` and `MAP_PRIVATE` flags.
+
+Replace the pipe with signal.
