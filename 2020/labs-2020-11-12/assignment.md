@@ -1,7 +1,7 @@
 
 # dynamic library overriding open/read/write
 
-- implement a library with 3 calls: `open`, `read`, `write`, `close`
+- implement a library with these calls: `open`, `read`, `write`, `close`
 - for each file descriptor opened the library will count the bytes read/written
 - on close(), print the byte counts to `stderr`
 - hint: in each function, use `RTLD_NEXT` to call the original implementation
