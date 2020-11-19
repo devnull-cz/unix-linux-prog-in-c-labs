@@ -7,8 +7,10 @@
 ## Signal ping-pong
 
 - make two processes send each other a signal in turns.  Figure out your own
-  solution.  Try multiple of those.  You may use `sleep(1)` if it helps to make
-  it reliably (that is, to avoid missed signals).
+  solution.  Try multiple of those.
+- you may use `sleep(1)` if it helps to make it reliable (that is, to avoid
+  missed signals).  However, you can also use file locking to avoid any busy
+  waiting.
 
 ## Use `sigwait`
 
