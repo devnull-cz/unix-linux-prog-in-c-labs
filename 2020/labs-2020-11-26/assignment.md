@@ -28,7 +28,7 @@ Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/
   - use TCP sink server and simple connect
   - see `atomicio()` in the OpenSSH source code
 
-# Simple TCP server with descriptor redirection
+# Simple TCP exec server with descriptor redirection
 
 Implement a program that will start listening on a specified TCP port and address.
 It will handle one connection at a time. Once current connection is closed,
@@ -46,7 +46,7 @@ connection.
  - networking APIs that are sufficient (besides the usuall read/write/printf/etc.): `socket, bind, listen, accept, setsockopt` (for `SO_REUSEADDR`)
 
 ## Variants:
-   - restrict clients
+   - restrict clients based on IP address
 ```
    usage: ./a.out <address> <port> <allowed_address>
 ```
