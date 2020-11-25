@@ -34,10 +34,10 @@ Implement a program that will start listening on a specified TCP port and addres
 It will handle one connection at a time. Once current connection is closed,
 new one can be accepted.
 ```
-   usage: ./a.out <address> <port>
+   usage: ./a.out <address> <port> <program> [arguments]
 ```
-Once a connection is accepted, the server will fork+exec a program and redirect `std{in,out,err}` to the network
-connection.
+Once a connection is accepted, the server will redirect `std{in,out,err}` to the network
+connection and fork+exec the program.
 
 ## Notes/constrains:
  - use numeric IPv4 address and port for the time being. Once the lecture is past address resolution APIs (in particular `getaddrinfo, getnameinfo`), return back and fix the program so that it is address family agnostic.
