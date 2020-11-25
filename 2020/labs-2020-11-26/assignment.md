@@ -12,7 +12,7 @@
 
 Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/master/tcp
 
-- what happens in TCP if a client process with established connection is terminated ?
+- what happens "on the wire" with established TCP connection if a client process with established connection is terminated ?
   - RST or FIN ?
 - what happens if server writes to a socket that is associated with client that has disconnected in the mean time ?
   - use connect.c and simple echo server (slow down writes in server)
