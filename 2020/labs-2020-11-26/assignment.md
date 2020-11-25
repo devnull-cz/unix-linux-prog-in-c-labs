@@ -24,7 +24,7 @@ Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/
   - use connect.c
 - how does the TCP handshake look like ?
 - what happens on the network when `shutdown()` is called
-- what happens if `read()` from network socket is interrupted with a (handled) signal
+- what happens if `read()` from network socket is interrupted with a (handled) signal (say `SIGTERM` or `SIGINT`)
   - use TCP sink server and simple connect
   - see `atomicio()` in the OpenSSH source code
 
