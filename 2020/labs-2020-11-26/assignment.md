@@ -13,6 +13,8 @@
 
 Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/master/tcp
 
+- how does the TCP handshake look like ?
+  - why there is a handshake at all ?
 - what happens "on the wire" with established TCP connection if a client process with established connection is terminated ?
   - RST or FIN ?
 - what happens if server writes to a socket that is associated with client that has disconnected in the mean time ?
@@ -23,7 +25,6 @@ Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/
   - modify `connect.c` to establish number of connections and sink server and experiment with listen backlog value
 - how long does it take for `connect()` to time out when connecting to unreachable service ? (i.e. service that drops packets, not a service that refuses connections)
   - modify `connect.c`
-- how does the TCP handshake look like ?
 - what happens on the network when `shutdown()` is called
 - what happens if `read()` from network socket is interrupted with a (handled) signal (say `SIGTERM` or `SIGINT`)
   - use TCP sink server and simple connect
