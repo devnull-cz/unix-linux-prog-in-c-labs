@@ -21,8 +21,8 @@ Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/
   - use `netstat` to observe the connections
 - how many TCP connections does server accept before `listen()` and `accept()` ?
   - modify `connect.c` to establish number of connections and sink server and experiment with listen backlog value
-- how long does it take for `connect()` to time out ?
-  - use connect.c
+- how long does it take for `connect()` to time out when connecting to unreachable service ? (i.e. service that drops packets, not a service that refuses connections)
+  - modify `connect.c`
 - how does the TCP handshake look like ?
 - what happens on the network when `shutdown()` is called
 - what happens if `read()` from network socket is interrupted with a (handled) signal (say `SIGTERM` or `SIGINT`)
