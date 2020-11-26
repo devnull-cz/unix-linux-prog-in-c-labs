@@ -8,6 +8,10 @@
   - `DEBUG()` macro (variadic)
   - use Netcat / Socat for testing/probing
   - traffic dump (`tcpdump` or `tshark` or `snoop` or Wireshark)
+  - firewall
+    - to simulate unreachable hosts
+    - some firewalls (e.g. PF on OpenBSD) can simulate packet loss with certain probability
+  - tools to simulate certain latency and/or bandwidth
 
 # TCP experiments
 
