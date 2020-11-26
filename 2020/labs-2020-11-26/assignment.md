@@ -12,6 +12,7 @@
     - to simulate unreachable hosts
     - some firewalls (e.g. PF on OpenBSD) can simulate packet loss with certain probability
   - tools to simulate certain latency and/or bandwidth
+  - syscall error injection (`strace` can do it)
 
 # TCP experiments
 
