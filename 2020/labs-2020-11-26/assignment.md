@@ -6,7 +6,7 @@
   - `netstat`
   - `assert()`
   - `DEBUG()` macro (variadic)
-  - use Netcat for testing/probing
+  - use Netcat / Socat for testing/probing
   - traffic dump (`tcpdump` or `tshark` or `snoop` or Wireshark)
 
 # TCP experiments
