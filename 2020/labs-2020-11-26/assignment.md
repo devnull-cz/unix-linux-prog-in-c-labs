@@ -3,7 +3,7 @@
     - can also be observed via `lsof` or via `/proc`
   - `strace` or `truss` can help you see problems when passing structures to syscalls
   - gdb (compile with -g)
-  - `netstat`
+  - `netstat` / `route`
   - `assert()`
   - `DEBUG()` macro (variadic)
   - use Netcat / Socat for testing/probing
