@@ -17,7 +17,7 @@ Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/
   - RST or FIN ?
 - what happens if server writes to a socket that is associated with client that has disconnected in the mean time ?
   - use connect.c and simple echo server (slow down writes in server)
-- what happens without `SO_REUSEADDR` ? when is it relevant ?
+- what happens for TCP server side socket without the `SO_REUSEADDR` socket option ? when is it relevant ?
   - use `netstat` to observe the connections
 - how many TCP connections does server accept before `listen()` and `accept()` ?
   - modify `connect.c` to establish number of connections and sink server and experiment with listen backlog value
