@@ -9,6 +9,18 @@ HTML page).
 
 Hint: use `telnet webserver-name 80` and type `GET /`
 
+You can so use `nc` for debugging:
+
+```
+nc -l -p 8080 127.0.0.1
+```
+
+And form another terminal:
+
+```
+ab http://127.0.0.1:8080/
+```
+
 ## `poll`
 
 Rewrite
@@ -35,6 +47,10 @@ lecture anyway).
 Do the same thing as with the 1st assignment but instead of `select`, use a new
 thread for every accepted connection.
 
+Alternatively, as a simpler task, take some existing TCP code from our repo and
+create a new thread for each accepted connection, and just write the data on the
+standard output.  Verify it works correctly.
+
 ## GNU pth thread library
 
 Download the source code from https://www.gnu.org/software/pth/, compile it, ale
@@ -42,3 +58,6 @@ link it to your source code using pthread API.
 
 Verify the library is really used (on Linux though, it should be easy as gcc
 will not automatically link against a pthread library).
+
+That is, you will not do `gcc -pthread` but rather something like `gcc -L. -R.
+-lpth ...`.  See the lecture materials, section on the dynamic linker.
