@@ -15,6 +15,21 @@ Rewrite
 https://github.com/devnull-cz/unix-linux-prog-in-c-src/blob/master/select/select.c
 using the `poll` call.
 
+## a simple example on threads
+
+- `./a.out <n>`
+- allocate array of `n` elements in `main`
+- create `n` threads
+- each thread will get an address of its array element
+- each thread will generate a random number to that location
+- the main thread joins all the threads, then sorts the array via `qsort`
+- `main` prints out the sorted array and exits
+- use debug messages to make sure you got everything right
+
+Note that given that each thread will get its own array element to store the
+random number to, there is no need to sychronize (that API will be on next
+lecture anyway).
+
 ## threaded server
 
 Do the same thing as with the 1st assignment but instead of `select`, use a new
