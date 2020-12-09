@@ -71,3 +71,9 @@ ip_address#port/x/y/z|NA
 
 The ordering of the lines in the output file is arbitrary. If the connect or the
 GET request was not successful, the entry will have `NA`.
+
+## graceful termination
+
+When the program receives the `SIGINT` signal, it should gracefully terminate 
+the current operations. I.e. the currently running workers are left to finish
+however no new jobs are started. Then the workers are made to exit.
