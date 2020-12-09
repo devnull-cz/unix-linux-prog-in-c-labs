@@ -58,6 +58,9 @@ Do not make any assumptions about the length of the input file (e.g. that it
 will fit into memory). The queue should be limited in length. The limit should
 be higher than the pool size.
 
+For better testing, it might be good idea to insert artifical delay between
+insertions into the queue.
+
 Each worker will get the specification, makes a HTTP GET request according to
 the specification, counts the number of bytes in the returned data and appends
 the result to the output file.
