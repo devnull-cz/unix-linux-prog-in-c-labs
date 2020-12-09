@@ -43,7 +43,7 @@ sleep for given number of seconds and exit.
 
 Uses the code produced for the above tasks as a foundation.
 
-usage: `a.out <input_file> <output_file>
+usage: `a.out <input_file> <output_file>`
 
 The work queue will be populated with request specifications from a file.
 The file contents will look like this:
