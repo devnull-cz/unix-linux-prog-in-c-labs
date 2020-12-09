@@ -24,6 +24,7 @@ usage: `./a.out <number_of_threads>`
     `pthread_detach()`)
 
 - verify that the number of threads in the pool remains more or less the same
+  - use command line tools
 
 # thread pool with work queue
 
@@ -33,6 +34,33 @@ that insert items to the queue (use e.g. `TAILQ` from `sys/queue.h`)
 The worker thread waits for an item to be inserted to the queue, grab it
 and process it and exit
 
-# use thread pool work queue for latency monitoring
+# web scraper
 
-TBD
+Uses the code produced for the above tasks as a foundation.
+
+usage: `a.out <input_file> <output_file>
+
+The work queue will be populated with request specifications from a file.
+The file contents will look like this:
+```
+hostname#port/foo/bar
+ip_address#port/x/y/z
+...
+```
+
+The requests should be processed by the workers as the file is read.
+Do not make any assumptions about the length of the input file (e.g. that it
+will fit into memory).
+
+Each worker will get the specification, makes HTTP GET request, counts the
+number of bytes in the returned data and appends the result to the output file.
+
+The format of the output file will look like this:
+```
+hostname#port/foo/bar|42
+ip_address#port/x/y/z|NA
+...
+```
+
+The ordering of the lines in the output file is arbitrary. If the connect or the
+GET request was not successful, the entry will have `NA`.
