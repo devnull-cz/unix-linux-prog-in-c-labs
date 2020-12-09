@@ -54,6 +54,8 @@ ip_address#port/x/y/z
 ```
 
 The requests should be processed by the workers as the file is read.
+There will be dedicated thread that will read the input file and insert
+the items into the queue.
 Do not make any assumptions about the length of the input file (e.g. that it
 will fit into memory). The queue should be limited in length. The limit should
 be higher than the pool size.
