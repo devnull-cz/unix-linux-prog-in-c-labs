@@ -28,11 +28,16 @@ usage: `./a.out <number_of_threads>`
 
 # thread pool with work queue
 
-Add queue structure to the thread pool code for work distribution and thread(s)
-that insert items to the queue (use e.g. `TAILQ` from `sys/queue.h`)
+Add queue structure to the thread pool code for work distribution and thread
+that insert items to the queue (use e.g. `TAILQ` from `sys/queue.h`).
 
-The worker thread waits for an item to be inserted to the queue, grab it
-and process it and exit
+usage: `a.out <thread_count> <number_of_items>`
+
+The producer thread will generate set of random integers up to the given count,
+insert them to the queue.
+
+Each worker thread waits for an item to be inserted to the queue, grab it,
+sleep for given number of seconds and exit.
 
 # web scraper
 
@@ -50,10 +55,12 @@ ip_address#port/x/y/z
 
 The requests should be processed by the workers as the file is read.
 Do not make any assumptions about the length of the input file (e.g. that it
-will fit into memory).
+will fit into memory). The queue should be limited in length. The limit should
+be higher than the pool size.
 
-Each worker will get the specification, makes HTTP GET request, counts the
-number of bytes in the returned data and appends the result to the output file.
+Each worker will get the specification, makes a HTTP GET request according to
+the specification, counts the number of bytes in the returned data and appends
+the result to the output file.
 
 The format of the output file will look like this:
 ```
