@@ -69,4 +69,5 @@
   - exit with error in case of invalid input (at least 2 lines are required)
   - written test cases ?
     - see https://github.com/devnull-cz/stef
-
+      - also remember Github actions (e.g. to automatically run the tests for
+	each integration)
