@@ -34,8 +34,8 @@ Makefiles: let's assume GNU make for now
 similarly to `libmin`, i.e. `libmax.[ch]`, `libmax.so`, ...
 
 - and link main with both libraries
-- 1st argument will be now "min" or "max" and based on that
- given function (and therefore library will be used)
+- 1st argument of your command will be now "min" or "max" and based on that
+ given function will be chosen (and therefore library will be used)
 
 - use hierarchical build:
 ```
