@@ -26,32 +26,6 @@ $ ./a.out $args
 ###########################################################################
 ```
 
-# getopt
-
-- check out http://github.com/devnull-cz/unix-linux-prog-in-c-src/blob/master/getopt/getopts.sh, then write the same
-  functionality in C. 
-
-```
-$ ./getopts.sh
-usage: getopts.sh command [-c code] [filename [filename [...]]]
-
-$ ./getopts.sh boot -c 11 xxx yyy
-first param (command): boot
-option -c set to '11'
-...done reading option arguments
-filenames: xxx yyy
-
-$ ./getopts.sh boot -x 11 xxx yyy
-first param (command): boot
-./getopts.sh: illegal option -- x
-usage: getopts.sh command [-c code] [filename [filename [...]]]
-
-$ ./getopts.sh attach
-first param (command): attach
-...done reading option arguments
-no filenames entered
-```
-
 
 # Environment
 
@@ -117,3 +91,30 @@ that is run internally as part of `system(3)`.  That is OK.
 (If we got there in the lecture)
 
 - instead of `-` for `env`, use the `-i` option as is in the standard
+
+# getopt
+
+- check out http://github.com/devnull-cz/unix-linux-prog-in-c-src/blob/master/getopt/getopts.sh, then write the same
+  functionality in C. 
+
+```
+$ ./getopts.sh
+usage: getopts.sh command [-c code] [filename [filename [...]]]
+
+$ ./getopts.sh boot -c 11 xxx yyy
+first param (command): boot
+option -c set to '11'
+...done reading option arguments
+filenames: xxx yyy
+
+$ ./getopts.sh boot -x 11 xxx yyy
+first param (command): boot
+./getopts.sh: illegal option -- x
+usage: getopts.sh command [-c code] [filename [filename [...]]]
+
+$ ./getopts.sh attach
+first param (command): attach
+...done reading option arguments
+no filenames entered
+```
+
