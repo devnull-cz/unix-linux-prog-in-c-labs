@@ -55,17 +55,18 @@ no filenames entered
 
 # Environment
 
-- write a simple `env(1)` program
+- write a simple `env(1)`-like program
   - `env [-] [varname=value [varname=value ...]] command`
-  - if the first argument is `-`, clear the environment before executing the
-    command
+  - if the first argument is `-`, clear the environment before executing the command
   - set environment variables in the caller if present on the command line
   - to execute the command, use `system(3)`
   - the command is just one argument
-	- extend the assignment to check what is a variable definition to also
-	  accept arguments to the command
   - all other arguments aside from the last one are variable definitions
   - do a reasonable error checking
+
+Extra tasks:
+  - accept arguments to the command
+  - implement `-u`
 
 Example:
 
