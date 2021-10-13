@@ -30,17 +30,14 @@ $ ./a.out $args
 # Environment
 
 - write a simple `env(1)`-like program
-  - `env [-] [varname=value [varname=value ...]] command`
+  - `env [-] [varname=value [varname=value ...]] [command]`
   - if the first argument is `-`, clear the environment before executing the command
   - set environment variables in the caller if present on the command line
   - to execute the command, use `system(3)`
-  - the command is just one argument
+  - if the command is not given, print all environment variables along with their values to stdout
+  - the command is just one argument (program name)
   - all other arguments aside from the last one are variable definitions
-  - do a reasonable error checking
-
-Extra tasks:
-  - accept arguments to the command
-  - implement `-u`
+  - do reasonable error checking
 
 Example:
 
@@ -86,9 +83,14 @@ a.out: need at least two arguments
 Note that those `PWD`, `SHLVL`, and `_` variables are put there by the shell
 that is run internally as part of `system(3)`.  That is OK.
 
-# Option processing
+## Optional tasks
 
-- instead of `-` for `env`, use the `-i` option as is in the standard
+Extra tasks:
+  - accept arguments to the command
+    - i.e. `env [-] [varname=value [varname=value ...]] [utility [argument ...]]`
+  - instead of `-` for `env`, use the `-i` option as is in the standard
+  - implement `-u`
+
 
 # getopt
 
