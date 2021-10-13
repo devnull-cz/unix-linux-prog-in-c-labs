@@ -88,8 +88,6 @@ that is run internally as part of `system(3)`.  That is OK.
 
 # Option processing
 
-(If we got there in the lecture)
-
 - instead of `-` for `env`, use the `-i` option as is in the standard
 
 # getopt
