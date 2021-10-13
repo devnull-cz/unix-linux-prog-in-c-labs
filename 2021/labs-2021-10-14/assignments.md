@@ -28,7 +28,7 @@ $ ./a.out $args
 
 # getopt
 
-- check out `unix-linux-prog-in-c-src/getopt/getopts.sh`, then write the same
+- check out http://github.com/devnull-cz/unix-linux-prog-in-c-src/blob/master/getopt/getopts.sh, then write the same
   functionality in C. 
 
 ```
