@@ -95,7 +95,7 @@ Extra tasks:
 # getopt
 
 - check out http://github.com/devnull-cz/unix-linux-prog-in-c-src/blob/master/getopt/getopts.sh, then write the same
-  functionality in C. 
+  functionality in C.
 
 ```
 $ ./getopts.sh
@@ -118,3 +118,4 @@ first param (command): attach
 no filenames entered
 ```
 
+It is recomended to write some unit tests. Look at `getopt-tests.c`.
