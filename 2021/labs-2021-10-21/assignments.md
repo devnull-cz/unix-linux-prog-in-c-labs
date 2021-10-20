@@ -1,6 +1,7 @@
-# File API: cat
+# File API: `cat`
 
-Implement a cat (like in `read/cat.c` but do not look at that code).
+Implement a `cat` command (like in `read/cat.c` but do **not** look at that code
+until you have finished and verified your version).
 
 ```
 ./cat file1 [file2 [file3 ... ] ]
@@ -17,7 +18,7 @@ $ echo $?
 0
 ```
 
-# lseek
+# `lseek`
 
 Write an X cross to a file.  The first argument is the size of the rectangle.
 
@@ -41,3 +42,21 @@ x........x
   newlines (`\n`)
 - that is, do **not** write the file in a single loop, printing either `.`, `x`,
   or `\n`
+
+# Redirection
+
+Implement:
+
+```
+$ cat <infile >outfile
+```
+
+via:
+
+```
+$ ./a.out infile outfile
+```
+
+- do the redirection in your code, create the outfile if needed
+- then implement a simple loop that reads from file descriptor `0` and writes to
+  `1` until `read` returns 0 (or an error).
