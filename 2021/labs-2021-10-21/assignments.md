@@ -57,6 +57,7 @@ via:
 $ ./a.out infile outfile
 ```
 
-- do the redirection in your code, create the outfile if needed
+- do the redirection in your code, create or truncate the `outfile` if needed
 - then implement a simple loop that reads from file descriptor `0` and writes to
   `1` until `read` returns 0 (or an error).
+- verify with `diff` that `infile` and `outfile` are identical
