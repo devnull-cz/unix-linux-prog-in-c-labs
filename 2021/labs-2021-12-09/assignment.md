@@ -4,6 +4,7 @@
   - `strace` or `truss` can help you see problems when passing structures to syscalls
   - gdb (compile with -g)
   - `netstat` / `route`
+    - use `netstat -peanut` to display which connections belong to which process
   - `assert()`
   - `DEBUG()` macro (variadic)
   - use Netcat / Socat for testing/probing
