@@ -14,7 +14,7 @@ function test_input {
 }
 
 n=$( cd $tmpdir; test_input | $MYSH | tr "/" "\n" | grep -c "^${dir}$" )
-rm -rf $tmpdir
+rm -rf "$tmpdir"
 
 (( $n != $count )) && echo "Count expected $count, was $n" && exit 1
 exit 0
