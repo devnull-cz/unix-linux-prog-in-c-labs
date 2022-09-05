@@ -5,7 +5,7 @@
 # You need to set this one to your shell binary.
 #
 # However, you should first set it to your system /bin/bash to make sure you can
-# properly run and pass the tests.
+# properly run and pass the tests with a shell that is expected to work.
 export MYSH="/bin/true"
 
 # Get STEF from https://github.com/devnull-cz/stef, then set STEF to path to

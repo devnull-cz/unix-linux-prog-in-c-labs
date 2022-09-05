@@ -4,8 +4,7 @@
 # If you find a bug in your implementation that is not covered in these tests,
 # let us know and we can add a new test.  Ideally, send us a pull request.
 
-Make sure variables in ./test-config are correctly defined, then run the
-following.
+Set properly variables in ./test-config, then run the following:
 
 # For phase 1
 ./run-tests.sh $( cat phase-1.tests )
