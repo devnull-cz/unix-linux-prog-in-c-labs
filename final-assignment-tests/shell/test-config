@@ -1,6 +1,6 @@
-# It is better to overwrite variables set here in you local test-config.local so
-# that you do not need to fix it again after each pull from the test repository.
-# Also see run-tests.sh.
+# It may be better to create ./test-config.local and overwrite variables set
+# here in that file so that you do not need to fix it again after each pull from
+# the test repository.  Also see run-tests.sh.
 
 # You need to set this one to your shell binary.
 #
