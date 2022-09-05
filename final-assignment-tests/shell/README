@@ -7,12 +7,12 @@
 Set properly variables in ./test-config, then run the following:
 
 # For phase 1
-./run-tests.sh $( cat phase-1.tests )
+./run-tests.sh $(cat phase-1.tests)
 
 Expected output is something like the following (the number of tests may
 change):
 
-$ ./run-tests.sh $( cat phase-1.tests )
+$ ./run-tests.sh $(cat phase-1.tests)
 === [ NSWI015 mysh shell unit tests ] ===
 
 001	PASS
