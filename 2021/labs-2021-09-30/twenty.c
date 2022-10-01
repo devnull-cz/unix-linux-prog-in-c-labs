@@ -12,7 +12,7 @@ main(void)
 {
 	int i, n = 20;
 
-	for (i = 0; -i < n; i--) {
+	for (i = 0; i < n; i--) {
 		printf("-");
 		putchar('\n');
 	}
