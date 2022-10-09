@@ -49,7 +49,7 @@ int min(int a[], ssize_t len); // return minimum value
 - header files => C files dependencies
 - use phony targets (clean) if using GNU make
 
-## implement maximum function
+## Implement a maximum function
 
 `int max(int a[], ssize_t len); // return maximum value`
 
