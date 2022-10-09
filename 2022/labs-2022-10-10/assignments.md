@@ -17,7 +17,7 @@
 
 Makefiles: let's assume GNU make for now
 
-## implement another program and a dynamic library
+## Implement another program and a dynamic library
 
 - start without makefiles
 - the dynamic library will be called `libmin.so`
@@ -41,10 +41,10 @@ int min(int a[], ssize_t len); // return minimum value
     elsewhere)
   - `main` is linked against `libmin.so`
 
-## construct set of Makefiles
+## Construct a Makefile for the above
 
-- basic targets: `all`, `clean`
-- use automatic gmake variables (preceded with the '@' char)
+- use usual targets: `all`, `clean`
+- use automatic `gmake` variables (preceded with the '@' char)
 - use wildcard rule for `*.c` => `*.o` files
 - header files => C files dependencies
 - use phony targets (clean) if using GNU make
