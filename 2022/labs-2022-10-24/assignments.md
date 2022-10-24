@@ -20,7 +20,7 @@ $ echo $?
 
 ## Variant: allow zero arguments
 
-usage: `./cat [file ...]
+usage: `./cat [file ...]`
 
 Also, allow `-` to be specified as file, reading standard input in such case.
 
