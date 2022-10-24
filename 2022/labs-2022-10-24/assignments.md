@@ -43,6 +43,7 @@ x........x
 x........x
 ```
 
+- if the file does not exist, create it. If it exists, truncate it.
 - use a single `write` to fill the file with dots (`.`)
 - use `lseek` and `write(.., .., 1)` to write the `x` characters and the
   newlines (`\n`)
