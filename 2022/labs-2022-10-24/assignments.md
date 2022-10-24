@@ -18,6 +18,12 @@ $ echo $?
 0
 ```
 
+## Variant: allow zero arguments
+
+usage: `./cat [file ...]
+
+Also, allow `-` to be specified as file, reading standard input in such case.
+
 # `lseek`
 
 Write an X cross to a file.  The first argument is the size of the rectangle.
