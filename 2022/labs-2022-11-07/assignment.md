@@ -62,6 +62,13 @@ unix-linux-prog-in-c-src/wait$ head -34 wait.c
  */
 ```
 
+## closing file descriptors across exec
+
+Produce 2 programs:
+  1. Create and open a file, create new process via `exec` syscall
+  1. programatically verify that file descriptors given by `argv` are closed
+
+
 ## double `pipe`
 
 - Implement:
