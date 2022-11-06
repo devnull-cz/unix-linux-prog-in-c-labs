@@ -1,7 +1,7 @@
 # `readdir`
 
 - write a program that will generate output similar to `ls -R`
-	- choose your own ouutput forma but increase indenting for each level of
+	- choose your own output form but increase indenting for each level of
 	  directories
 
 # `rm -r`
