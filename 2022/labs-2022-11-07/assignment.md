@@ -20,6 +20,8 @@ Questions:
 
 Think first, then verify your hypothesis with `pstree -p -s -t <pid>`.
 
+Note: this is assuming a system with the `pstree` command (e.g. Linux distribution or FreeBSD).
+
 ## exec `vim /etc/passwd`
 
 Do not use `fork()`.
