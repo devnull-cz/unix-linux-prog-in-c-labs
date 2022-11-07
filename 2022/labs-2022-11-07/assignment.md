@@ -41,7 +41,7 @@ Create the following process tree:
 
    parent_1
    fork()  --> child_1 (parent_2)
-               fork() -------------> child_3
+               fork() -------------> child_2
                                      fork()
 
 ```
