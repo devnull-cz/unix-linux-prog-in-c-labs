@@ -26,6 +26,14 @@ Note: this is assuming a system with the `pstree` command (e.g. Linux distributi
 
 Do not use `fork()`.
 
+## Fork bomb
+
+Read https://en.wikipedia.org/wiki/Fork_bomb and implement fork bomb in C.
+Run and observe the results.
+
+**Note: be warned that it might deplete system resources on the system the program is run on**
+
+
 ## different process tree
 
 Create the following process tree:
