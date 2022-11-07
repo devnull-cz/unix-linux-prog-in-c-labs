@@ -22,10 +22,6 @@ Think first, then verify your hypothesis with `pstree -p -s -t <pid>`.
 
 Note: this is assuming a system with the `pstree` command (e.g. Linux distribution or FreeBSD).
 
-## exec `vim /etc/passwd`
-
-Do not use `fork()`.
-
 ## Fork bomb
 
 Read https://en.wikipedia.org/wiki/Fork_bomb and implement fork bomb in C.
@@ -33,6 +29,9 @@ Run and observe the results.
 
 **Note: be warned that it might deplete system resources on the system the program is run on**
 
+## exec `vim /etc/passwd`
+
+Do not use `fork()`.
 
 ## different process tree
 
