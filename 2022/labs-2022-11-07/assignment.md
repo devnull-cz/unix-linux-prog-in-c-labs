@@ -47,7 +47,7 @@ Create the following process tree:
 ```
 
 Each process:
-  - prints its PID and parent PID
+  - prints its PID, parent PID, process group ID
   - will call `sleep(1)` before exiting.
 
 ### variant
