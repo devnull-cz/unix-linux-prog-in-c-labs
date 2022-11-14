@@ -1,7 +1,7 @@
 
 # Construct a shared library
 
-Produce a shared library () and a program liniking with it.
+Produce a shared library (`libmy.so.`) and a program liniking with it. Call a function from the shared library in the program.
 
 Write Makefile(s).
 
