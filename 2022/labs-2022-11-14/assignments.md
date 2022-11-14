@@ -1,4 +1,17 @@
 
+# Construct a shared library
+
+Produce a shared library () and a program liniking with it.
+
+Write Makefile(s).
+
+# Plugin framework
+
+Produce program that will search for all `*.so` files inside current directory and will load them
+using the dynamic linker APIs. Call `void foo(char *)` for all the libraries found.
+
+Gracefully skip the libraries that do not adhere to the plugin framework APIs.
+
 # Zombie army
 
 Create a program that produces selected number of zombies and then exits.
