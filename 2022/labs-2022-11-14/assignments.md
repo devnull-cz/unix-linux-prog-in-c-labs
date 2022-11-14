@@ -11,6 +11,7 @@ Produce program that will search for all `*.so` files inside current directory a
 using the dynamic linker APIs. Call `void foo(char *)` for all the libraries found.
 
 Gracefully skip the libraries that do not adhere to the plugin framework APIs.
+Copy one of the system libraries (from e.g. `/usr/lib` directory) to the current directory to test this out.
 
 # Zombie army
 
