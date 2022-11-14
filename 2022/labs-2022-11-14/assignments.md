@@ -10,6 +10,8 @@ Write Makefile(s).
 Produce program that will search for all `*.so` files inside current directory and will load them
 using the dynamic linker APIs. Call `void foo(char *)` for all the libraries found.
 
+The `foo()` function might e.g. pass the argument to `printf()`.
+
 Gracefully skip the libraries that do not adhere to the plugin framework APIs.
 Copy one of the system libraries (from e.g. `/usr/lib` directory) to the current directory to test this out.
 
