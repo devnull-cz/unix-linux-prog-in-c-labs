@@ -29,6 +29,10 @@
   last process is written to its standard output
 - make sure you try it out with a file of at least a few megabytes.
 - if your process hangs, it means you did not close all unused file descriptors
+- your solution may first read/write all the input data to the pipe in main(),
+  and only then it may start reading the data from the other end.  That is, you
+  may assume the data file size is not larger than the sum of all the pipes
+  (otherwise main() would put itself to sleep on a full pipe).
 
 ```
 $ cat /etc/passwd | ./a.out 10 > mypasswd
