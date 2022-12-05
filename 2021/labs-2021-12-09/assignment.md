@@ -61,7 +61,7 @@ connection and fork+exec the program.
  - networking APIs that are sufficient (besides the usuall read/write/printf/etc.): `socket, bind, listen, accept, setsockopt` (for `SO_REUSEADDR`)
 
 ## Variants:
-   - restrict clients based on IP address
+   - restrict clients based on IP address (sort of ala [TCP wrappers](https://en.wikipedia.org/wiki/TCP_Wrappers))
 ```
    usage: ./a.out <address> <port> <allowed_address>
 ```
