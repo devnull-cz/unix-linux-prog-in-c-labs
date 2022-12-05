@@ -31,7 +31,8 @@ Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/
   - usage: `./a.out <protocol_number>`
   - go through protocol numbers from 0 to say 255 on your system and see for which `socket()` returns somehing other than `ENOTSUP`
   - if the `socket()` succeeded, try to connect to a specified address and port using that socket
-    - usage: `./a.out <host> <port> <protocol>`  
+    - usage: `./a.out <host> <port> <protocol>`
+      - for easy experiment, use `127.0.0.1` as the host and `22` as the port
 - how many TCP connections does the server accept after `listen()` and before `accept()` ?
   - does it match the `backlog` argument of `listen()` ?
   - modify `connect.c` to establish number of connections and sink server and experiment with listen backlog value
