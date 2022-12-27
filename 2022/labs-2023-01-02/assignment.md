@@ -1,7 +1,10 @@
 # 0. warm-up: report divisors of numbers in range [1, N]
    - create M threads (start with M = number of online CPUs in the system as reported by sysconf(3)
-     where each thread continues processing until there is some work to do
-     - or make it a tunable (a define or program option) and see what works best on given system
+     - each thread computes the divisors of given number and then proceeds to the next number
+       - or make it a tunable (a define or program option) and see what works best on given system
+     - each thread continues processing until there is some work to do
+       - keep it simple: in the initial version, there is no need to deal with queues/stacks etc.
+
    - main thread will report:
      - the best result found so far
      - the overall progress in percent (use \r to refresh the terminal)
@@ -16,6 +19,7 @@
 
   - variants:
     - make this code generic so any sort of job can be used (e.g. convert this to parallelized port scanner/downloader/web crawler)
+      - this is where the queue/stack/list comes into consideration 
     - pass the information about the best number to the main thread so that no single number is lost (i.e. use a queue)
     - do not report percentage update for each computation update but only when
       new winner is found
