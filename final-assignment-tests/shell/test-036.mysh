@@ -1,4 +1,4 @@
 cd /tmp
 cd
 cd -
-pwd
+/bin/pwd

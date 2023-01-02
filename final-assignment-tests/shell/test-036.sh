@@ -11,7 +11,7 @@
 #	bash: cd: OLDPWD not set
 #	$ cd
 #	bash: cd: HOME not set
-#	$ pwd
+#	$ /bin/pwd
 #	/tmp
 #	$ exit
 #	host-machine$ echo $?
