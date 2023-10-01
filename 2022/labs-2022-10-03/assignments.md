@@ -45,7 +45,7 @@
   - need to `fflush()` the output buffer after each character
   - to sleep under one second use `poll(NUll, 0, <value_in_msec>);`
 
-- will display a moving star (`*`) that is going back and forth
+- will display a moving star (`*`) that is going back and forth on the same line
   - use a reasonable hard coded line length
 
 - will detect if the system is little/big endian machine
