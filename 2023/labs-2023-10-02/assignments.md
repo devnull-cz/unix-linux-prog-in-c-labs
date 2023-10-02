@@ -19,6 +19,9 @@
 
 - see `twenty.c`, find why exactly it does not work and find a fix
 - what does the `plus-deref-plus-argv.c` do exactly ?
+- ditto for https://github.com/devnull-cz/c-prog-lang/blob/master/src/whole-array.c
+
+Think about the program first, only then run it. Does the runtime match your expectations ?
 
 ## Write a program that..
 
