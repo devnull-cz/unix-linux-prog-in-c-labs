@@ -92,3 +92,5 @@ first param (command): attach
 ...done reading option arguments
 no filenames entered
 ```
+
+- sub-task: how would you change the `getopt()` API (including global variables) to make it stateless ? (i.e. avoid global/static variables)
