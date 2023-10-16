@@ -71,6 +71,7 @@ Extra tasks:
 - check out http://github.com/devnull-cz/unix-linux-prog-in-c-src/blob/master/getopt/getopts.sh, then write the same
   functionality in C.  Do not look at the C code in the repository that is
   already there, until you write your own version.
+  - this is merely a `getopt()` wrapper, see below for `getopt()` reimplementation
 
 ```
 $ ./getopts.sh
@@ -93,4 +94,6 @@ first param (command): attach
 no filenames entered
 ```
 
-- sub-task: how would you change the `getopt()` API (including global variables) to make it stateless ? (i.e. avoid global/static variables)
+- sub-tasks:
+  - reimplement `getopt()`
+  - how would you change the `getopt()` API (including global variables) to make it stateless ? (i.e. avoid global/static variables)
