@@ -86,7 +86,7 @@ filenames: xxx yyy
 $ ./getopts boot -x 11 xxx yyy
 first param (command): boot
 ./getopts: illegal option -- x
-usage: getopts.sh command [-c code] [filename [filename [...]]]
+usage: getopts command [-c code] [filename [filename [...]]]
 
 $ ./getopts attach
 first param (command): attach
