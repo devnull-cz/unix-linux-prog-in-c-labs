@@ -74,21 +74,21 @@ Extra tasks:
   - this is merely a `getopt()` wrapper, see below for `getopt()` reimplementation
 
 ```
-$ ./getopts.sh
-usage: getopts.sh command [-c code] [filename [filename [...]]]
+$ ./getopts
+usage: getopts command [-c code] [filename [filename [...]]]
 
-$ ./getopts.sh boot -c 11 xxx yyy
+$ ./getopts boot -c 11 xxx yyy
 first param (command): boot
 option -c set to '11'
 ...done reading option arguments
 filenames: xxx yyy
 
-$ ./getopts.sh boot -x 11 xxx yyy
+$ ./getopts boot -x 11 xxx yyy
 first param (command): boot
-./getopts.sh: illegal option -- x
+./getopts: illegal option -- x
 usage: getopts.sh command [-c code] [filename [filename [...]]]
 
-$ ./getopts.sh attach
+$ ./getopts attach
 first param (command): attach
 ...done reading option arguments
 no filenames entered
