@@ -7,6 +7,8 @@ until you have finished and verified your version).
 ./cat file1 [file2 ..]
 ```
 
+Try to preserve error behavior of the `cat` on your system (i.e. what happens if one of the files cannot be read).
+
 To verify, cat a few files with your program and then `/bin/cat`, then `diff` it.
 
 ```
