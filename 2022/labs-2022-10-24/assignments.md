@@ -55,10 +55,8 @@ x........x
 
 - if the file does not exist, create it. If it exists, truncate it.
 - use a single `write` to fill the file with dots (`.`)
-- use `lseek` and `write(.., .., 1)` to write the `x` characters and the
-  newlines (`\n`)
-- that is, do **not** write the file in a single loop, printing either `.`, `x`,
-  or `\n`
+- use `lseek` and `write(.., .., 1)` to write the `x` characters and the newlines (`\n`)
+- that is, do **not** write the file in a single loop, printing either `.`, `x`, or `\n`
 
 # Redirection
 
@@ -77,7 +75,7 @@ $ ./a.out infile outfile
 - do the redirection in your code, create or truncate the `outfile` if needed
 - then implement a simple loop that reads from file descriptor `0` and writes to
   `1` until `read` returns 0 (or an error).
-- verify with `diff` that `infile` and `outfile` are identical
+- verify with `diff` (or `cmp`) that `infile` and `outfile` are identical
 
 # retouch
 
