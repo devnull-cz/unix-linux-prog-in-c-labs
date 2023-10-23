@@ -24,6 +24,12 @@ usage: `./cat [file ...]`
 
 Also, allow `-` to be specified as file, reading standard input in such case.
 
+The `-` argument can be at any position, e.g.:
+```
+cat -
+for i in `seq 1 10`; do echo $i; done | cat /etc/passwd - /etc/group
+```
+
 # `lseek`
 
 Write an X cross to a file.  The first argument is the size of the rectangle.
