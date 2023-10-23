@@ -4,7 +4,7 @@ Implement a `cat` command (like in `read/cat.c` but do **not** look at that code
 until you have finished and verified your version).
 
 ```
-./cat [file1 ..]
+./cat file1 [file2 ..]
 ```
 
 To verify, cat a few files with your program and then `/bin/cat`, then `diff` it.
