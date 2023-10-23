@@ -76,7 +76,7 @@ $ ./a.out infile outfile
 
 - do the redirection in your code, create or truncate the `outfile` if needed
 - then implement a simple loop that reads from file descriptor `0` and writes to
-  `1` until `read` returns 0 (or an error).
+  `1` until `read` returns 0 (or an error). Similarly for `write()` error handling. 
 - verify with `diff` (or `cmp`) that `infile` and `outfile` are identical
 
 # retouch
