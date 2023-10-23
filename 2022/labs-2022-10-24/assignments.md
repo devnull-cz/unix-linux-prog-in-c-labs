@@ -18,6 +18,10 @@ $ echo $?
 0
 ```
 
+You can try to experiment with various buffer sizes; what is the size that will make your program go fastest in the given environment ?
+The `stat()` syscall provides the block size of the file system the file resides on; you can use that as a sort of hint for your 
+program on how big the read buffer should be (that could be different for each file specified as arguments).
+
 ## Variant: allow zero arguments
 
 usage: `./cat [file ...]`
