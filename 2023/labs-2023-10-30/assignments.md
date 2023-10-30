@@ -73,6 +73,8 @@ I.e. the first program will execute the second program.
 Open file "`output`" for writing and redirect standard output to it. Then go through directory tree
 starting at `argv[1]` and for each regular file do `fork()` and `exec()` of `wc -l` on that file.
 
+The main process should wait for all the children to complete.
+
 Verify all output went to file file "`output`". Also make sure any errors printed to `stderr`
 by `wc` are printed to the console (e.g. when `wc` does not have sufficient permissions to read the file).
 
