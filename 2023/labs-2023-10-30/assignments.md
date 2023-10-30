@@ -75,7 +75,7 @@ starting at `argv[1]` and for each regular file do `fork()` and `exec()` of `wc 
 
 The main process should wait for all the children to complete.
 
-Verify all output went to file file "`output`". Also make sure any errors printed to `stderr`
+Verify all output went to the file "`output`". Also make sure any errors printed to `stderr`
 by `wc` are printed to the console (e.g. when `wc` does not have sufficient permissions to read the file).
 
 # File I/O
