@@ -31,7 +31,11 @@ Run and observe the results.
 
 ## exec `vim /etc/passwd`
 
-Do not use `fork()`.
+Do not use `fork()`. Start with `execl()`, then try `execv()`.
+
+## supply environment variable
+
+Execute `sudo vipw` with the `EDITOR` environment variable set to your favorite editor.
 
 ## different process tree
 
