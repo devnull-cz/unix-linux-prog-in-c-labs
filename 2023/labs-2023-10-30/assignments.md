@@ -35,7 +35,8 @@ Do not use `fork()`. Start with `execl()`, then try `execv()`.
 
 ## supply environment variable
 
-Execute `sudo --preserve-env vipw` with the `EDITOR` environment variable set to your favorite editor.
+Execute `sudo vipw` with the `EDITOR` environment variable set to your favorite editor.
+You will have to use the `--preserve-env` option for sudo, because it sanitizes the environment by default.
 
 ## different process tree
 
