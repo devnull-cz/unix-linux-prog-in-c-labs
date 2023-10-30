@@ -78,6 +78,9 @@ The main process should wait for all the children to complete.
 Verify all output went to the file "`output`". Also make sure any errors printed to `stderr`
 by `wc` are printed to the console (e.g. when `wc` does not have sufficient permissions to read the file).
 
+Lastly, think about what is going on in terms of file descriptors used by the child programs,
+the global file table and the file offset.
+
 # File I/O
 
 ## `readdir`
