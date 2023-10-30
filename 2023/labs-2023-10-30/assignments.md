@@ -89,13 +89,10 @@ by `wc` are printed to the console (e.g. when `wc` does not have sufficient perm
 ## `rm -r`
 
 - implement `rm -r <dir>`
-	- be careful...
-	- I suggest to first print what would be done before the next version
-	  actually does it
-	- create a short shell script to generate a random directory structure
-		- you can get a small random number like this, for example (bash
-		  specific): `echo $(($RANDOM % 8))`
-
+  - be careful...
+  - I suggest to first print what would be done before the next version actually does it
+  - create a short program to generate a random directory structure
+  
 ## `getent`
 
 - traverse the password database using the `(set|get|end)pwent` and print all
