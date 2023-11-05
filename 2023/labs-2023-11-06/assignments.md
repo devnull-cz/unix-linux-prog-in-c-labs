@@ -107,7 +107,7 @@ $ cal | head -1 | tr '[[:lower:]]' '[[:upper:]]'
 ```
 
 - This task is good for understanding that by common code you actually need to
-  manage three different processes.
+  manage three different kinds of processes.
 
 - If it prints what you expect but hangs after that, you forgot to close all the
   needed descriptors you were supposed to close.
