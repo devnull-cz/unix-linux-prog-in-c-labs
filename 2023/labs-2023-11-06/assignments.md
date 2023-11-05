@@ -32,7 +32,7 @@ usage: `./a.out <zombie_num>`
 
 ## sub-task
 
-Fix the zombie problem.
+Fix the zombie problem. Either use one of the `wait` syscalls or try handling `SIGCHLD`.
 
 
 ## `pipe`
