@@ -44,8 +44,8 @@ ls / | wc -l
 
 ## `pipe` with not closing some descriptors
 
-- In the notes below slide "Example: a pipe between two processes", we mentioned
-  what may happen if we do not close two file descriptors (one in the consumer,
+- In the notes below slide "Example: a pipe between two processes", it was mentioned
+  what may happen if two file descriptors are not closed (one in the consumer,
   the other one in the producer).
 
 - one by one, do no close it and figure out how to verify that it may lead to
