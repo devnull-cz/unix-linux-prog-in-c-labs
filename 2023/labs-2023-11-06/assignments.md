@@ -16,6 +16,8 @@ shared libraries that implement this plugin framework API.
 Gracefully skip the libraries that do not adhere to the plugin framework APIs.
 Copy one of the system libraries (from e.g. `/usr/lib` directory) to the current directory to test this out.
 
+Implement `init` and `fini` functions for the libraries that will print a label (library name and whether this is init or fini) to `stdout`.
+
 # Zombie army
 
 Create a program that produces selected number of zombies and then exits.
