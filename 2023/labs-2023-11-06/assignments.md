@@ -20,7 +20,7 @@ Implement `init` and `fini` functions for the libraries that will print a label 
 
 # Zombie army
 
-Create a program that produces selected number of zombies and then exits.
+Create a program that produces given number of zombies (`argv[1]`) and then exits.
 Observe the zombies being handled by the init(8) process.
 
 Check the state of the zombie processes with ps(1).
