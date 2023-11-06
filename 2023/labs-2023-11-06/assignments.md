@@ -103,7 +103,7 @@ unix-linux-prog-in-c-src/wait$ head -34 wait.c
 
 ```
 $ cal | head -1 | tr '[[:lower:]]' '[[:upper:]]'
-   NOVEMBER 2020
+   NOVEMBER 2023
 ```
 
 - This task is good for understanding that by common code you actually need to
