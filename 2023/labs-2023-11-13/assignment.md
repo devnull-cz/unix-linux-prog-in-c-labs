@@ -13,6 +13,7 @@
     - to simulate unreachable hosts
     - some firewalls (e.g. PF on OpenBSD) can simulate packet loss with certain probability
   - tools to simulate certain latency and/or bandwidth
+    - e.g. https://github.com/Shopify/toxiproxy
   - syscall error injection (`strace` can do it)
 
 # TCP experiments
