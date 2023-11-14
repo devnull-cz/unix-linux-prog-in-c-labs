@@ -203,10 +203,10 @@ jobs:
         os: [ubuntu-latest, macos-latest]
     steps:
     - name: Checkout master branch
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: build
       run: make
-    - uses: actions/setup-python@v2
+    - uses: actions/setup-python@v3
       with:
         python-version: "3.10"
     - name: Install test dependencies
