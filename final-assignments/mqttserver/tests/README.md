@@ -12,6 +12,11 @@ pip install -r requirements.txt
 pytest
 ```
 
+or to run an individual test (assuming activated Python virtual environment):
+```
+pytest functional/test_keepalive.py
+```
+
 ## Github Actions
 
 You can set up your Github repository so that the tests run via Github action on push.
