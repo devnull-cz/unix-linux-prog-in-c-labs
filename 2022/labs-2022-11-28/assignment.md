@@ -9,7 +9,7 @@
 	- when locked, picks a random number of seconds, and each second prints
 	  out its PID to the **standard error** output
 - you should print helpful debugging messages
-- test with multiple processes, each started from the same terminal.  One one
+- test with multiple processes, each started from the same terminal.  Only one
   should be writing at every single moment.
 
 ## `shlock`
