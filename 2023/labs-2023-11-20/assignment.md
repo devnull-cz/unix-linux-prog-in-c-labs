@@ -2,7 +2,8 @@
 
 ## reader
 
-Finish the _exercise to the reader_ in [`select/select.c`](https://github.com/devnull-cz/unix-linux-prog-in-c-src/blob/master/select/select.c).
+- convert the code to be AF agnostic
+- Finish the _exercise to the reader_ in [`select/select.c`](https://github.com/devnull-cz/unix-linux-prog-in-c-src/blob/master/select/select.c).
 
 ## writer to full pipe
 
