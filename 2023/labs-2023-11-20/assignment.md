@@ -16,5 +16,5 @@ Q: what happens if a non-blocking socket cannot receive any more writes ? (e.g. 
 Try with a sequence of small buffers or singular large buffer.
 
 You can use the example in 
-[`select/write-select.c`](https://github.com/devnull-cz/unix-linux-prog-in-c-src/blob/master/select/write-select.c).
+[`select/write-select.c`](https://github.com/devnull-cz/unix-linux-prog-in-c-src/blob/master/select/write-select.c)
 as a basis.
