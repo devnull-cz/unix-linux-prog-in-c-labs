@@ -12,7 +12,7 @@ What happens if using non-blocking fd for writing into pipe that is full ?
 
 # writer to full socket
 
-Q: what happens if non-blocking socket cannot receive any more writes ? (e.g. if the TCP window is full or reduced by the other side).
+Q: what happens if a non-blocking socket cannot receive any more writes ? (e.g. if the TCP window is full or reduced by the other side).
 Try with a sequence of small buffers or singular large buffer.
 
 You can use the example in 
