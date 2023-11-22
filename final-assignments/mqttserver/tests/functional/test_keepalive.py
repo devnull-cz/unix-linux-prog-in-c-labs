@@ -46,6 +46,8 @@ def test_keepalive(mqtt_server, keep_alive_timeout):
     logger.debug(f"sleeping for {sleep_period} seconds")
     time.sleep(sleep_period)
     # Will wait for PINGRESP for keep_alive seconds. Should not get anything back.
-    with pytest.raises(MQTT.MMQTTException):
+    # While on Linux this raises MMQTTException (Unable to receive 1 bytes within 8 seconds.),
+    # on macOS this leads to ConnectionResetError.
+    with pytest.raises((MQTT.MMQTTException, ConnectionResetError)):
         logger.debug("pinging the server")
         mqtt_client.ping()
