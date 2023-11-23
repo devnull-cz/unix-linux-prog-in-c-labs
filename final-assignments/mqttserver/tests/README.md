@@ -17,6 +17,16 @@ or to run an individual test (assuming activated Python virtual environment):
 pytest functional/test_keepalive.py
 ```
 
+## Tracking changes
+
+Each group of tests is versioned. The version is embedded in the respective
+`__init__.py` file for each Python package, e.g. `functional/__init__.py`
+contains the `VERSION` variable.
+
+The `VERSION` value is bumped for each non-trivial change.
+
+Always make sure you have the latest tests.
+
 ## Github Actions
 
 You can set up your Github repository so that the tests run via Github action on push.
