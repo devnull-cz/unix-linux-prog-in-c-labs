@@ -40,6 +40,16 @@ def test_keepalive(mqtt_server, keep_alive_timeout):
 
     logger.debug(f"connecting with keep alive = {keep_alive_timeout}")
     mqtt_client.connect()
+    ensure_keep_alive(keep_alive_timeout, logger, mqtt_client)
+
+
+def ensure_keep_alive(keep_alive_timeout, logger, mqtt_client):
+    """
+    Sleep 2 * keep_alive_timeout and then send PINGREQ.
+    """
+    # workaround for https://github.com/adafruit/Adafruit_CircuitPython_MiniMQTT/issues/189
+    mqtt_client.keep_alive = mqtt_client._recv_timeout
+
     # The MQTT spec says not hearing from the client for 1.5 times keep alive timeout
     # means it can be considered dead and disconnected.
     sleep_period = 2 * keep_alive_timeout
