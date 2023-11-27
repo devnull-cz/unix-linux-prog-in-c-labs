@@ -1,7 +1,7 @@
 ## a simple example on threads
 
 - `./a.out <n>`
-- allocate array of `n` elements in `main`
+- allocate array of `n` integer elements in `main`
 - create `n` threads
 - each thread will get an address of its array element
 - each thread will generate a random number to that location
