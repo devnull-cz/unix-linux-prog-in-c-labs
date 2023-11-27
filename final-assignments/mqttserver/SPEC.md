@@ -36,6 +36,7 @@ even though the code size is not that big.
 This specification will likely have to be adjusted/completed. Here is the list of changes done:
 
 - 2023/11/18: move the testing information to the `tests` subdirectory
+- 2023/11/27: add a note about Remaining length for SUBSCRIBE/PUBLISH packets in the MQTT specification
 
 ## Basic information
 
@@ -109,6 +110,14 @@ There are some exceptions to this rule, though:
 
 The topics are to be treated as opaque sequences of characters,
 A topic containing wildcard characters (such as `#`) should be refused, i.e. the client disconnected.
+
+#### Remaining length bug in the MQTT spec
+
+It seems that the MQTT specificaion contains a bug w.r.t. the Remaining length (2.2.3).
+For the SUBSCRIBE and PUBLISH packets the Fixed header example has `byte 2` instead of `byte 2...`
+in sections 3.3.1 and 3.8.1, respectively. This might lead some to think that field should be 1 byte only.
+The elipsis is signifying that the Remaining length can be encoded as multiple bytes like in the CONNECT packet
+fixed header (section 3.1.1) where it is correctly specified with the elipsis.
 
 ### Choice of APIs
 
