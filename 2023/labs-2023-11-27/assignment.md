@@ -21,9 +21,7 @@ Use Apache `ab(1)` with options `-c` and `-n` to verify it works correctly.
 You might need to act as an web server to a certain level (e.g. return a simple
 HTML page).
 
-Alternatively, as a simpler task, take some existing TCP code from our repo and
-create a new thread for each accepted connection, and just write the data on the
-standard output.  Verify it works correctly.
+You can reuse existing TCP code from the src repo.
 
 ## GNU pth thread library
 
