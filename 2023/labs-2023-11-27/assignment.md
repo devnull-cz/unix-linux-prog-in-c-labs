@@ -23,6 +23,8 @@ Choose a document root and serve the files within. Implement basic status codes 
 
 Using blocking file descriptors throughout the code is fine.
 
+Use `curl`/`wget` for simple functional test. For the former you can use the `--http1.0` command line option to issue HTTP 1.0 request.
+
 Use Apache benchmark `ab(1)` (delivered via the `apache2-utils` package on Ubuntu) 
 with options `-c` and `-n` to verify it works correctly.
 
