@@ -24,6 +24,8 @@ Choose a document root and serve the files within. Implement basic status codes 
 Use Apache benchmark `ab(1)` (delivered via the `apache2-utils` package on Ubuntu) 
 with options `-c` and `-n` to verify it works correctly.
 
+Consider thread stack size limit w.r.t. the buffer used in the worker threads for the read/write loop.
+
 You can reuse existing TCP code from the [src repo](https://github.com/devnull-cz/unix-linux-prog-in-c-src).
 
 ## GNU pth thread library
