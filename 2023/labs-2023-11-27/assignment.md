@@ -13,7 +13,7 @@ Note that given that each thread will get its own array element to store the
 random number to, there is no need to sychronize (that API will be in the next
 lecture anyway).
 
-## threaded server
+## multi-threaded HTTP 1.0 server
 
 Implement multi-threaded HTTP 1.0 server with `GET` support for static files. 
 Use a new thread for every accepted connection.
