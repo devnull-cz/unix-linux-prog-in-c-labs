@@ -17,7 +17,7 @@ lecture anyway).
 
 Implement multi-threaded HTTP 1.0 server with `GET` support for static plaintext files 
 (i.e. the `Content-type: text/plain` header will be sent). 
-Use a new thread for every accepted connection. Make sure the main thread does not have to join the finished threads.
+Use a new thread for every accepted connection. Make sure the main thread (or any thread) does not have to join the finished threads.
 Choose a document root and serve the files within. Implement basic status codes (200, 404) for the responses.
 
 Use Apache benchmark `ab(1)` (delivered via the `apache2-utils` package on Ubuntu) 
