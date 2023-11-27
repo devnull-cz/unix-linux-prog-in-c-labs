@@ -21,7 +21,7 @@ Use Apache `ab(1)` with options `-c` and `-n` to verify it works correctly.
 You might need to act as an web server to a certain level (e.g. return a simple
 HTML page).
 
-You can reuse existing TCP code from the src repo.
+You can reuse existing TCP code from the [src repo](https://github.com/devnull-cz/unix-linux-prog-in-c-src).
 
 ## GNU pth thread library
 
