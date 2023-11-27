@@ -32,8 +32,8 @@ link it to your source code using pthread API.
 Verify the library is really used (on Linux though, it should be easy as gcc
 will not automatically link against a pthread library).
 
-That is, you will not do `gcc -pthread` but rather something like `gcc -L. -R.
--lpth ...`.  See the lecture materials, section on the dynamic linker.
+That is, you will not do `gcc -pthread` but rather something like `gcc -lpth ...`. 
+See the lecture materials, section on the dynamic linker.
 
 # POSIX semaphores
 
