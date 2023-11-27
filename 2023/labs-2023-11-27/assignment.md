@@ -15,8 +15,11 @@ lecture anyway).
 
 ## threaded server
 
-Do the same thing as with the 1st assignment but instead of `select`, use a new
-thread for every accepted connection.
+Implement multi-threaded HTTP server. Use a new thread for every accepted connection.
+
+Use Apache `ab(1)` with options `-c` and `-n` to verify it works correctly.
+You might need to act as an web server to a certain level (e.g. return a simple
+HTML page).
 
 Alternatively, as a simpler task, take some existing TCP code from our repo and
 create a new thread for each accepted connection, and just write the data on the
