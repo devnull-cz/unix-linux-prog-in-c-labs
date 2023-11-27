@@ -15,7 +15,9 @@ lecture anyway).
 
 ## threaded server
 
-Implement multi-threaded HTTP server. Use a new thread for every accepted connection.
+Implement multi-threaded HTTP 1.0 server with `GET` support for static files. 
+Use a new thread for every accepted connection.
+Choose a document root and serve the files within. Implement basic status codes (200, 404) for the responses.
 
 Use Apache `ab(1)` with options `-c` and `-n` to verify it works correctly.
 You might need to act as an web server to a certain level (e.g. return a simple
