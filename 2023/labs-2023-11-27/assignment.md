@@ -16,7 +16,7 @@ lecture anyway).
 ## multi-threaded HTTP 1.0 server
 
 Implement multi-threaded HTTP 1.0 server with `GET` support for static plaintext files 
-(i.e. the `Content-type: text/plain` header will be sent). 
+(i.e. the `Content-type: text/plain` header will be sent). Assume correctly formed requests.
 Use a new thread for every accepted connection. Make sure the main thread (or any thread) does not have to join the finished threads.
 Choose a document root and serve the files within. Implement basic status codes (200, 404) for the responses.
 
