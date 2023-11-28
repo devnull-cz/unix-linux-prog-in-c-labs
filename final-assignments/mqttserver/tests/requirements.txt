@@ -1,5 +1,4 @@
-# freeze the MiniMQTT library because of the workaround in test_keepalive.py
-adafruit-circuitpython-minimqtt==7.4.2
+adafruit-circuitpython-minimqtt
 pytest
 paho-mqtt
 pytest-timeout

@@ -19,13 +19,6 @@ def test_keepalive(mqtt_server, keep_alive_timeout):
     logger = logging.getLogger(__name__)
     logger.setLevel(logging.DEBUG)
 
-    # workaround for Adafruit MiniMQTT client bug:
-    #   https://github.com/adafruit/Adafruit_CircuitPython_MiniMQTT/issues/185
-    #
-    # Paho MQTT client sends the keep alive value correctly, however
-    # does not have such easy way to detect that the connection was closed.
-    MQTT.MQTT_HDR_CONNECT = bytearray(b"\x04MQTT\x04\x02\0\0")
-
     host = "localhost"
     port = mqtt_server.port
     mqtt_client = MQTT.MQTT(
