@@ -1,4 +1,4 @@
-# 0. warm-up: report divisors of numbers in range [1, N]
+# warm-up: report divisors of numbers in range [1, N]
    - create M threads (start with M = number of online CPUs in the system as reported by sysconf(3)
      - each thread computes the divisors of given number and then proceeds to the next number
        - or make it a tunable (a define or program option) and see what works best on given system
@@ -63,4 +63,14 @@
 	Best number: 83160 (divisors 128)
 ```
 
+# multiple alarm scheduler
 
+Design a solution for multiple alarms/callbacks in multithreaded environment. Each alarm will have the following properties:
+  - number of seconds starting from now after which the alarm expires
+  - argument (`void *`)
+  - callback function (`void (*callback)(void *);`)
+
+Once the alarm expires, the callback function will be called with given argument. It can be expected that potentially many threads will register
+alarms at once. The precision is seconds is fine.
+
+You can start with simple/naive implementationa and then refine it to a more effective (and possibly sophisticated) one.
