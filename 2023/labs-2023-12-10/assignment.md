@@ -1,4 +1,4 @@
-# warm-up: report divisors of numbers in range [1, N]
+# report divisors of numbers in range [1, N]
    - create M threads (start with M = number of online CPUs in the system as reported by sysconf(3)
      - each thread computes the divisors of given number and then proceeds to the next number
        - or make it a tunable (a define or program option) and see what works best on given system
