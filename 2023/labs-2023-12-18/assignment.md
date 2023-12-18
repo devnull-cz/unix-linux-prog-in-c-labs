@@ -1,3 +1,8 @@
+# barrier
+
+Implement the APIs for POSIX barrier.
+
+You can use `pthread-barrier.c` from the src repository for testing.
 
 # multiple alarm scheduler
 
