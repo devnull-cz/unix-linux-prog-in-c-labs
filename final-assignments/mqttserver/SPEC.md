@@ -37,6 +37,7 @@ This specification will likely have to be adjusted/completed. Here is the list o
 
 - 2023/11/18: move the testing information to the `tests` subdirectory
 - 2023/11/27: add a note about Remaining length for SUBSCRIBE/PUBLISH packets in the MQTT specification
+- 2024/01/01: add note about RETAIN flag for the PUBLISH message
 
 ## Basic information
 
@@ -98,6 +99,7 @@ As said above, only a subset of features is to be implemented. Here is a list of
     do not have to be handled.
   - None of the functionality given by the `CONNECT` message flags (as per 3.1.2.3 Connect Flags) has to be
     supported. E.g. the RETAIN flag, Will, Username/password, etc.
+  - Likewise, the functionality related to the flags in the PUBLISH message (e.g. the RETAIN flag) does not have to be implemented
   - message delivery retry (4.4). Given that QoS > 0 is not to be implemented, this does not have to be implemented.
     Same goes for message ordering (4.6)
 
