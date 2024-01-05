@@ -38,6 +38,7 @@ This specification will likely have to be adjusted/completed. Here is the list o
 - 2023/11/18: move the testing information to the `tests` subdirectory
 - 2023/11/27: add a note about Remaining length for SUBSCRIBE/PUBLISH packets in the MQTT specification
 - 2024/01/01: add note about RETAIN flag for the PUBLISH message
+- 2024/01/05: add note on the provided tests
 
 ## Basic information
 
@@ -182,7 +183,10 @@ There are other tools that can help with general troubleshooting and/or problem 
 
 ## Testing
 
-Basic set of unit tests is located in the `tests` directory.
+Basic set of unit tests is located in the `tests` directory. These tests have only very basic
+coverage of the **subset** of the specification. These serve basically as a [smoke test](https://en.wikipedia.org/wiki/Smoke_testing_(software)),
+meaning that if the program passes these tests, it can be made subject to more thorough testing
+and review. Passing these tests does not imply that the assignment is accepted.
 
 ## Scaling
 
