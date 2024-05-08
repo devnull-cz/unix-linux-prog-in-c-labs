@@ -50,7 +50,7 @@ jobs:
         os: [ubuntu-latest, macos-latest]
     steps:
     - name: Checkout master branch
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: build
       run: make
     - uses: actions/setup-python@v3
