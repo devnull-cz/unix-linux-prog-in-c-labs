@@ -25,7 +25,7 @@ Think about the program first, only then run it. Does the runtime match your exp
 
 ## Write a program that..
 
-- will define a void pointer to self
+- will define a `void` pointer to self
   - verify that this is the case via debugger (or debug prints)
 
 - prints program arguments (including the name of the program itself),
@@ -43,7 +43,7 @@ Think about the program first, only then run it. Does the runtime match your exp
     - https://www.ioccc.org/
     - how many characters does the program have in total ?
 
-- displays a indication by rotating dash/slash/etc. characters
+- displays an indication by rotating dash/slash/etc. characters
   - printing `\r` will clean the line and revert back to beginning
   - need to `fflush()` the output buffer after each character
   - to sleep under one second use `poll(NUll, 0, <value_in_msec>);`
@@ -52,7 +52,7 @@ Think about the program first, only then run it. Does the runtime match your exp
   - use a reasonable hard coded line length
 
 - will detect if the system is little/big endian machine
-  - use only basic C (no system/library calls besides printf())
+  - use only basic C (no system/library calls besides `printf()`)
   - there are multiple ways to do it
   - use assert() to make sure the type sizes are what you expect
 
@@ -67,10 +67,9 @@ Think about the program first, only then run it. Does the runtime match your exp
 
 - will print (to stdout) only the penultimate line of input received on stdin
   - use getline(3)
-  - be conservative in memory usage, use malloc()/free() to allocate the memory
-    - hint: array of 2 pointers, strdup()
+  - be conservative in memory usage, use `malloc()`/`free()` to allocate the memory
+    - hint: array of 2 pointers, `strdup()`
   - exit with error in case of invalid input (at least 2 lines are required)
   - written test cases ?
     - see https://github.com/devnull-cz/stef
-      - also remember Github actions (e.g. to automatically run the tests for
-	each integration)
+      - also remember Github actions (e.g. to automatically run the tests for each integration)
