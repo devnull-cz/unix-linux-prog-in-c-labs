@@ -47,6 +47,7 @@ Think about the program first, only then run it. Does the runtime match your exp
   - printing `\r` will clean the line and revert back to beginning
   - need to `fflush()` the output buffer after each character
   - to sleep under one second use `poll(NUll, 0, <value_in_msec>);`
+    - or use usleep(3) (deprecated by POSIX but oh well) or nanosleep(3) 
 
 - will display a moving star (`*`) that is going back and forth on the same line
   - use a reasonable hard coded line length
