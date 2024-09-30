@@ -55,7 +55,7 @@ Think about the program first, only then run it. Does the runtime match your exp
 - will detect if the system is little/big endian machine
   - use only basic C (no system/library calls besides `printf()`)
   - there are multiple ways to do it
-  - use assert() to make sure the type sizes are what you expect
+  - use `assert()` to make sure the type sizes are what you expect
 
 - implements linked list
   - fill the list with program arguments
