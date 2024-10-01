@@ -13,6 +13,38 @@
 
 - demonstrate how to use Github + Github actions
 
+1. In you repository, create source code file called `foo.c`
+1. In your repository, create file `.github/workflows/build.yml` (basename does not matter) with the following content:
+```yaml
+name: Build
+
+on:
+  push:
+    paths-ignore:
+    - README.md
+  schedule:
+  - cron: "0 0 * * 0"
+
+jobs:
+  build:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+    - name: Checkout master branch
+      uses: actions/checkout@v4
+    - name: build
+      run: gcc foo.c
+    - name: run
+      run: ./a.out
+```
+
+This will make Github Actions run the sequence of tasks for each item in the matrix on push (and also weekly based on the `cron` schedule), 
+in this case on Ubuntu and macOS. This can be further parametrized, e.g. for various compiler implementations/versions.
+
 # Tasks
 
 ## Trivia
