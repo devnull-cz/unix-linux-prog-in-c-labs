@@ -12,6 +12,7 @@
 # Makefile
 - write a makefile for the previous task
 - use `touch(1)` to verify you only rebuild what is necessary and nothing else
+  - the `-n` (no-op) option of `make` is useful for this
 
 # libmin, libmax and makefiles
 
