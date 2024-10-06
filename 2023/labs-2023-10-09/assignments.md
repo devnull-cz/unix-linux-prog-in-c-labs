@@ -60,7 +60,7 @@ similarly to `libmin`, i.e. `libmax.[ch]`, `libmax.so`, ...
 - 1st argument of your command will be now `min` or `max` string and based on
   that a given function will be chosen (and therefore the specific library will
   be used)
-  - or better yet, create hardlinks named `min` and `max`, both pointing to the `prog`, and switch the behavior of the program based on the program name
+  - or better yet, create symlinks or hardlinks named `min` and `max`, both pointing to the `prog`, and switch the behavior of the program based on the program name
 
 - use hierarchical build:
 ```
