@@ -28,8 +28,8 @@ int min(int a[], ssize_t len); // return minimum value
 ```
 - the library source will comprise of the following two files:
   - `libmin.h`
-  - `libmin.c` - will include libmin.h
-- the program will be in `main.c`, compiled into `main` binary and will be
+  - `libmin.c` - will include `libmin.h` (handy for interface checking)
+- the program will be in `main.c`, compiled into `prog` binary and will be
   dynamically linked against `libmin.so`
 - `main.c` assumes valid numbers as its command line arguments
 - create a numbered array in `main()` (see the prototype above), fill it with
@@ -40,7 +40,7 @@ int min(int a[], ssize_t len); // return minimum value
   - `libmin.so` is a dynamic library
   - `libmin.so` defines the `min` function (rather than taking it from
     elsewhere)
-  - `main` is linked against `libmin.so`
+  - `prog` is linked against `libmin.so`
 
 ## Construct a Makefile for the above
 
@@ -56,10 +56,11 @@ int min(int a[], ssize_t len); // return minimum value
 
 similarly to `libmin`, i.e. `libmax.[ch]`, `libmax.so`, ...
 
-- and link main with both libraries
+- and link `prog` with both libraries
 - 1st argument of your command will be now `min` or `max` string and based on
   that a given function will be chosen (and therefore the specific library will
   be used)
+  - or better yet, create hardlinks named `min` and `max`, both pointing to the `prog`, and switch the behavior of the program based on the program name
 
 - use hierarchical build:
 ```
