@@ -77,3 +77,4 @@ libmax/
     level `Makefile`, run e.g. `cd libmin; make` as the command to refresh the
     (empty) target.  Do not put dependencies from subdirectories into the top
     level `Makefile`.
+  - bonus task: figure out how to run the "builds" in `libmin` and `libmax` in parallel and then once both are done, link `prog`
