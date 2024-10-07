@@ -1,5 +1,13 @@
 # Linker and libraries
 
+## minimal linker options for trivial program
+
+Write a trivial program (where e.g. `main()` calls `printf()` and exits) and run the compiler with the `-###` option
+to see the linker options used to build the binary. Compile the program using the `-c` compiler option
+and `ld`, using the options from the `-###` run. Try to reduce the set of linker options to minimum (so that the program still runs).
+
+## runtime path vs. library search path
+
 - write two dynamic libraries, `liba.so` and `libb.so`, and a program `prog` (compiled from `main.c`)
 - `liba` will define a function `fna` which calls a function `fnb`
 - function `fnb` will be defined in `libb`
