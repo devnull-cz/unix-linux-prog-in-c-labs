@@ -1,3 +1,11 @@
+# Leaky
+
+write a program that leaks fds on purpose, by calling open() or dup() in a endless cycle.
+Observe when the respective syscall will start returning -1. What is the `errno` value ?
+
+Retrieve the limit of open file descriptors using `getrlimit()` and `sysconf()`. Then raise the limit using
+`setrlimit()` and see if it had any effect (it should).
+
 # File API: `cat`
 
 Implement a `cat` command (like in `read/cat.c` but do **not** look at that code
