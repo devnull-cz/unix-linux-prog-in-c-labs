@@ -6,6 +6,8 @@ Observe when the respective syscall will start returning -1. What is the `errno`
 Retrieve the limit of open file descriptors using `getrlimit()` and `sysconf()`. Then raise the limit using
 `setrlimit()` and see if it had any effect (it should).
 
+Q: how to debug file descriptor leaks ?
+
 # File API: `cat`
 
 Implement a `cat` command (like in `read/cat.c` but do **not** look at that code
