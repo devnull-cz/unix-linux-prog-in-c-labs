@@ -53,7 +53,7 @@ x........x
 x........x
 ```
 
-- you can assume (or enforce in the program) and the number is even and bigger or equal to 4
+- you can assume (or enforce in the program) that the number is even and bigger or equal to 4
 - if the file does not exist, create it. If it exists, truncate it.
 - use a single `write` to fill the file with dots (`.`)
 - use `lseek` and `write(.., .., 1)` to write the `x` characters and the
