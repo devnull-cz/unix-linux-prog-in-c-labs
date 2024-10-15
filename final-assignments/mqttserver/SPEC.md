@@ -54,6 +54,7 @@ with the `-p` command line option that supports numeric option argument.
 There should be a `Makefile` that by default produces binary called `mqttserver` with the default target.
 Ideally, use makefile syntax that is common across different `make` implementations,
 so that the `make` can be run without relying e.g. on GNU or BSD extensions.
+If you deem necessary to rely on specific `make` implementation, please state so in the comments in the makefile.
 
 The `Makefile` should use the `$(CC)` macro for the compiler, so that the compiler
 can be overridden.
