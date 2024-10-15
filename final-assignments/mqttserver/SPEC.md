@@ -39,6 +39,7 @@ This specification will likely have to be adjusted/completed. Here is the list o
 - 2023/11/27: add a note about Remaining length for SUBSCRIBE/PUBLISH packets in the MQTT specification
 - 2024/01/01: add note about RETAIN flag for the PUBLISH message
 - 2024/01/05: add note on the provided tests
+- 2024/10/15: add note on makefile syntax and running the server on different Unix systems
 
 ## Basic information
 
@@ -50,7 +51,10 @@ with the `-p` command line option that supports numeric option argument.
 
 ### Compilation
 
-There should be a `Makefile` that by default produces binary called `mqttserver`.
+There should be a `Makefile` that by default produces binary called `mqttserver` with the default target.
+Ideally, use makefile syntax that is common across different `make` implementations,
+so that the `make` can be run without relying e.g. on GNU or BSD extensions.
+
 The `Makefile` should use the `$(CC)` macro for the compiler, so that the compiler
 can be overridden.
 This is important so that a lecturer can run the tests on submitted code
@@ -71,6 +75,10 @@ Firstly, when in doubt what about the specification, ask on the mailing list.
 You will find pointer to the mailing list on the [course page](https://devnull-cz.github.io/unix-linux-prog-in-c/).
 
 ### General
+
+Although the server will be primarily tested on Linux, it should be possible to run the server on different Unix systems,
+because it relies on standard set of interfaces which should have the same behavior everywhere.
+I will test the imlementation on Gentoo Linux in the lab, then possibly on different Unixes (macOS, OpenBSD, maybe Solaris).
 
 It must be possible to restart the server gracefully even if there are lingering client connections present
 at the time it is being terminated, i.e. it should not wait for the connections to close correctly
