@@ -109,6 +109,20 @@ f: /home/vkotal/MFF/Unix/unix-linux-prog-in-c-src/readdir/foo
      nonexistent - No such file or directory
 ```
 
+Bonus sub-task: implement the `-x` option to display the mount points, e.g.:
+```
+$ namei -x /media/vkotal/KINGSTON/UNIX/raw.c 
+f: /media/vkotal/KINGSTON/UNIX/raw.c
+ D /
+ d media
+ d vkotal
+ D KINGSTON
+ d UNIX
+ - raw.c
+```
+
+Again, use `strace` to see what it does (esp. w.r.t. `/`).
+
 # simple `find`
 
 Implement:
