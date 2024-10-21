@@ -92,6 +92,22 @@ f: /usr/bin/java
      d bin
      - java
 ```
+The `strerror()` is written next to the path component on error, e.g.:
+```
+$ namei $PWD/foo
+f: /home/vkotal/MFF/Unix/unix-linux-prog-in-c-src/readdir/foo
+ d /
+ d home
+ d vkotal
+ d MFF
+ d Unix
+ d unix-linux-prog-in-c-src
+ d readdir
+ l foo -> /etc/nonexistent
+   d /
+   d etc
+     nonexistent - No such file or directory
+```
 
 # simple `find`
 
