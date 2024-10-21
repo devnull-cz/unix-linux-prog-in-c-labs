@@ -5,6 +5,69 @@
 3. create path longer than `PATH_MAX`, `cd` into it and run a program which will call `getcwd()` with buffer longer than `PATH_MAX`
   - on Glibc, you can try passing `NULL` as a buffer. Trace the system calls of the program to see what happens under the hood.
 
+NetBSD's getcwd (`lib/libc/gen/getcwd.c`):
+```C
+
+char *
+__ssp_real(getcwd)(char *pt, size_t size)
+{
+    char *npt;
+
+    /*
+     * If a buffer is specified, the size has to be non-zero.
+     */
+    if (pt != NULL) {
+        if (size == 0) {
+            /* __getcwd(pt, 0) results ERANGE. */
+            errno = EINVAL;
+            return (NULL);
+        }
+        if (__getcwd(pt, size) >= 0)
+            return (pt);
+        return (NULL);
+    }
+
+    /*
+     * If no buffer specified by the user, allocate one as necessary.
+     */
+    size = 1024 >> 1;
+    do {
+        if ((npt = realloc(pt, size <<= 1)) == NULL)
+            break;
+        pt = npt;
+        if (__getcwd(pt, size) >= 0)
+            return (pt);
+    } while (size <= MAXPATHLEN * 4 && errno == ERANGE);
+
+    free(pt);
+    return (NULL);
+}
+```
+
+musl libc (`src/unistd/getcwd.c`):
+```C
+
+char *getcwd(char *buf, size_t size)
+{
+	char tmp[buf ? 1 : PATH_MAX];
+	if (!buf) {
+		buf = tmp;
+		size = sizeof tmp;
+	} else if (!size) {
+		errno = EINVAL;
+		return 0;
+	}
+	long ret = syscall(SYS_getcwd, buf, size);
+	if (ret < 0)
+		return 0;
+	if (ret == 0 || buf[0] != '/') {
+		errno = ENOENT;
+		return 0;
+	}
+	return buf == tmp ? strdup(buf) : buf;
+}
+```
+
 # `namei`
 
 Implement the `namei(1)` program.
