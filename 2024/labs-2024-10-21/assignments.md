@@ -70,7 +70,7 @@ char *getcwd(char *buf, size_t size)
 
 # `namei`
 
-Implement the `namei(1)` program.
+Implement the `namei(1)` program. You can `strace` the execution of `namei` to see what syscalls it uses to perform its job.
 
 Example output (on Ubuntu):
 ```
