@@ -22,6 +22,31 @@ $ ./a.out infile outfile
   `1` until `read` returns 0 (or an error).
 - verify with `diff` that `infile` and `outfile` are identical
 
+# `namei`
+
+Implement the `namei(1)` program.
+
+Example output (on Ubuntu):
+```
+$ namei /usr/bin/java
+f: /usr/bin/java
+ d /
+ d usr
+ d bin
+ l java -> /etc/alternatives/java
+   d /
+   d etc
+   d alternatives
+   l java -> /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+     d /
+     d usr
+     d lib
+     d jvm
+     d java-17-openjdk-amd64
+     d bin
+     - java
+```
+
 # simple `find`
 
 Implement:
@@ -29,8 +54,10 @@ Implement:
 find /etc/ -type f -name '*foo*'
 ```
 
-Extra: implement the `-mount` option (i.e. do not descent into other
-file-systems)
+Extra:
+  - implement the `-mount` option (i.e. do not descent into other file-systems)
+  - `-maxdepth`
+  - `-mmin`
 
 # retouch
 
