@@ -1,26 +1,9 @@
+# getcwd vs limits
 
-# env (warm-up)
-
-TODO:
-
-# Redirection
-
-Implement:
-
-```
-$ cat <infile >outfile
-```
-
-via:
-
-```
-$ ./a.out infile outfile
-```
-
-- do the redirection in your code, create or truncate the `outfile` if needed
-- then implement a simple loop that reads from file descriptor `0` and writes to
-  `1` until `read` returns 0 (or an error).
-- verify with `diff` that `infile` and `outfile` are identical
+1. find the value of `PATH_MAX` on your system
+2. see if that corresponds to the value returned by `pathconf(homedir , _PC_PATH_MAX)` where `homedir` is your home directory
+3. create path longer than `PATH_MAX`, `cd` into it and run a program which will call `getcwd()` with buffer longer than `PATH_MAX`
+  - on Glibc, you can try passing `NULL` as a buffer. Trace the system calls of the program to see what happens under the hood.
 
 # `namei`
 
