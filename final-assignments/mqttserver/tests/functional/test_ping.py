@@ -31,3 +31,5 @@ def test_ping(mqtt_server):
     mqtt_client.connect()
     # Will wait for PINGRESP for keep_alive seconds.
     mqtt_client.ping()
+    # cleanup
+    mqtt_client.disconnect()

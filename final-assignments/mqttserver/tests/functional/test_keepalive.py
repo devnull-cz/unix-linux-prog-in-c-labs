@@ -40,17 +40,17 @@ def ensure_keep_alive(keep_alive_timeout, logger, mqtt_client):
     """
     Sleep 2 * keep_alive_timeout and then send PINGREQ.
     """
-    # workaround for https://github.com/adafruit/Adafruit_CircuitPython_MiniMQTT/issues/189
-    mqtt_client.keep_alive = mqtt_client._recv_timeout
-
     # The MQTT spec says not hearing from the client for 1.5 times keep alive timeout
     # means it can be considered dead and disconnected.
     sleep_period = 2 * keep_alive_timeout
     logger.debug(f"sleeping for {sleep_period} seconds")
     time.sleep(sleep_period)
-    # Will wait for PINGRESP for keep_alive seconds. Should not get anything back.
+    # Will wait for the PINGRESP message for keep_alive seconds. Should not get anything back.
     # While on Linux this raises MMQTTException (Unable to receive 1 bytes within 8 seconds.),
     # on macOS this leads to ConnectionResetError.
     with pytest.raises((MQTT.MMQTTException, ConnectionResetError)):
         logger.debug("pinging the server")
         mqtt_client.ping()
+
+    # Cleanup so the socket is cleared in the ConnectionManager pool used by MiniMQTT.
+    mqtt_client.disconnect()

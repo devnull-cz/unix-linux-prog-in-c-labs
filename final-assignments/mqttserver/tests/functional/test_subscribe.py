@@ -6,9 +6,12 @@ import string
 
 import adafruit_minimqtt.adafruit_minimqtt as MQTT
 
+from . import FakeConnectionManager
+
 from ..common import mqtt_server
 
 RECEIVED_MESSAGES = {}
+
 
 def handle_message(client, topic, message):
     print(f"{client}# {topic}: {message}")
@@ -19,7 +22,7 @@ def handle_message(client, topic, message):
 
 def randomword(length):
     letters = string.ascii_lowercase
-    return ''.join(random.choice(letters) for i in range(length))
+    return "".join(random.choice(letters) for i in range(length))
 
 
 def test_subscribe_to_multiple_topics(mqtt_server):
@@ -34,14 +37,17 @@ def test_subscribe_to_multiple_topics(mqtt_server):
     host = "localhost"
     port = mqtt_server.port
 
+    pool = socket
     mqtt_client_sub = MQTT.MQTT(
         broker=host,
         port=port,
-        socket_pool=socket,
+        socket_pool=pool,
         ssl_context=ssl.create_default_context(),
         connect_retries=1,
         recv_timeout=5,
     )
+
+    mqtt_client_sub._connection_manager = FakeConnectionManager(pool)
 
     logger.info(f"Connecting to MQTT broker (subscriber)")
     mqtt_client_sub.connect()
@@ -58,10 +64,13 @@ def test_subscribe_to_multiple_topics(mqtt_server):
     mqtt_client_pub = MQTT.MQTT(
         broker=host,
         port=port,
-        socket_pool=socket,
+        socket_pool=pool,
         ssl_context=ssl.create_default_context(),
         connect_retries=1,
     )
+
+    mqtt_client_pub._connection_manager = FakeConnectionManager(pool)
+
     logger.info(f"Connecting to MQTT broker (publisher)")
     mqtt_client_pub.connect()
     sent_msgs = {}
