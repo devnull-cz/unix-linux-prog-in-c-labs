@@ -18,7 +18,7 @@ Questions:
   - how many processes will be running ?
   - how exactly will the process hierarchy look like ?
 
-Think first, then verify your hypothesis with `pstree -p -s -t <pid>`.
+Think first, then verify your hypothesis with `pstree -p -s -t <pid>` or by using the `f` output modifier (*process forest*) of `ps`.
 
 Note: this is assuming a system with the `pstree` command (e.g. Linux distribution or FreeBSD).
 
