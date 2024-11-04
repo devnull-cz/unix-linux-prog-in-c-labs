@@ -8,7 +8,7 @@ To run the tests by hand, use these steps:
 ```
 python3 -m venv venv
 . ./venv/bin/activate
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 pytest
 ```
 
