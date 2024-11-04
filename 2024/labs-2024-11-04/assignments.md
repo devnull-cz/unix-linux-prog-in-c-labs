@@ -31,7 +31,7 @@ Run and observe the results.
 
 ## exec `vi -R /etc/passwd`
 
-Do not use `fork()`. Start with `execl()`, then try `execv()`.
+Do not use `fork()`. Start with `execl()`, then try `execv()`. Then try `posix_spawn()`.
 
 ## supply environment variable
 
