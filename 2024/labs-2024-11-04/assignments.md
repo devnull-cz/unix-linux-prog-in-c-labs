@@ -29,7 +29,7 @@ Run and observe the results.
 
 **Note: be warned that it might deplete system resources on the system the program is run on**
 
-## exec `vim -R /etc/passwd`
+## exec `vi -R /etc/passwd`
 
 Do not use `fork()`. Start with `execl()`, then try `execv()`.
 
