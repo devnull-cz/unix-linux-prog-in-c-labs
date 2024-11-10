@@ -49,6 +49,10 @@ ls / | wc -l
 ```
 - Do not use any existing code, just use the slides.
 
+Once you are done with the initial implementation, modify the code to:
+  - use `dup2()` instead of `dup()` for better robustness
+  - designate the fds to be closed as close-on-exec
+
 ## `pipe` with not closing some descriptors
 
 - In the notes below slide "Example: a pipe between two processes", it was mentioned
