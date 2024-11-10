@@ -40,6 +40,10 @@ Fix the zombie problem. Either use one of the `wait` syscalls or try handling `S
 
 # pipes
 
+## detect if pipe is bi- or uni-directional
+
+Construct a program that will show whether given `pipe()` implementation si bi- or uni-directional.
+
 ## simple pipe
 
 - Check out slide "Example: a pipe between two processes" and implement:
