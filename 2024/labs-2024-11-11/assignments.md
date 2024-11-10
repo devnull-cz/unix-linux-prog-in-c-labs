@@ -38,8 +38,9 @@ For this task, cheating is allowed. I.e. you can slow down the "init" process, e
 
 Fix the zombie problem. Either use one of the `wait` syscalls or try handling `SIGCHLD`.
 
+# pipes
 
-## `pipe`
+## simple pipe
 
 - Check out slide "Example: a pipe between two processes" and implement:
 
@@ -56,6 +57,8 @@ ls / | wc -l
 
 - one by one, do no close it and figure out how to verify that it may lead to
   the situation described.
+
+# wait (and pipe)
 
 ## `wait`
 
