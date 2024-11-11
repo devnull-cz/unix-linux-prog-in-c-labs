@@ -36,7 +36,7 @@ For this task, cheating is allowed. I.e. you can slow down the "init" process, e
 
 ## sub-task
 
-Fix the zombie problem. Either use one of the `wait` syscalls or try handling `SIGCHLD`.
+Fix the zombie problem. Either use one of the `wait` syscalls (or can be done by handling the `SIGCHLD` signal).
 
 # pipes
 
