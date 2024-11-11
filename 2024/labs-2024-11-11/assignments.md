@@ -13,7 +13,7 @@ using the dynamic linker APIs. Call `void foo(char *)` for all the libraries fou
 The `foo()` function might e.g. pass the argument to `printf()`. Implement at least 2 different
 shared libraries that implement this plugin framework API.
 
-Gracefully skip the libraries that do not adhere to the plugin framework APIs.
+Gracefully skip the libraries that do not adhere to the plugin framework APIs (i.e. they miss the expected symbol).
 Copy one of the system libraries (from e.g. `/usr/lib` directory) to the current directory to test this out.
 
 Implement `init` and `fini` functions for the libraries that will print a label (library name and whether this is init or fini) to `stdout`.
