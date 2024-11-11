@@ -7,7 +7,7 @@ Write Makefile(s).
 
 # Plugin framework
 
-Produce program that will search for all `*.so` files inside current directory and will load them
+Produce program that will search for all `*.so` files inside directory called `"plugins"` and will load them
 using the dynamic linker APIs. Call `void foo(char *)` for all the libraries found.
 
 The `foo()` function might e.g. pass the argument to `printf()`. Implement at least 2 different
