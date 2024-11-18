@@ -36,7 +36,7 @@
 
 ## NOTES
 
-  - use waitpid(2)
+  - use waitpid(2) or install `SIGCHLD` handler to get rid of the zombies
   - make sure the signal is set to the correct processes only
     - i.e. not the shell
     - use process group number to verify
