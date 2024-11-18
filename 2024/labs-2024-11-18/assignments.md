@@ -12,9 +12,6 @@
   - does it depend on `wait()`/`waitpid()`
 - what happens on `wait()`/`waitpid()` after SIGCHLD is explicitly ignored ?
 
-- how to handle SIGPIPE ?
-  - hint: https://www.pixelbeat.org/programming/sigpipe_handling.html
-
 # Signal chain
 
 - write a program that will create a chain of N processes, each child creates
