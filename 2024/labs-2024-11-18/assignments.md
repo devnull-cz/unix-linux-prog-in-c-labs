@@ -4,6 +4,7 @@
 - check if file contents is a palindrome using memory mapped file
   - verify that the RSS/size of the program is limited even for very
     large (think MiB/GiB) palindromatic files
+  - set the exit code to 1 if the file is palindomatic or to 0 if not
 
 # Questions
 
