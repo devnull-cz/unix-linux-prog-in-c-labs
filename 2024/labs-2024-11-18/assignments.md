@@ -12,6 +12,18 @@
   - does it depend on `wait()`/`waitpid()`
 - what happens on `wait()`/`waitpid()` after SIGCHLD is explicitly ignored ?
 
+# use sigqueue to send data between processes
+
+Fork a child process that will enter a loop in which it will send a set of numbers to the parent process
+using `sigqueue()`. Use `SIGUSR1`.
+
+Notes:
+  - beware of signal races: if the parent installed the handler only after returning from `fork()`, the child might have sent its first `SIGUSR1`.
+    This might make the parent exit if the signal was delivered before it completed `sigaction()` because the default action for this signal is to terminate the process. 
+  - `SA_SIGINFO` flag has to be set, otherwise the siginfo structure will contain garbage in the `si_value` member
+  - if waiting for the child with wait(), the `SA_RESTART` flag has to be used, otherwise signal delivery will cause the `wait()` to be interrupted
+    - alternatively check the `errno` to be `EINTR`
+
 # Signal chain
 
 - write a program that will create a chain of N processes, each child creates
