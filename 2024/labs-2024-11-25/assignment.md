@@ -16,6 +16,12 @@
     - e.g. https://github.com/Shopify/toxiproxy
   - syscall error/delay injection (`strace` can do it)
 
+# BSD socket experiments
+
+- can the same port be bound by multiple programs (with different uid) for
+  distinct protocols ?
+- ditto however for IPv4 vs. IPv6 address family
+
 # TCP experiments
 
 Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/master/tcp
