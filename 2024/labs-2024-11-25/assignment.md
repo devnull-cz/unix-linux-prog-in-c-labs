@@ -1,12 +1,19 @@
 # Debugging (networking) code
+
+## generic
+
   - make sure there are no file descriptor leaks (e.g. connect to the server enough times so that any leakage will hit the maximum limit imposed by `ulimit`)
     - can also be observed via `lsof` or via `/proc`
   - `strace` or `truss` can help you see problems when passing structures to syscalls
   - gdb (compile with -g)
-  - `netstat` / `route`
-    - use `netstat -peanut` to display which connections belong to which process
   - `assert()`
   - `DEBUG()` macro (variadic)
+  - syscall error/delay injection (`strace` can do it)
+
+## network specific
+  
+  - `netstat` / `route`
+    - use `netstat -peanut` to display which connections belong to which process
   - use Netcat / Socat for testing/probing
   - traffic dump (`tcpdump` or `tshark` or `snoop` or Wireshark)
   - firewall
@@ -14,7 +21,6 @@
     - some firewalls (e.g. PF on OpenBSD) can simulate packet loss with certain probability
   - tools to simulate certain latency and/or bandwidth
     - e.g. https://github.com/Shopify/toxiproxy
-  - syscall error/delay injection (`strace` can do it)
 
 # BSD socket experiments
 
