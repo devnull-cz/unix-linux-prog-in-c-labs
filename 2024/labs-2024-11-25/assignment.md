@@ -5,7 +5,7 @@
   - make sure there are no file descriptor leaks (e.g. connect to the server enough times so that any leakage will hit the maximum limit imposed by `ulimit`)
     - can also be observed via `lsof` or via `/proc`
   - `strace` or `truss` can help you see problems when passing structures to syscalls
-  - gdb (compile with -g)
+  - debugger (compile with -g)
   - `assert()`
   - `DEBUG()` macro (variadic)
   - syscall error/delay injection (`strace` can do it)
