@@ -24,8 +24,8 @@
 
 # BSD socket experiments
 
-- can the same port be bound by multiple programs (with different uid) for
-  distinct protocols ?
+- can the same port be bound by multiple programs (with different uid) for distinct protocols ?
+  - use tcp/sctp 
 - ditto however for IPv4 vs. IPv6 address family
 
 # TCP experiments
