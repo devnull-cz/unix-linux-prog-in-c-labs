@@ -37,7 +37,7 @@ Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/
 - what happens "on the wire" with established TCP connection if a client process with established connection is terminated ?
   - RST or FIN ?
 - what happens if server writes to a socket that is associated with client that has disconnected in the mean time ?
-  - use connect.c and simple echo server (slow down writes in server)
+  - use connect.c and simple echo server (delay writes in server so that the client can be terminated after sending the data)
 - what happens for TCP server side socket without the `SO_REUSEADDR` socket option ? when is it relevant ?
   - use `netstat` to observe the connections
 - how many TCP connections does the server accept after `listen()` and before `accept()` ?
