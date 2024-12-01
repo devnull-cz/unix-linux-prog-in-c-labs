@@ -1,7 +1,9 @@
 # select
 
+ [`select/select.c`](https://github.com/devnull-cz/unix-linux-prog-in-c-src/blob/master/select/select.c)
+
 - convert the code to be AF agnostic
-- Finish the _exercise to the reader_ in [`select/select.c`](https://github.com/devnull-cz/unix-linux-prog-in-c-src/blob/master/select/select.c).
+- Finish the _exercise to the reader_
 - make all the fds non-blocking
 - rewrite to `poll()`
 - handle the case of a client that disconnected (`POLLIN | POLLHUP`)
