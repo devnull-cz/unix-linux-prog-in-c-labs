@@ -1,30 +1,22 @@
-# Slightly happy eyeballs problem
-
-Parallel TCP connect() for hostnames with multiple IP addresses
-
-variant: "primitive eyeballs" (draft-ietf-v6ops-happy-eyeballs analogy)
+# happy eyeballs problem
 
 Write function:
 
 ```C
-    int multi_connect(char *hostname, char *port, bool getall, unsigned int timeout);
+    int multi_connect(char *hostname, char *port, unsigned int timeout);
 ```
 
 where `hostname`/`port` is the specification of the target service to which the
 client has to connect to. `timeout` is maximum time in milliseconds to wait for
-connection establishment for given IP address. The default value for testing
-should be 5000 ms.
+connection establishment for given IP address.
 
 `getall` is boolean value that states whether to wait till the timeout or grab
 first functional connection.
 
 Required features:
-  - the function will initiate TCP connect to all addresses for given hostname
-    "simultaneously"
-  - if any of these connections is successfully established and  the `getall`
-    parameter is false, the function immediatelly returns the file descriptor
-    for the new connection
-  - if none connect was successful, -1 is returned
+  - the function will initiate TCP connect to the first IP address in the list
+  - if the first connection is not successful within the `timeout`, next AF in the list is tried
+  - if none of the connects were successful, -1 is returned
   - (for debugging) after max 1/10th of the timeout value the state of the
     connections is printed:
     - fd number
