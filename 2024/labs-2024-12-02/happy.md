@@ -27,7 +27,9 @@ Required features:
     - state (timeout, connection refused, unsupported address family, success)
 
 The Happy Eyeballs algorithm according to RFC 6555 sort of assumes that `getaddrinfo()`
-returns IPv6 address first, 
+returns IPv6 address first, then if not successful, it will proceed to IPv4 addresses in the list.
+This can be made to work in generic way, e.g. if IPv4 addresses are preferred, it will try to connect
+to the first IPv4 addresses, if that fails, it will try the different AF addresses.
 
 When the hostname resolves to a sequence of only IPv4 addresses, it should try to connect to them in sequence.
 
