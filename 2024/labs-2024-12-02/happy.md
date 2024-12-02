@@ -18,6 +18,7 @@ first functional connection.
 Required features:
   - the function will initiate TCP connect to the first IP address in the list
   - if the first connection is not successful within the `timeout` (say 300 ms), next AF in the list is tried
+  - for the next iterations it will stick to the AF
   - if none of the connects were successful, -1 is returned
   - (for debugging) after max 1/10th of the timeout value the state of the
     connections is printed:
