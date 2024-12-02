@@ -34,6 +34,9 @@ Either it can try to connect to them in sequence or bail if the attempt to conne
 
 Note: at each step, there could be max. 2 simultaneous connection attempts in progress.
 
+A firewall (e.g. `iptables` on Linux or PF on BSD) can be used to simulate the connection delays.
+Or, you can `LD_PRELOAD` library that wraps the `connect()` and delay based on the `sockaddr`.
+
 Example of hostname with A+AAAA DNS records:
   - www.kame.net
   - speed.cloudflare.com
