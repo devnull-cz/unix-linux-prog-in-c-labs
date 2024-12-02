@@ -31,7 +31,7 @@ returns IPv6 address first, then if not successful, it will proceed to IPv4 addr
 This can be made to work in generic way, e.g. if IPv4 addresses are preferred, it will try to connect
 to the first IPv4 addresses, if that fails, it will try the different AF addresses.
 
-The question is what should happen when the hostname resolves to a sequence of only IPv4 addresses. 
+The question is what should happen when the hostname resolves to a sequence of only IPv4 addresses (or only IPv6 addresses). 
 Either it can try to connect to them in sequence or bail if the attempt to connect to the first one
 (within the timeout) is not successful.
 
