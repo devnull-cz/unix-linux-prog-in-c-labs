@@ -12,9 +12,6 @@ where `hostname`/`port` is the specification of the target service to which the
 client has to connect to. `timeout` is maximum time in milliseconds to wait for
 connection establishment for given IP address.
 
-`getall` is boolean value that states whether to wait till the timeout or grab
-first functional connection.
-
 Required features:
   - the function will initiate TCP connect to the first IP address in the list
   - if the first connection is not successful within the `timeout` (say 300 ms), next AF in the list is tried
