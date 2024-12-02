@@ -1,4 +1,4 @@
-# happy eyeballs problem (original)
+# The happy eyeballs algorithm (original)
 
 Write function:
 
