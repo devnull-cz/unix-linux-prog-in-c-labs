@@ -39,6 +39,7 @@ Note: at each step, there could be max. 2 simultaneous connection attempts in pr
 
 Example of hostname with A+AAAA DNS records:
   - www.kame.net
+  - speed.cloudflare.com
 
 Variants:
   - print also IP address of the remote end in the state dump
