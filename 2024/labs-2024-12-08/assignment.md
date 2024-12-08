@@ -58,3 +58,11 @@ See the lecture materials, section on the dynamic linker.
 # `shlock`
 
 - implement `shlock` or its subset.  See https://linux.die.net/man/1/shlock
+
+# benchmark various IPC
+
+Compare the localhost performance (data passing) of:
+  - AF_UNIX socket
+  - AF_INET socket
+  - pipe (unnamed)
+  - POSIX MQ
