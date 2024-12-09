@@ -33,6 +33,10 @@ Consider thread stack size limit w.r.t. the buffer used in the worker threads fo
 
 You can reuse existing TCP code from the [src repo](https://github.com/devnull-cz/unix-linux-prog-in-c-src).
 
+Once you have the skeleton of the server working in basic mode, you can play around with various ways
+how to send the file data to the clients, i.e. from the classic open/read/write/close to memory mapped files
+and then maybe to `sendfile()`.
+
 ## GNU pth thread library
 
 Download the source code from https://www.gnu.org/software/pth/, compile it, ale
