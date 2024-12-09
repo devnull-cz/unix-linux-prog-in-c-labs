@@ -6,7 +6,7 @@
 - each thread will get an address of its array element
 - each thread will generate a random number to that location
   - use e.g. `getrandom()`, maybe even with the true-randomnes flag
-- the main thread joins all the threads, then sorts the array via `qsort`
+- the main thread joins all the threads, then sorts the array via `qsort()` (from libc)
 - `main` prints out the sorted array and exits
 - use debug messages to make sure you got everything right
 
