@@ -13,7 +13,7 @@ Design a solution for multiple alarms/callbacks in multithreaded environment. Ea
   - callback function (`void (*callback)(void *);`)
 
 Once the alarm expires, the callback function will be called with given argument. It can be expected that potentially many threads will register
-alarms at once. The precision is seconds is fine.
+alarms at once. The precision in seconds is fine.
 
 You can start with simple/naive implementation and then refine it to a more effective (and possibly sophisticated) one.
 The sound implementation should be using some of the thread synchronization mechanisms explained in the lecture.
