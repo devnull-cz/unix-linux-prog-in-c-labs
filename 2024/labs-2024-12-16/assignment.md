@@ -20,13 +20,13 @@
   - check: [1, 100000]: the winner is 83160 that has 128 divisors
 
   - variants:
+    - make the worker threads exit after specified count of processed numbers in given thread
+      - the thread pool needs to be resupplied as long as there is some work to do
     - make this code generic so any sort of job can be used (e.g. convert this to parallelized port scanner/downloader/web crawler)
       - this is where the queue/stack/list comes into consideration 
     - pass the information about the best number to the main thread so that no single number is lost (i.e. use a queue)
-    - do not report percentage update for each computation update but only when
-      new winner is found
-      - this has consequences: main thread needs to be aware of terminating
-	threads
+    - do not report percentage update for each computation update but only when new winner is found
+      - this has consequences: main thread needs to be aware of terminating threads
 
   - example output:
 
