@@ -4,7 +4,7 @@
    - each thread computes the divisors of given number and then proceeds to the next number
      - there will be a global integer variable holding the next number to be processed (i.e. each thread will increment/decrement it by one whenever it takes the next number) 
    - compute the divisor count for given number using the most naive algorithm
-     - cycle through the numbers and see if the division operation has no carry
+     - for number M, cycle through the numbers [0, M) and see if the division operation has no carry
    - each thread continues processing until there is some work to do
      - keep it simple: in the initial version, there is no need to deal with queues/stacks etc.
 
