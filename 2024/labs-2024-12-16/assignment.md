@@ -7,7 +7,7 @@
 
    - main thread will report:
      - the best result found so far
-     - the overall progress in percent (use \r to refresh the terminal)
+     - the overall progress in percent (use `\r` to refresh the terminal)
 
   - hints/questions:
     - use refactoring to avoid long functions
