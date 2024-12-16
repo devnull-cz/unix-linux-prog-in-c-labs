@@ -8,7 +8,7 @@
    - each thread continues processing until there is some work to do
      - keep it simple: in the initial version, there is no need to deal with queues/stacks etc.
 
-   - whenever the new best result (number of divisors) is found, main thread will report:
+   - whenever there is a number processed by a thread, it will signal to the main thread, which will report:
      - the best result found so far
      - the overall progress in percent (use `\r` to refresh the terminal)
 
