@@ -3,7 +3,7 @@
      - each thread computes the divisors of given number and then proceeds to the next number
        - or make it a tunable (a define or program option) and see what works best on given system
      - compute the divisor count for given number using the most naive algorithm
-       - cycle thrugh the numbers and see if the division operation has no carry
+       - cycle through the numbers and see if the division operation has no carry
      - each thread continues processing until there is some work to do
        - keep it simple: in the initial version, there is no need to deal with queues/stacks etc.
 
