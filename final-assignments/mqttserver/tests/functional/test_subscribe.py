@@ -6,8 +6,6 @@ import string
 
 import adafruit_minimqtt.adafruit_minimqtt as MQTT
 
-from . import FakeConnectionManager
-
 from ..common import mqtt_server
 
 RECEIVED_MESSAGES = {}
@@ -47,10 +45,8 @@ def test_subscribe_to_multiple_topics(mqtt_server):
         recv_timeout=5,
     )
 
-    mqtt_client_sub._connection_manager = FakeConnectionManager(pool)
-
     logger.info(f"Connecting to MQTT broker (subscriber)")
-    mqtt_client_sub.connect()
+    mqtt_client_sub.connect(session_id="client_sub")
 
     num_topics = random.randrange(16, 64)
     topics = [randomword(random.randrange(10, 30)) for _ in range(num_topics)]
@@ -69,10 +65,8 @@ def test_subscribe_to_multiple_topics(mqtt_server):
         connect_retries=1,
     )
 
-    mqtt_client_pub._connection_manager = FakeConnectionManager(pool)
-
     logger.info(f"Connecting to MQTT broker (publisher)")
-    mqtt_client_pub.connect()
+    mqtt_client_pub.connect(session_id="client_pub")
     sent_msgs = {}
     for topic in topics:
         logger.info(f"publishing message to topic {topic}")

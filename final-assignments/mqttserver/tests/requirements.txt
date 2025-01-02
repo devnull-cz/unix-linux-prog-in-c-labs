@@ -1,4 +1,4 @@
-adafruit-circuitpython-minimqtt
+adafruit-circuitpython-minimqtt>=7.11.0
 pytest
 paho-mqtt
 pytest-timeout

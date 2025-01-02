@@ -8,8 +8,6 @@ import adafruit_minimqtt.adafruit_minimqtt as MQTT
 
 from ..common import mqtt_server
 
-from . import FakeConnectionManager
-
 
 def handle_message(mqtt_client, topic, message):
     print(f"got msg on {topic}: {message}")
@@ -43,13 +41,11 @@ def test_publish_by_many_to_single(mqtt_server):
         user_data=received_msgs,
     )
 
-    mqtt_client_sub._connection_manager = FakeConnectionManager(pool)
-
     # add_topic_callback() makes sure that the callback will be called only for messages
     # received on the specified topic.
     mqtt_client_sub.add_topic_callback(topic, handle_message)
     logger.info(f"Connecting to MQTT broker (subscriber)")
-    mqtt_client_sub.connect()
+    mqtt_client_sub.connect(session_id="client_sub")
     logger.info(f"subscribing to {topic}")
     mqtt_client_sub.subscribe(topic)
 
@@ -71,10 +67,8 @@ def test_publish_by_many_to_single(mqtt_server):
             connect_retries=1,
         )
 
-        mqtt_client_pub._connection_manager = FakeConnectionManager(pool)
-
         logger.info(f"Connecting to MQTT broker (publisher {i})")
-        mqtt_client_pub.connect()
+        mqtt_client_pub.connect(session_id="client_pub")
         logger.info("publishing message")
         message = f"message {i}"
         sent_msgs.append(message)
