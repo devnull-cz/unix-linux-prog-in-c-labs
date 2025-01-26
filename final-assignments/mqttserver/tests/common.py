@@ -1,5 +1,8 @@
 from .server import Server
 
+import string
+import random
+
 import pytest
 
 PROGRAM_PATH = "../mqttserver"
@@ -16,3 +19,12 @@ def mqtt_server(request):
     server.start()
     yield server
     server.stop()
+
+
+def randomword(length):
+    """
+    :param length: number of letters
+    :return: random string of lowercase ASCII characters
+    """
+    letters = string.ascii_lowercase
+    return "".join(random.choice(letters) for i in range(length))
