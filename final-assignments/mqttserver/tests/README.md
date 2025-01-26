@@ -27,7 +27,7 @@ The `VERSION` value is bumped for each non-trivial change.
 
 Always make sure you have the latest tests.
 
-Also, it does not hurt to update the packages in the Python virtual environment:
+Also, it does not hurt to update the packages in the Python virtual environment once in a while:
 ```
 python3 -m pip install --upgrade -r requirements.txt
 ```
