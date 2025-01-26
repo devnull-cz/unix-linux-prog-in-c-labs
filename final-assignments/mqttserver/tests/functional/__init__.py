@@ -1,5 +1,5 @@
 # The version should be bumped for each non-trivial change.
-VERSION = "0.6"
+VERSION = "0.8"
 
 import sys
 

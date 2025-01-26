@@ -45,12 +45,13 @@ def ensure_keep_alive(keep_alive_timeout, logger, mqtt_client):
     sleep_period = 2 * keep_alive_timeout
     logger.debug(f"sleeping for {sleep_period} seconds")
     time.sleep(sleep_period)
-    # Will wait for the PINGRESP message for keep_alive seconds. Should not get anything back.
-    # While on Linux this raises MMQTTException (Unable to receive 1 bytes within 8 seconds.),
-    # on macOS this leads to ConnectionResetError.
-    with pytest.raises((MQTT.MMQTTException, ConnectionResetError)):
-        logger.debug("pinging the server")
-        mqtt_client.ping()
-
-    # Cleanup so the socket is cleared in the ConnectionManager pool used by MiniMQTT.
-    mqtt_client.disconnect()
+    try:
+        # Will wait for the PINGRESP message for keep_alive seconds. Should not get anything back.
+        # While on Linux this raises MMQTTException (Unable to receive 1 bytes within 8 seconds.),
+        # on macOS this leads to ConnectionResetError or BrokenPipeError.
+        with pytest.raises((MQTT.MMQTTException, ConnectionResetError, BrokenPipeError)):
+            logger.debug("pinging the server")
+            mqtt_client.ping()
+    finally:
+        # Cleanup so the socket is cleared in the ConnectionManager pool used by MiniMQTT.
+        mqtt_client.disconnect()
