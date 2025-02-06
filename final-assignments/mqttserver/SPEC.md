@@ -40,6 +40,7 @@ This specification will likely have to be adjusted/completed. Here is the list o
 - 2024/01/01: add note about RETAIN flag for the PUBLISH message
 - 2024/01/05: add note on the provided tests
 - 2024/10/15: add note on makefile syntax and running the server on different Unix systems
+- 2025/02/05: add clarification on using foregin code/libraries
 
 ## Basic information
 
@@ -48,6 +49,8 @@ using TCP sockets, no authentication.
 
 By default, the server will listen on TCP port 1883. Alternative port can be specified
 with the `-p` command line option that supports numeric option argument.
+
+All the source code should be written by you and no one else.
 
 ### Compilation
 
@@ -69,6 +72,8 @@ fine to use just a single source code file.
 
 The code should be written in strict C99, i.e. avoid GNU C extensions or such.
 The compilation of the program should pass with `-std=c99 -Werror=pedantic` (GCC, Clang).
+
+Avoid using any other library than `libc`. As for `libc`, any implementation will do (glibc, musl, BSD libc, ...).
 
 ## Implementation
 
