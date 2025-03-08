@@ -41,6 +41,7 @@ This specification will likely have to be adjusted/completed. Here is the list o
 - 2024/01/05: add note on the provided tests
 - 2024/10/15: add note on makefile syntax and running the server on different Unix systems
 - 2025/02/05: add clarification on using foregin code/libraries
+- 2025/03/08: add clarification on empty client IDs
 
 ## Basic information
 
@@ -117,8 +118,11 @@ As said above, only a subset of features is to be implemented. Here is a list of
   - Likewise, the functionality related to the flags in the PUBLISH message (e.g. the RETAIN flag) does not have to be implemented
   - message delivery retry (4.4). Given that QoS > 0 is not to be implemented, this does not have to be implemented.
     Same goes for message ordering (4.6)
+  - empty client ID does not have to be supported  
 
-If an unsupported message or message with unsupported content is received, the server can close the connection.
+If an unsupported message or message with unsupported content is received, the server can close the connection. 
+For example, expanding on the 'empty client ID' item above, if the server receives CONNECT message with empty client ID, it can correctly refuse such message 
+(see section *3.1.3.1 Client Identifier* of the MQTT specification) and then close the network connection.
 
 The implementation should make every attempt to verify message content
 based on the MQTT protocol specification.
