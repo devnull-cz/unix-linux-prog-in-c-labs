@@ -3,6 +3,9 @@
 - usual compiler options ?
   - `-Wall -Wextra`
   - `-std=c99`
+ 
+- not so usual but handy
+  - sanitizers
 
 - always check return values and react appropriately
   - `malloc()` (and anything the uses it under the hood) can fail
