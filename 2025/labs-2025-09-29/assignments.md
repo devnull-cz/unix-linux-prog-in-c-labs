@@ -106,3 +106,5 @@ Think about the program first, only then run it. Does the runtime match your exp
   - written test cases ?
     - see https://github.com/devnull-cz/stef
       - also remember Github actions (e.g. to automatically run the tests for each integration)
+
+- implement the `strsep(3)` library function
