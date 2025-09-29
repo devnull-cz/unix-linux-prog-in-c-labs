@@ -6,6 +6,9 @@
 
 - not so usual but handy
   - sanitizers (address, thread)
+  - static analyzers (built-in sometimes)
+  - dynamic analyzers (Valgrind)
+  - test frameworks
 
 - always check return values and react appropriately
   - `malloc()` (and anything the uses it under the hood) can fail
