@@ -39,8 +39,9 @@ int min(int a[], ssize_t len); // return minimum value
   - `libmin.c`
     - function definition 
     - will include `libmin.h` (for sanity check performed by the compiler w.r.t. function prototype)
-- the program will be in `main.c`, compiled into `main` binary and will be
-  dynamically linked against `libmin.so`
+- the program will be in `main.c`, compiled into `main` binary and will be dynamically linked against `libmin.so`
+  - or rather the numbered file, i.e. `libmin.so.1`
+    - the `libmin.so` can be a symlink to `libmin.so.1`
 - `main.c` assumes valid numbers as its command line arguments
 - create a numbered array in `main()` (see the prototype above), fill it with
   numbers from the arguments.  Remember, you need to convert the string
