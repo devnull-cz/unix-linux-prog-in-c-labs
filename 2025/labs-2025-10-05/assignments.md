@@ -35,7 +35,10 @@ int min(int a[], ssize_t len); // return minimum value
 ```
 - the library source will comprise of the following two files:
   - `libmin.h`
-  - `libmin.c` - will include libmin.h
+    - function prototype
+  - `libmin.c`
+    - function definition 
+    - will include `libmin.h` (for sanity check performed by the compiler w.r.t. function prototype)
 - the program will be in `main.c`, compiled into `main` binary and will be
   dynamically linked against `libmin.so`
 - `main.c` assumes valid numbers as its command line arguments
