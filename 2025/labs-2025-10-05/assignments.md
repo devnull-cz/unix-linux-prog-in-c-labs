@@ -58,7 +58,7 @@ int min(int a[], ssize_t len); // return minimum value
 - use automatic `gmake` variables (preceded with the '@' char)
 - use wildcard rule for `*.c` => `*.o` files
 - header files => C files dependencies
-- use phony targets (clean) if using GNU make
+- use *phony* targets (clean) if using GNU make
 
 ## Implement a maximum function
 
