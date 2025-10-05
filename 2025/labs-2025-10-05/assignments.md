@@ -59,6 +59,7 @@ int min(int a[], ssize_t len); // return minimum value
 - use wildcard rule for `*.c` => `*.o` files
 - header files => C files dependencies
 - use *phony* targets (clean) if using GNU make
+  - or similar (`FRC` aka force) for other make implementations
 
 ## Implement a maximum function
 
