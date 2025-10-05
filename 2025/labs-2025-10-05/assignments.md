@@ -46,7 +46,7 @@ int min(int a[], size_t len); // return minimum value
 - create a numbered array in `main()` (see the prototype above), fill it with
   numbers from the arguments.  Remember, you need to convert the string
   arguments to numbers.
-- call min() and print its result to stdout
+- call `min()` and print its result to stdout
 - now, how do you tell:
   - `libmin.so` is a dynamic library
   - `libmin.so` defines the `min` function (rather than taking it from
