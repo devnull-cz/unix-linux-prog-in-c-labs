@@ -44,14 +44,12 @@ int min(int a[], size_t len); // return minimum value
     - the `libmin.so` can be a symlink to `libmin.so.1`
 - `main.c` assumes valid numbers as its command line arguments
 - create a numbered array in `main()` (see the prototype above), fill it with
-  numbers from the arguments.  Remember, you need to convert the string
-  arguments to numbers.
+  numbers from the arguments.  Remember, you need to convert the string arguments to numbers.
 - call `min()` and print its result to stdout
 - now, how do you tell:
-  - `libmin.so` is a dynamic library
-  - `libmin.so` defines the `min` function (rather than taking it from
-    elsewhere)
-  - `main` is linked against `libmin.so`
+  - `libmin.so.1` is a dynamic library
+  - `libmin.so.1` defines the `min` function (rather than taking it from elsewhere)
+  - `main` is linked against `libmin.so.1`
 
 ## Construct a Makefile for the above
 
