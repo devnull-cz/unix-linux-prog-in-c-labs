@@ -31,7 +31,7 @@ Makefiles: let's assume GNU make for now
 - the dynamic library will be called `libmin.so`
 - it will implement one function:
 ```C
-int min(int a[], ssize_t len); // return minimum value
+int min(int a[], size_t len); // return minimum value
 ```
 - the library source will comprise of the following two files:
   - `libmin.h`
@@ -65,7 +65,7 @@ int min(int a[], ssize_t len); // return minimum value
 ## Implement a maximum function
 
 ```C
-int max(int a[], ssize_t len); // return maximum value
+int max(int a[], size_t len); // return maximum value
 ```
 
 similarly to `libmin`, i.e. `libmax.[ch]`, `libmax.so`, ...
