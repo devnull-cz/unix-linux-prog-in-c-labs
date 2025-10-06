@@ -6,6 +6,8 @@ Write a trivial program (where e.g. `main()` calls `printf()` and exits) and run
 to see the linker options used to build the binary. Compile the program using the `-c` compiler option
 and `ld`, using the options from the `-###` run. Try to reduce the set of linker options to minimum (so that the program still runs).
 
+Who manages to build a program which runs but crashes, wins.
+
 ## runtime path vs. library search path
 
 - write two dynamic libraries, `liba.so` and `libb.so`, and a program `prog` (compiled from `main.c`)
