@@ -35,7 +35,7 @@ Do not use `fork()`. Start with `execl()`, then try `execv()`. Then try `posix_s
 
 ## supply environment variable
 
-Execute `sudo vipw` with the `EDITOR` environment variable set to your favorite editor.
+Write a program that will execute `sudo vipw` with the `EDITOR` environment variable set to your favorite editor.
 You will have to use the `--preserve-env` option for sudo, because it sanitizes the environment by default.
 
 If you cannot execute `sudo` on your system, use the `env` program instead of the `sudo vipw` to see that the
