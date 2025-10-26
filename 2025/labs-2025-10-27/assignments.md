@@ -39,7 +39,7 @@ Write a program that will execute `sudo vipw` (or `doas vipw` if running on Open
 with the `EDITOR` environment variable set to your favorite editor.
 You will have to use the `--preserve-env` option for sudo, because it sanitizes the environment by default.
 
-If you cannot execute `sudo` on your system, use the `env` program instead of the `sudo vipw` to see that the
+If you cannot execute `sudo` on your system to actually execute `vipw`, use the `env` program instead of the `sudo vipw` to see that the
 variable setting is in effect.
 
 ## different process tree
