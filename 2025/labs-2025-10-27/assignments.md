@@ -75,7 +75,7 @@ I.e. the first program will execute the second program.
 
 ## Count lines for files in a directory
 
-Open file "`output`" for writing and redirect standard output to it. Then go through directory tree
+Open file "`output`" for writing, truncate it and redirect standard output to it. Then go through directory tree
 starting at `argv[1]` and for each regular file do `fork()` and `exec()` of `wc -l` on that file.
 
 The main process should wait for all the children to complete.
