@@ -73,7 +73,7 @@ Produce 2 programs:
 
 I.e. the first program will execute the second program.
 
-## Count lines for files in a directory
+## Count lines for retgular files in a directory
 
 Open file "`output`" for writing, truncate it and redirect standard output to it. Then go through directory tree
 starting at `argv[1]` and for each regular file do `fork()` and `exec()` of `wc -l` on that file.
