@@ -66,6 +66,23 @@ Once you are done with the initial implementation, modify the code to:
 - one by one, do no close it and figure out how to verify that it may lead to
   the situation described.
 
+## double `pipe`
+
+Construct a pipeline with 3 procesess, e.g.:
+
+```
+$ cal | head -1 | tr '[[:lower:]]' '[[:upper:]]'
+   NOVEMBER 2023
+```
+
+- Use `fork()` / `exec()` / `wait()` (or their variants)
+
+- This task is good for understanding that by common code you actually need to
+  manage three different kinds of processes.
+
+- If it prints what you expect but hangs after that, you forgot to close all the
+  needed descriptors you were supposed to close.
+
 # wait (and pipe)
 
 ## `wait`
@@ -111,20 +128,3 @@ unix-linux-prog-in-c-src/wait$ head -34 wait.c
  * (c) jp@devnull.cz
  */
 ```
-
-## double `pipe`
-
-Construct a pipeline with 3 procesess, e.g.:
-
-```
-$ cal | head -1 | tr '[[:lower:]]' '[[:upper:]]'
-   NOVEMBER 2023
-```
-
-- Use `fork()` / `exec()` / `wait()` (or their variants)
-
-- This task is good for understanding that by common code you actually need to
-  manage three different kinds of processes.
-
-- If it prints what you expect but hangs after that, you forgot to close all the
-  needed descriptors you were supposed to close.
