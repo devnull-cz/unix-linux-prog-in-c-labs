@@ -114,12 +114,14 @@ unix-linux-prog-in-c-src/wait$ head -34 wait.c
 
 ## double `pipe`
 
-- Implement:
+Construct a pipeline with 3 procesess, e.g.:
 
 ```
 $ cal | head -1 | tr '[[:lower:]]' '[[:upper:]]'
    NOVEMBER 2023
 ```
+
+- Use `fork()` / `exec()` / `wait()` (or their variants)
 
 - This task is good for understanding that by common code you actually need to
   manage three different kinds of processes.
