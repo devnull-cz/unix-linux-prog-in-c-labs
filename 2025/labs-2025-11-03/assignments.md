@@ -83,9 +83,9 @@ $ cal | head -1 | tr '[[:lower:]]' '[[:upper:]]'
 - If it prints what you expect but hangs after that, you forgot to close all the
   needed descriptors you were supposed to close.
 
-# wait (and pipe)
+# wait
 
-## `wait`
+## `wait` and reporting child state
 
 - from the unix-linux-prog-in-c-src repo, take the first block comment and
   re-implement it.  **Do not look at the code.**  Use slides only.  Making
