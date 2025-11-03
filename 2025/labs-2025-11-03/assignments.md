@@ -4,8 +4,12 @@
 Produce a shared library (`libmy.so`) and a program linking with it. Call a function from the shared library in the program.
 Optional write Makefile(s).
 
-Produce program that will search for all `*.so` files inside directory called `"plugins"` and will load them
-using the dynamic linker APIs. Call `void foo(char *)` for all the libraries found.
+Produce program that will search for all `*.so` files inside directory called `"plugins"` and will:
+  1. load them using the dynamic linker APIs
+  2. call `void foo(char *)` for all the libraries found
+  3. unload
+
+This should be done sequentially.
 
 The `foo()` function might e.g. pass the argument to `printf()`. Implement at least 2 different
 shared libraries that implement this plugin framework API.
