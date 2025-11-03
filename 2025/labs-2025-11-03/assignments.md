@@ -9,7 +9,7 @@ Produce program that will search for all `*.so` files inside directory called `"
   2. call `void foo(char *)` for all the libraries found
   3. unload
 
-This should be done sequentially.
+This should be done sequentially. For this case resolve the symbols immediately.
 
 The `foo()` function might e.g. pass the argument to `printf()`. Implement at least 2 different
 shared libraries that implement this plugin framework API.
