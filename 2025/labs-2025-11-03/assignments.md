@@ -34,7 +34,12 @@ usage: `./a.out <zombie_num>`
 
 To see if there are any zombies in the system, you can use: `ps -o state ax | grep ^Z`
 
-For this task, cheating is allowed. I.e. you can slow down the "init" process, e.g. by injecting a delay using `strace`: `sudo strace -p 1 -e inject=waitid:delay_enter=5s` so that the adopted children are not reaped as quickly.
+For this task, cheating is allowed. I.e. you can slow down the "init" process, e.g. by injecting a delay using `strace`:
+`sudo strace -p <systemd_pid> -e inject=waitid:delay_enter=5s` so that the adopted children are not reaped as quickly.
+Note that the `systemd_pid` is usually not 1 (the one running as `/sbin/init` which might be a symlink to `systemd`), 
+in an interactive session it will be the PID of the user-specific daemon, i.e. the one running with `/usr/lib/systemd/systemd --user`.
+This is clearly visible when running the [fork.c](https://github.com/devnull-cz/unix-linux-prog-in-c-src/blob/master/fork/fork.c) example
+as the child process PID is reparented.
 
 ## sub-task
 
