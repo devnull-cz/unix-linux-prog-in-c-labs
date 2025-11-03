@@ -1,11 +1,8 @@
 
-# Construct a shared library
+# Plugin framework
 
 Produce a shared library (`libmy.so`) and a program linking with it. Call a function from the shared library in the program.
-
-Write Makefile(s).
-
-# Plugin framework
+Optional write Makefile(s).
 
 Produce program that will search for all `*.so` files inside directory called `"plugins"` and will load them
 using the dynamic linker APIs. Call `void foo(char *)` for all the libraries found.
