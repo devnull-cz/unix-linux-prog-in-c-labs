@@ -14,7 +14,8 @@ This should be done sequentially. For this case resolve the symbols immediately.
 The `foo()` function might e.g. pass the argument to `printf()`. Implement at least 2 different
 shared libraries that implement this plugin framework API.
 
-Gracefully skip the libraries that do not adhere to the plugin framework APIs (i.e. they miss the expected symbol).
+Gracefully skip the libraries that do not adhere to the plugin framework APIs (e.g. they miss the expected symbols,
+or a designated global variable will have different content than expected, perhaps containing a version number).
 Copy one of the system libraries (from e.g. `/usr/lib` directory) to the current directory to test this out.
 
 Implement `init` and `fini` functions for the libraries that will print a label (library name and whether this is init or fini) to `stdout`.
