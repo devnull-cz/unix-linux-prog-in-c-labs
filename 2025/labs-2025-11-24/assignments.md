@@ -2,7 +2,7 @@
 # Lock file with waiting
 
 Change the
-[`file-locking/file-locking.c`](https://github.com/devnull-cz/nix-linux-prog-in-c-src/.../file-locking/file-locking.c)
+[`file-locking/file-locking.c`](https://github.com/devnull-cz/unix-linux-prog-in-c-src/blob/master/file-locking/fcntl-locking.c)
 to busy wait when the lock is held.
 
 Then change it again to avoid busy waiting, i.e. use pipe() as a waiting mechanism.
