@@ -5,7 +5,7 @@ Change the
 [`file-locking/lock-unlock.c`](https://github.com/devnull-cz/unix-linux-prog-in-c-src/blob/master/file-locking/lock-unlock.c)
 to busy wait when the lock is held.
 
-Then change it again to avoid busy waiting, i.e. use pipe() as a waiting mechanism.
+Then change it again to avoid busy waiting, i.e. use named pipe as a waiting mechanism.
 
 # Palindrome (redux)
 
