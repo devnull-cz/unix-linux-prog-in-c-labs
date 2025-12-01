@@ -42,9 +42,9 @@ Try the programs in https://github.com/devnull-cz/unix-linux-prog-in-c-src/tree/
   - use `netstat` to observe the connections
 - how many TCP connections does the server accept after `listen()` and before `accept()` ?
   - does it match the `backlog` argument of `listen()` ?
-  - modify `connect.c` to establish number of connections and sink server and experiment with listen backlog value
+  - modify [`connect.c`](https://github.com/devnull-cz/unix-linux-prog-in-c-src/blob/master/tcp/connect.c) to establish number of connections and sink server and experiment with listen backlog value
 - how long does it take for `connect()` to time out when connecting to unreachable service ? (i.e. service that drops packets, not a service that refuses connections)
-  - modify `connect.c` to record the time delta (see `difftime()`)
+  - modify [`connect.c`](https://github.com/devnull-cz/unix-linux-prog-in-c-src/blob/master/tcp/connect.c) to record the time delta (see `difftime()`)
 - what happens on the network when `shutdown()` is called with read or write only flag ?
 - what happens if `read()` from network socket is interrupted with a (handled) signal (say `SIGTERM` or `SIGINT`)
   - use TCP sink server and simple connect
