@@ -14,7 +14,7 @@
   
   - `netstat` / `route`
     - use `netstat -peanut` to display which connections belong to which process
-  - use Netcat / Socat for testing/probing
+  - use one of the [Netcat](https://en.wikipedia.org/wiki/Netcat) implementations / Socat for testing/probing
   - traffic dump (`tcpdump` or `tshark` or `snoop` or Wireshark)
   - firewall
     - to simulate unreachable hosts
