@@ -21,6 +21,7 @@
     - some firewalls (e.g. PF on OpenBSD) can simulate packet loss with certain probability
   - tools to simulate certain latency and/or bandwidth
     - e.g. https://github.com/Shopify/toxiproxy
+  - network/port scanner, e.g. Nmap
 
 # BSD socket experiments
 
