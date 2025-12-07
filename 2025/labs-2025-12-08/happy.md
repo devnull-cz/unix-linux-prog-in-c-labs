@@ -6,7 +6,7 @@ Write function:
     int multi_connect(char *hostname, char *port, unsigned int timeout);
 ```
 
-that implement the algorithm specified in RFC 6555.
+that implement the algorithm specified in [RFC 6555](https://www.rfc-editor.org/rfc/rfc6555).
 
 where `hostname`/`port` is the specification of the target service to which the
 client has to connect to. `timeout` is maximum time in milliseconds to wait for
