@@ -20,7 +20,7 @@
 
   - check: [1, 100000]: the winner is 83160 that has 128 divisors
 
-  - variants:
+  - variants/bonus tasks:
     - make the worker threads exit after specified count of processed numbers in given thread
       - the thread pool needs to be resupplied as long as there is some work to do
     - make this code generic so any sort of job can be used (e.g. convert this to parallelized port scanner/downloader/web crawler)
@@ -29,6 +29,9 @@
     - do not report percentage update for each computation update but only when new winner is found
       - this has consequences: main thread needs to be aware of terminating threads
     - run with different number of threads up to the number of hardware threads or CPUs in the system and see how it stacks w.r.t. Amdahl's law
+    - check error values from mutex operations
+      - wrap the checks in macros to retain readability
+      - use the `ERRORCHECK` mutex type to detect problems right away
 
   - example output:
 
