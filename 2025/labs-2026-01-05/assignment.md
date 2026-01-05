@@ -28,6 +28,7 @@
     - pass the information about the best number to the main thread so that no single number is lost (i.e. use a queue)
     - do not report percentage update for each computation update but only when new winner is found
       - this has consequences: main thread needs to be aware of terminating threads
+    - run with different number of threads up to the number of hardware threads or CPUs in the system and see how it stacks w.r.t. Amdahl's law
 
   - example output:
 
