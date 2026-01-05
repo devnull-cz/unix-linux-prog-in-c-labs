@@ -1,7 +1,7 @@
 # report divisors of numbers in range [1, N]
    - create M threads (start with M = number of online CPUs in the system as reported by sysconf(3)
      - or make it a tunable (a define or program option) and see what works best on given system
-   - each thread computes the divisors of given number and then proceeds to the next number
+   - each thread computes number of divisors of given number and then proceeds to the next number
      - there will be a global integer variable holding the next number to be processed (i.e. each thread will increment/decrement it by one whenever it takes the next number) 
    - compute the divisor count for given number using the most naive algorithm
      - for number M, cycle through the numbers [0, M) and see if the division operation has no carry
