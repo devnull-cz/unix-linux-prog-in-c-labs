@@ -70,6 +70,8 @@
 	Best number: 83160 (divisors 128)
 ```
 
+Note 83160 is not the biggest number with 128 divisors within the 100000 range, this is merely an artifact of the reporting.
+
 ## multi-threaded HTTP 1.0 server
 
 Implement multi-threaded HTTP 1.0 server (RFC 1945) with `GET` support for static plaintext files 
