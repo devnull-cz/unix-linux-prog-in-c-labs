@@ -1,4 +1,5 @@
 **/test-config.local
 **/.DS_store
 **/a.out
+**/*.o
 __pycache__
