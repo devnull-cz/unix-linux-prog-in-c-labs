@@ -74,7 +74,7 @@ Think about the program first, only then run it. Does the runtime match your exp
     - try without them. and without local variables or argument count.
 
 - will print 2nd character of second argument (you can assume there is one), that is `argv[1]`
-  of the program in upper case
+  of the program in upper case (assume alphabetic ASCII chars)
   - use only pointer arithmetics to do that in single expression
   - now try to write the program with as few characters as possible (you do not have to print the new line)
     - do not modify `argv`
