@@ -10,14 +10,14 @@ Who manages to build a program which runs but crashes, wins.
 
 ## runtime path vs. library search path
 
-- write two dynamic libraries, `liba.so` and `libb.so`, and a program `prog` (compiled from `main.c`)
+- produce two dynamic libraries, `liba.so` and `libb.so`, and a program `prog` (compiled from `main.c`)
 - `liba` will define a function `fna` which calls a function `fnb`
 - function `fnb` will be defined in `libb`
 - design `fna` and `fnb` as you wish just make sure they return something based
   on `argv[1]`, and print that argument out from `main` at the beginning
 - `main()` from `main.c` only calls function `fna`
 - make sure you can call the program from a local directory as `./prog`, and
-  also from the `/` directory using a full path.
+  also from arbitrary directory using a full path.
 
 # Makefile
 - write a makefile for the previous task
