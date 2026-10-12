@@ -17,7 +17,7 @@ Who manages to build a program which runs but crashes, wins.
   on `argv[1]`, and print that argument out from `main` at the beginning
 - `main()` from `main.c` only calls function `fna`
 - make sure you can call the program from a local directory as `./prog`, and
-  also from arbitrary directory using a full path.
+  also from arbitrary directory using a full path. Do not use `LD_LIBRARY_PATH` or such.
 
 # Makefile
 - write a makefile for the previous task
