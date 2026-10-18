@@ -17,7 +17,7 @@ until you have finished and verified your version).
 ./cat file1 [file2 [file3 ... ] ]
 ```
 
-To verify, cat a few files with your binary and then `/bin/cat`, then `diff` it.
+To verify, cat a few files with your binary, then `/bin/cat`, then `diff`/`cmp` it.
 
 ```
 $ dd if=/dev/urandom bs=1k count=128 of=data
