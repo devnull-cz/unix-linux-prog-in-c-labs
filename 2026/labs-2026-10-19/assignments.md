@@ -1,6 +1,6 @@
 # Leaky
 
-write a program that leaks fds on purpose, by calling open() or dup() in a endless cycle.
+write a program that leaks fds on purpose, by calling `open()` or `dup()` in a endless cycle.
 Observe when the respective syscall will start returning -1. What is the `errno` value ?
 
 Retrieve the limit of open file descriptors using `getrlimit()` and `sysconf()`. Then raise the limit using
