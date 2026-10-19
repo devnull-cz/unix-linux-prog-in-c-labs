@@ -10,8 +10,7 @@ Q: how to debug file descriptor leaks ?
 
 # File API: `cat`
 
-Implement a `cat` command (like in `read/cat.c` but do **not** look at that code
-until you have finished and verified your version).
+Implement a `cat` command.
 
 ```
 ./cat file1 [file2 [file3 ... ] ]
