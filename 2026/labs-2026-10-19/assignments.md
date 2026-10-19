@@ -27,6 +27,8 @@ $ echo $?
 0
 ```
 
+Once you are done, implement the tee(1) command.
+
 ## Variant: allow zero arguments
 
 usage: `./cat [file ...]`
