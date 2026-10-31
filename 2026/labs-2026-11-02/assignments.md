@@ -87,7 +87,7 @@ by `wc` are printed to the console (e.g. when `wc` does not have sufficient perm
 Lastly, think about what is going on in terms of file descriptors used by the child programs,
 the global file table and the file offset.
 
-Variant: create the children in parallel
+Variant: create the children in parallel. The content of the "`output`" file should be the same as in the sequential case, modulo ordering.
 
 # File I/O
 
