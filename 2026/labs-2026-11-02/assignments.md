@@ -75,8 +75,9 @@ I.e. the first program will execute the second program.
 
 ## Count lines for retgular files in a directory
 
-Open file "`output`" for writing, truncate it and redirect standard output to it. Then go through directory tree
-starting at `argv[1]` and for each regular file do `fork()` and `exec()` of `wc -l` on that file.
+Open file "`output`" for writing, truncate it and redirect standard output to it. Then go through directory
+`argv[1]` and for each regular file do `fork()` and `exec()` of `wc -l` on that file.
+The children should be created sequentially.
 
 The main process should wait for all the children to complete.
 
@@ -85,6 +86,8 @@ by `wc` are printed to the console (e.g. when `wc` does not have sufficient perm
 
 Lastly, think about what is going on in terms of file descriptors used by the child programs,
 the global file table and the file offset.
+
+Variant: create the children in parallel
 
 # File I/O
 
