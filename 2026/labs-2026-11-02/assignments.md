@@ -36,7 +36,8 @@ Do not use `fork()`. Start with `execl()`, then try `execv()`. Then try `posix_s
 ## supply environment variable
 
 Write a program that will execute `sudo vipw` (or `doas vipw` if running on OpenBSD)
-with the `EDITOR` environment variable set to your favorite editor.
+with the `EDITOR` environment variable set to your favorite editor (different to the default editor used by `vipw` so that the effect is obvious).
+
 You will have to use the `--preserve-env` option for sudo, because it sanitizes the environment by default.
 Or better yet, use the `--preserve-env=EDITOR` option to avoid passing the complete set of environment variables.
 
