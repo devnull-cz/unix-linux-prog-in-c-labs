@@ -69,11 +69,11 @@ either `snprintf()` or `asprintf()`.
 Produce 2 programs:
   1. Create and open set of files given by `argv`, mark these file descriptors to be close-on-exec, 
      create new process via `exec` syscall and pass the fd numbers as arguments to the new program
-  3. programatically verify that file descriptors given by `argv` are closed
+  3. programmatically verify that file descriptors given by `argv` are closed
 
 I.e. the first program will execute the second program.
 
-## Count lines for retgular files in a directory
+## Count lines for regular files in a directory
 
 Open file "`output`" for writing, truncate it and redirect standard output to it. Then go through directory tree
 starting at `argv[1]` and for each regular file do `fork()` and `exec()` of `wc -l` on that file.
