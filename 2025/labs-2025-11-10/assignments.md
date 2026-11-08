@@ -9,7 +9,7 @@
 # Questions
 
 - is SIGCHLD always sent when child terminates ?
-  - does it depend on `wait()`/`waitpid()`
+  - does it depend on `wait()`/`waitpid()` ?
 - what happens on `wait()`/`waitpid()` after SIGCHLD is explicitly ignored ?
 
 # use sigqueue to send data between processes
